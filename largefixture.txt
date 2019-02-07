@@ -1,0 +1,3325 @@
+# HELP go_gc_duration_seconds A summary of the GC invocation durations.
+# TYPE go_gc_duration_seconds summary
+go_gc_duration_seconds{quantile="0"} 4.6788e-05
+go_gc_duration_seconds{quantile="0.25"} 9.5869e-05
+go_gc_duration_seconds{quantile="0.5"} 0.00011914
+go_gc_duration_seconds{quantile="0.75"} 0.000163162
+go_gc_duration_seconds{quantile="1"} 0.002185543
+go_gc_duration_seconds_sum 0.035571069
+go_gc_duration_seconds_count 178
+# HELP go_goroutines Number of goroutines that currently exist.
+# TYPE go_goroutines gauge
+go_goroutines 6
+# HELP go_info Information about the Go environment.
+# TYPE go_info gauge
+go_info{version="go1.9.6"} 1
+# HELP go_memstats_alloc_bytes Number of bytes allocated and still in use.
+# TYPE go_memstats_alloc_bytes gauge
+go_memstats_alloc_bytes 2.615632e+06
+# HELP go_memstats_alloc_bytes_total Total number of bytes allocated, even if freed.
+# TYPE go_memstats_alloc_bytes_total counter
+go_memstats_alloc_bytes_total 1.12764472e+08
+# HELP go_memstats_buck_hash_sys_bytes Number of bytes used by the profiling bucket hash table.
+# TYPE go_memstats_buck_hash_sys_bytes gauge
+go_memstats_buck_hash_sys_bytes 1.482176e+06
+# HELP go_memstats_frees_total Total number of frees.
+# TYPE go_memstats_frees_total counter
+go_memstats_frees_total 1.62619e+06
+# HELP go_memstats_gc_cpu_fraction The fraction of this program's available CPU time used by the GC since the program started.
+# TYPE go_memstats_gc_cpu_fraction gauge
+go_memstats_gc_cpu_fraction 3.5636049649299633e-06
+# HELP go_memstats_gc_sys_bytes Number of bytes used for garbage collection system metadata.
+# TYPE go_memstats_gc_sys_bytes gauge
+go_memstats_gc_sys_bytes 438272
+# HELP go_memstats_heap_alloc_bytes Number of heap bytes allocated and still in use.
+# TYPE go_memstats_heap_alloc_bytes gauge
+go_memstats_heap_alloc_bytes 2.615632e+06
+# HELP go_memstats_heap_idle_bytes Number of heap bytes waiting to be used.
+# TYPE go_memstats_heap_idle_bytes gauge
+go_memstats_heap_idle_bytes 2.408448e+06
+# HELP go_memstats_heap_inuse_bytes Number of heap bytes that are in use.
+# TYPE go_memstats_heap_inuse_bytes gauge
+go_memstats_heap_inuse_bytes 4.308992e+06
+# HELP go_memstats_heap_objects Number of allocated objects.
+# TYPE go_memstats_heap_objects gauge
+go_memstats_heap_objects 30417
+# HELP go_memstats_heap_released_bytes Number of heap bytes released to OS.
+# TYPE go_memstats_heap_released_bytes gauge
+go_memstats_heap_released_bytes 1.8432e+06
+# HELP go_memstats_heap_sys_bytes Number of heap bytes obtained from system.
+# TYPE go_memstats_heap_sys_bytes gauge
+go_memstats_heap_sys_bytes 6.71744e+06
+# HELP go_memstats_last_gc_time_seconds Number of seconds since 1970 of last garbage collection.
+# TYPE go_memstats_last_gc_time_seconds gauge
+go_memstats_last_gc_time_seconds 1.5494562854614809e+09
+# HELP go_memstats_lookups_total Total number of pointer lookups.
+# TYPE go_memstats_lookups_total counter
+go_memstats_lookups_total 8470
+# HELP go_memstats_mallocs_total Total number of mallocs.
+# TYPE go_memstats_mallocs_total counter
+go_memstats_mallocs_total 1.656607e+06
+# HELP go_memstats_mcache_inuse_bytes Number of bytes in use by mcache structures.
+# TYPE go_memstats_mcache_inuse_bytes gauge
+go_memstats_mcache_inuse_bytes 6944
+# HELP go_memstats_mcache_sys_bytes Number of bytes used for mcache structures obtained from system.
+# TYPE go_memstats_mcache_sys_bytes gauge
+go_memstats_mcache_sys_bytes 16384
+# HELP go_memstats_mspan_inuse_bytes Number of bytes in use by mspan structures.
+# TYPE go_memstats_mspan_inuse_bytes gauge
+go_memstats_mspan_inuse_bytes 61256
+# HELP go_memstats_mspan_sys_bytes Number of bytes used for mspan structures obtained from system.
+# TYPE go_memstats_mspan_sys_bytes gauge
+go_memstats_mspan_sys_bytes 81920
+# HELP go_memstats_next_gc_bytes Number of heap bytes when next garbage collection will take place.
+# TYPE go_memstats_next_gc_bytes gauge
+go_memstats_next_gc_bytes 4.194304e+06
+# HELP go_memstats_other_sys_bytes Number of bytes used for other system allocations.
+# TYPE go_memstats_other_sys_bytes gauge
+go_memstats_other_sys_bytes 1.231672e+06
+# HELP go_memstats_stack_inuse_bytes Number of bytes in use by the stack allocator.
+# TYPE go_memstats_stack_inuse_bytes gauge
+go_memstats_stack_inuse_bytes 622592
+# HELP go_memstats_stack_sys_bytes Number of bytes obtained from system for stack allocator.
+# TYPE go_memstats_stack_sys_bytes gauge
+go_memstats_stack_sys_bytes 622592
+# HELP go_memstats_sys_bytes Number of bytes obtained from system.
+# TYPE go_memstats_sys_bytes gauge
+go_memstats_sys_bytes 1.0590456e+07
+# HELP go_threads Number of OS threads created.
+# TYPE go_threads gauge
+go_threads 10
+# HELP node_boot_time_seconds Node boot time, in unixtime.
+# TYPE node_boot_time_seconds gauge
+node_boot_time_seconds 1.549231848e+09
+# HELP node_context_switches_total Total number of context switches.
+# TYPE node_context_switches_total counter
+node_context_switches_total 1.587886932e+09
+# HELP node_cpu_guest_seconds_total Seconds the cpus spent in guests (VMs) for each mode.
+# TYPE node_cpu_guest_seconds_total counter
+node_cpu_guest_seconds_total{cpu="0",mode="nice"} 0
+node_cpu_guest_seconds_total{cpu="0",mode="user"} 0
+node_cpu_guest_seconds_total{cpu="1",mode="nice"} 0
+node_cpu_guest_seconds_total{cpu="1",mode="user"} 0
+node_cpu_guest_seconds_total{cpu="2",mode="nice"} 0
+node_cpu_guest_seconds_total{cpu="2",mode="user"} 0
+node_cpu_guest_seconds_total{cpu="3",mode="nice"} 0
+node_cpu_guest_seconds_total{cpu="3",mode="user"} 0
+# HELP node_cpu_seconds_total Seconds the cpus spent in each mode.
+# TYPE node_cpu_seconds_total counter
+node_cpu_seconds_total{cpu="0",mode="idle"} 213180.66
+node_cpu_seconds_total{cpu="0",mode="iowait"} 551.56
+node_cpu_seconds_total{cpu="0",mode="irq"} 654.26
+node_cpu_seconds_total{cpu="0",mode="nice"} 4.76
+node_cpu_seconds_total{cpu="0",mode="softirq"} 255.2
+node_cpu_seconds_total{cpu="0",mode="steal"} 1409.23
+node_cpu_seconds_total{cpu="0",mode="system"} 3455.28
+node_cpu_seconds_total{cpu="0",mode="user"} 3670.85
+node_cpu_seconds_total{cpu="1",mode="idle"} 213496.96
+node_cpu_seconds_total{cpu="1",mode="iowait"} 610.99
+node_cpu_seconds_total{cpu="1",mode="irq"} 392.73
+node_cpu_seconds_total{cpu="1",mode="nice"} 4.17
+node_cpu_seconds_total{cpu="1",mode="softirq"} 251.03
+node_cpu_seconds_total{cpu="1",mode="steal"} 1283.65
+node_cpu_seconds_total{cpu="1",mode="system"} 3193.44
+node_cpu_seconds_total{cpu="1",mode="user"} 3663.21
+node_cpu_seconds_total{cpu="2",mode="idle"} 214027.13
+node_cpu_seconds_total{cpu="2",mode="iowait"} 544.64
+node_cpu_seconds_total{cpu="2",mode="irq"} 362.91
+node_cpu_seconds_total{cpu="2",mode="nice"} 3.48
+node_cpu_seconds_total{cpu="2",mode="softirq"} 250.04
+node_cpu_seconds_total{cpu="2",mode="steal"} 1237.07
+node_cpu_seconds_total{cpu="2",mode="system"} 3213.24
+node_cpu_seconds_total{cpu="2",mode="user"} 3388.63
+node_cpu_seconds_total{cpu="3",mode="idle"} 214205.77
+node_cpu_seconds_total{cpu="3",mode="iowait"} 554.03
+node_cpu_seconds_total{cpu="3",mode="irq"} 365.88
+node_cpu_seconds_total{cpu="3",mode="nice"} 5.58
+node_cpu_seconds_total{cpu="3",mode="softirq"} 267.86
+node_cpu_seconds_total{cpu="3",mode="steal"} 1230.24
+node_cpu_seconds_total{cpu="3",mode="system"} 3104.94
+node_cpu_seconds_total{cpu="3",mode="user"} 3269.81
+# HELP node_disk_io_now The number of I/Os currently in progress.
+# TYPE node_disk_io_now gauge
+node_disk_io_now{device="dm-0"} 0
+node_disk_io_now{device="dm-1"} 0
+node_disk_io_now{device="dm-2"} 0
+node_disk_io_now{device="sda"} 0
+node_disk_io_now{device="sdb"} 0
+node_disk_io_now{device="sdc"} 0
+node_disk_io_now{device="zd0"} 0
+# HELP node_disk_io_time_seconds_total Total seconds spent doing I/Os.
+# TYPE node_disk_io_time_seconds_total counter
+node_disk_io_time_seconds_total{device="dm-0"} 3834.7690000000002
+node_disk_io_time_seconds_total{device="dm-1"} 36.385
+node_disk_io_time_seconds_total{device="dm-2"} 240.948
+node_disk_io_time_seconds_total{device="sda"} 0.023
+node_disk_io_time_seconds_total{device="sdb"} 0.098
+node_disk_io_time_seconds_total{device="sdc"} 3663.011
+node_disk_io_time_seconds_total{device="zd0"} 0.07
+# HELP node_disk_io_time_weighted_seconds_total The weighted # of seconds spent doing I/Os. See https://www.kernel.org/doc/Documentation/iostats.txt.
+# TYPE node_disk_io_time_weighted_seconds_total counter
+node_disk_io_time_weighted_seconds_total{device="dm-0"} 25493.351
+node_disk_io_time_weighted_seconds_total{device="dm-1"} 104.512
+node_disk_io_time_weighted_seconds_total{device="dm-2"} 923.186
+node_disk_io_time_weighted_seconds_total{device="sda"} 0.032
+node_disk_io_time_weighted_seconds_total{device="sdb"} 0.21
+node_disk_io_time_weighted_seconds_total{device="sdc"} 26321.853
+node_disk_io_time_weighted_seconds_total{device="zd0"} 0.07
+# HELP node_disk_read_bytes_total The total number of bytes read successfully.
+# TYPE node_disk_read_bytes_total counter
+node_disk_read_bytes_total{device="dm-0"} 1.6919891968e+10
+node_disk_read_bytes_total{device="dm-1"} 6.540639232e+09
+node_disk_read_bytes_total{device="dm-2"} 5.415558656e+10
+node_disk_read_bytes_total{device="sda"} 3.289088e+06
+node_disk_read_bytes_total{device="sdb"} 8.786432e+06
+node_disk_read_bytes_total{device="sdc"} 1.693488896e+10
+node_disk_read_bytes_total{device="zd0"} 196608
+# HELP node_disk_read_time_seconds_total The total number of milliseconds spent by all reads.
+# TYPE node_disk_read_time_seconds_total counter
+node_disk_read_time_seconds_total{device="dm-0"} 19960.146
+node_disk_read_time_seconds_total{device="dm-1"} 104.505
+node_disk_read_time_seconds_total{device="dm-2"} 922.955
+node_disk_read_time_seconds_total{device="sda"} 0.002
+node_disk_read_time_seconds_total{device="sdb"} 0.064
+node_disk_read_time_seconds_total{device="sdc"} 544.282
+node_disk_read_time_seconds_total{device="zd0"} 0.07
+# HELP node_disk_reads_completed_total The total number of reads completed successfully.
+# TYPE node_disk_reads_completed_total counter
+node_disk_reads_completed_total{device="dm-0"} 774628
+node_disk_reads_completed_total{device="dm-1"} 331983
+node_disk_reads_completed_total{device="dm-2"} 4.844461e+06
+node_disk_reads_completed_total{device="sda"} 353
+node_disk_reads_completed_total{device="sdb"} 2822
+node_disk_reads_completed_total{device="sdc"} 267071
+node_disk_reads_completed_total{device="zd0"} 26
+# HELP node_disk_reads_merged_total The total number of reads merged. See https://www.kernel.org/doc/Documentation/iostats.txt.
+# TYPE node_disk_reads_merged_total counter
+node_disk_reads_merged_total{device="dm-0"} 0
+node_disk_reads_merged_total{device="dm-1"} 0
+node_disk_reads_merged_total{device="dm-2"} 0
+node_disk_reads_merged_total{device="sda"} 0
+node_disk_reads_merged_total{device="sdb"} 0
+node_disk_reads_merged_total{device="sdc"} 910
+node_disk_reads_merged_total{device="zd0"} 0
+# HELP node_disk_write_time_seconds_total This is the total number of seconds spent by all writes.
+# TYPE node_disk_write_time_seconds_total counter
+node_disk_write_time_seconds_total{device="dm-0"} 5529.2210000000005
+node_disk_write_time_seconds_total{device="dm-1"} 0
+node_disk_write_time_seconds_total{device="dm-2"} 0
+node_disk_write_time_seconds_total{device="sda"} 0
+node_disk_write_time_seconds_total{device="sdb"} 0
+node_disk_write_time_seconds_total{device="sdc"} 24805.083
+node_disk_write_time_seconds_total{device="zd0"} 0
+# HELP node_disk_writes_completed_total The total number of writes completed successfully.
+# TYPE node_disk_writes_completed_total counter
+node_disk_writes_completed_total{device="dm-0"} 5.076393e+06
+node_disk_writes_completed_total{device="dm-1"} 0
+node_disk_writes_completed_total{device="dm-2"} 0
+node_disk_writes_completed_total{device="sda"} 0
+node_disk_writes_completed_total{device="sdb"} 0
+node_disk_writes_completed_total{device="sdc"} 5.535754e+06
+node_disk_writes_completed_total{device="zd0"} 0
+# HELP node_disk_writes_merged_total The number of writes merged. See https://www.kernel.org/doc/Documentation/iostats.txt.
+# TYPE node_disk_writes_merged_total counter
+node_disk_writes_merged_total{device="dm-0"} 0
+node_disk_writes_merged_total{device="dm-1"} 0
+node_disk_writes_merged_total{device="dm-2"} 0
+node_disk_writes_merged_total{device="sda"} 0
+node_disk_writes_merged_total{device="sdb"} 0
+node_disk_writes_merged_total{device="sdc"} 75408
+node_disk_writes_merged_total{device="zd0"} 0
+# HELP node_disk_written_bytes_total The total number of bytes written successfully.
+# TYPE node_disk_written_bytes_total counter
+node_disk_written_bytes_total{device="dm-0"} 1.43322144768e+11
+node_disk_written_bytes_total{device="dm-1"} 0
+node_disk_written_bytes_total{device="dm-2"} 0
+node_disk_written_bytes_total{device="sda"} 0
+node_disk_written_bytes_total{device="sdb"} 0
+node_disk_written_bytes_total{device="sdc"} 1.4332217856e+11
+node_disk_written_bytes_total{device="zd0"} 0
+# HELP node_entropy_available_bits Bits of available entropy.
+# TYPE node_entropy_available_bits gauge
+node_entropy_available_bits 3664
+# HELP node_exporter_build_info A metric with a constant '1' value labeled by version, revision, branch, and goversion from which node_exporter was built.
+# TYPE node_exporter_build_info gauge
+node_exporter_build_info{branch="HEAD",goversion="go1.9.6",revision="d42bd70f4363dced6b77d8fc311ea57b63387e4f",version="0.16.0"} 1
+# HELP node_filefd_allocated File descriptor statistics: allocated.
+# TYPE node_filefd_allocated gauge
+node_filefd_allocated 12704
+# HELP node_filefd_maximum File descriptor statistics: maximum.
+# TYPE node_filefd_maximum gauge
+node_filefd_maximum 1.585351e+06
+# HELP node_filesystem_avail_bytes Filesystem space available to non-root users in bytes.
+# TYPE node_filesystem_avail_bytes gauge
+node_filesystem_avail_bytes{device="/dev/sdc2",fstype="vfat",mountpoint="/boot/efi"} 1.014992896e+09
+node_filesystem_avail_bytes{device="/dev/sdc3",fstype="ext4",mountpoint="/boot"} 7.09484544e+08
+node_filesystem_avail_bytes{device="fortressworkstation/ROOT/os",fstype="zfs",mountpoint="/"} 4.97948295168e+11
+node_filesystem_avail_bytes{device="fortressworkstation/ROOT/os-borg-2018-12-02",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-uRtWclTBtE"} 4.97948295168e+11
+node_filesystem_avail_bytes{device="fortressworkstation/ROOT/os-borg-2019-01-06",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-1lUku9wUmv"} 4.97948295168e+11
+node_filesystem_avail_bytes{device="fortressworkstation/ROOT/os-borg-2019-01-23",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-bF2DolWWag"} 4.97948295168e+11
+node_filesystem_avail_bytes{device="fortressworkstation/ROOT/os-borg-2019-02-03",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-1LVq6UOPBe"} 4.97948295168e+11
+node_filesystem_avail_bytes{device="fortressworkstation/ROOT/os-borg-2019-02-06",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-IEDpbEYFIT"} 4.97948295168e+11
+node_filesystem_avail_bytes{device="tmpfs",fstype="tmpfs",mountpoint="/run"} 8.146743296e+09
+node_filesystem_avail_bytes{device="tmpfs",fstype="tmpfs",mountpoint="/run/user/1000"} 1.63024896e+09
+node_filesystem_avail_bytes{device="tmpfs",fstype="tmpfs",mountpoint="/tmp"} 8.15128576e+09
+node_filesystem_avail_bytes{device="xenstore",fstype="tmpfs",mountpoint="/var/lib/xenstored"} 8.150700032e+09
+# HELP node_filesystem_device_error Whether an error occurred while getting statistics for the given device.
+# TYPE node_filesystem_device_error gauge
+node_filesystem_device_error{device="/dev/sdc2",fstype="vfat",mountpoint="/boot/efi"} 0
+node_filesystem_device_error{device="/dev/sdc3",fstype="ext4",mountpoint="/boot"} 0
+node_filesystem_device_error{device="fortressworkstation/ROOT/os",fstype="zfs",mountpoint="/"} 0
+node_filesystem_device_error{device="fortressworkstation/ROOT/os-borg-2018-12-02",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-uRtWclTBtE"} 0
+node_filesystem_device_error{device="fortressworkstation/ROOT/os-borg-2019-01-06",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-1lUku9wUmv"} 0
+node_filesystem_device_error{device="fortressworkstation/ROOT/os-borg-2019-01-23",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-bF2DolWWag"} 0
+node_filesystem_device_error{device="fortressworkstation/ROOT/os-borg-2019-02-03",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-1LVq6UOPBe"} 0
+node_filesystem_device_error{device="fortressworkstation/ROOT/os-borg-2019-02-06",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-IEDpbEYFIT"} 0
+node_filesystem_device_error{device="tmpfs",fstype="tmpfs",mountpoint="/run"} 0
+node_filesystem_device_error{device="tmpfs",fstype="tmpfs",mountpoint="/run/user/1000"} 0
+node_filesystem_device_error{device="tmpfs",fstype="tmpfs",mountpoint="/tmp"} 0
+node_filesystem_device_error{device="xenstore",fstype="tmpfs",mountpoint="/var/lib/xenstored"} 0
+# HELP node_filesystem_files Filesystem total file nodes.
+# TYPE node_filesystem_files gauge
+node_filesystem_files{device="/dev/sdc2",fstype="vfat",mountpoint="/boot/efi"} 0
+node_filesystem_files{device="/dev/sdc3",fstype="ext4",mountpoint="/boot"} 65536
+node_filesystem_files{device="fortressworkstation/ROOT/os",fstype="zfs",mountpoint="/"} 9.72825717e+08
+node_filesystem_files{device="fortressworkstation/ROOT/os-borg-2018-12-02",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-uRtWclTBtE"} 9.7282276e+08
+node_filesystem_files{device="fortressworkstation/ROOT/os-borg-2019-01-06",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-1lUku9wUmv"} 9.72822774e+08
+node_filesystem_files{device="fortressworkstation/ROOT/os-borg-2019-01-23",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-bF2DolWWag"} 9.72825655e+08
+node_filesystem_files{device="fortressworkstation/ROOT/os-borg-2019-02-03",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-1LVq6UOPBe"} 9.72825688e+08
+node_filesystem_files{device="fortressworkstation/ROOT/os-borg-2019-02-06",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-IEDpbEYFIT"} 9.72825698e+08
+node_filesystem_files{device="tmpfs",fstype="tmpfs",mountpoint="/run"} 1.990065e+06
+node_filesystem_files{device="tmpfs",fstype="tmpfs",mountpoint="/run/user/1000"} 1.810383e+06
+node_filesystem_files{device="tmpfs",fstype="tmpfs",mountpoint="/tmp"} 1.990065e+06
+node_filesystem_files{device="xenstore",fstype="tmpfs",mountpoint="/var/lib/xenstored"} 1.990065e+06
+# HELP node_filesystem_files_free Filesystem total free file nodes.
+# TYPE node_filesystem_files_free gauge
+node_filesystem_files_free{device="/dev/sdc2",fstype="vfat",mountpoint="/boot/efi"} 0
+node_filesystem_files_free{device="/dev/sdc3",fstype="ext4",mountpoint="/boot"} 65120
+node_filesystem_files_free{device="fortressworkstation/ROOT/os",fstype="zfs",mountpoint="/"} 9.72555448e+08
+node_filesystem_files_free{device="fortressworkstation/ROOT/os-borg-2018-12-02",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-uRtWclTBtE"} 9.72555448e+08
+node_filesystem_files_free{device="fortressworkstation/ROOT/os-borg-2019-01-06",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-1lUku9wUmv"} 9.72555448e+08
+node_filesystem_files_free{device="fortressworkstation/ROOT/os-borg-2019-01-23",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-bF2DolWWag"} 9.72555448e+08
+node_filesystem_files_free{device="fortressworkstation/ROOT/os-borg-2019-02-03",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-1LVq6UOPBe"} 9.72555448e+08
+node_filesystem_files_free{device="fortressworkstation/ROOT/os-borg-2019-02-06",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-IEDpbEYFIT"} 9.72555448e+08
+node_filesystem_files_free{device="tmpfs",fstype="tmpfs",mountpoint="/run"} 1.988335e+06
+node_filesystem_files_free{device="tmpfs",fstype="tmpfs",mountpoint="/run/user/1000"} 1.810369e+06
+node_filesystem_files_free{device="tmpfs",fstype="tmpfs",mountpoint="/tmp"} 1.990023e+06
+node_filesystem_files_free{device="xenstore",fstype="tmpfs",mountpoint="/var/lib/xenstored"} 1.990063e+06
+# HELP node_filesystem_free_bytes Filesystem free space in bytes.
+# TYPE node_filesystem_free_bytes gauge
+node_filesystem_free_bytes{device="/dev/sdc2",fstype="vfat",mountpoint="/boot/efi"} 1.014992896e+09
+node_filesystem_free_bytes{device="/dev/sdc3",fstype="ext4",mountpoint="/boot"} 7.79948032e+08
+node_filesystem_free_bytes{device="fortressworkstation/ROOT/os",fstype="zfs",mountpoint="/"} 4.97948295168e+11
+node_filesystem_free_bytes{device="fortressworkstation/ROOT/os-borg-2018-12-02",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-uRtWclTBtE"} 4.97948295168e+11
+node_filesystem_free_bytes{device="fortressworkstation/ROOT/os-borg-2019-01-06",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-1lUku9wUmv"} 4.97948295168e+11
+node_filesystem_free_bytes{device="fortressworkstation/ROOT/os-borg-2019-01-23",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-bF2DolWWag"} 4.97948295168e+11
+node_filesystem_free_bytes{device="fortressworkstation/ROOT/os-borg-2019-02-03",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-1LVq6UOPBe"} 4.97948295168e+11
+node_filesystem_free_bytes{device="fortressworkstation/ROOT/os-borg-2019-02-06",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-IEDpbEYFIT"} 4.97948295168e+11
+node_filesystem_free_bytes{device="tmpfs",fstype="tmpfs",mountpoint="/run"} 8.146743296e+09
+node_filesystem_free_bytes{device="tmpfs",fstype="tmpfs",mountpoint="/run/user/1000"} 1.63024896e+09
+node_filesystem_free_bytes{device="tmpfs",fstype="tmpfs",mountpoint="/tmp"} 8.15128576e+09
+node_filesystem_free_bytes{device="xenstore",fstype="tmpfs",mountpoint="/var/lib/xenstored"} 8.150700032e+09
+# HELP node_filesystem_readonly Filesystem read-only status.
+# TYPE node_filesystem_readonly gauge
+node_filesystem_readonly{device="/dev/sdc2",fstype="vfat",mountpoint="/boot/efi"} 0
+node_filesystem_readonly{device="/dev/sdc3",fstype="ext4",mountpoint="/boot"} 0
+node_filesystem_readonly{device="fortressworkstation/ROOT/os",fstype="zfs",mountpoint="/"} 0
+node_filesystem_readonly{device="fortressworkstation/ROOT/os-borg-2018-12-02",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-uRtWclTBtE"} 0
+node_filesystem_readonly{device="fortressworkstation/ROOT/os-borg-2019-01-06",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-1lUku9wUmv"} 0
+node_filesystem_readonly{device="fortressworkstation/ROOT/os-borg-2019-01-23",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-bF2DolWWag"} 0
+node_filesystem_readonly{device="fortressworkstation/ROOT/os-borg-2019-02-03",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-1LVq6UOPBe"} 0
+node_filesystem_readonly{device="fortressworkstation/ROOT/os-borg-2019-02-06",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-IEDpbEYFIT"} 0
+node_filesystem_readonly{device="tmpfs",fstype="tmpfs",mountpoint="/run"} 0
+node_filesystem_readonly{device="tmpfs",fstype="tmpfs",mountpoint="/run/user/1000"} 0
+node_filesystem_readonly{device="tmpfs",fstype="tmpfs",mountpoint="/tmp"} 0
+node_filesystem_readonly{device="xenstore",fstype="tmpfs",mountpoint="/var/lib/xenstored"} 0
+# HELP node_filesystem_size_bytes Filesystem size in bytes.
+# TYPE node_filesystem_size_bytes gauge
+node_filesystem_size_bytes{device="/dev/sdc2",fstype="vfat",mountpoint="/boot/efi"} 1.068490752e+09
+node_filesystem_size_bytes{device="/dev/sdc3",fstype="ext4",mountpoint="/boot"} 1.02330368e+09
+node_filesystem_size_bytes{device="fortressworkstation/ROOT/os",fstype="zfs",mountpoint="/"} 9.12559570944e+11
+node_filesystem_size_bytes{device="fortressworkstation/ROOT/os-borg-2018-12-02",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-uRtWclTBtE"} 8.97127677952e+11
+node_filesystem_size_bytes{device="fortressworkstation/ROOT/os-borg-2019-01-06",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-1lUku9wUmv"} 9.047801856e+11
+node_filesystem_size_bytes{device="fortressworkstation/ROOT/os-borg-2019-01-23",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-bF2DolWWag"} 9.10835318784e+11
+node_filesystem_size_bytes{device="fortressworkstation/ROOT/os-borg-2019-02-03",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-1LVq6UOPBe"} 9.15508690944e+11
+node_filesystem_size_bytes{device="fortressworkstation/ROOT/os-borg-2019-02-06",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-IEDpbEYFIT"} 9.11494873088e+11
+node_filesystem_size_bytes{device="tmpfs",fstype="tmpfs",mountpoint="/run"} 8.15130624e+09
+node_filesystem_size_bytes{device="tmpfs",fstype="tmpfs",mountpoint="/run/user/1000"} 1.630261248e+09
+node_filesystem_size_bytes{device="tmpfs",fstype="tmpfs",mountpoint="/tmp"} 8.15130624e+09
+node_filesystem_size_bytes{device="xenstore",fstype="tmpfs",mountpoint="/var/lib/xenstored"} 8.15130624e+09
+# HELP node_forks_total Total number of forks.
+# TYPE node_forks_total counter
+node_forks_total 1.66815e+06
+# HELP node_hwmon_chip_names Annotation metric for human-readable chip names
+# TYPE node_hwmon_chip_names gauge
+node_hwmon_chip_names{chip="acpitz",chip_name="acpitz"} 1
+node_hwmon_chip_names{chip="platform_coretemp_0",chip_name="coretemp"} 1
+# HELP node_hwmon_sensor_label Label for given chip and sensor
+# TYPE node_hwmon_sensor_label gauge
+node_hwmon_sensor_label{chip="platform_coretemp_0",label="core_0",sensor="temp2"} 1
+node_hwmon_sensor_label{chip="platform_coretemp_0",label="core_1",sensor="temp3"} 1
+node_hwmon_sensor_label{chip="platform_coretemp_0",label="core_2",sensor="temp4"} 1
+node_hwmon_sensor_label{chip="platform_coretemp_0",label="core_3",sensor="temp5"} 1
+node_hwmon_sensor_label{chip="platform_coretemp_0",label="package_id_0",sensor="temp1"} 1
+# HELP node_hwmon_temp_celsius Hardware monitor for temperature (input)
+# TYPE node_hwmon_temp_celsius gauge
+node_hwmon_temp_celsius{chip="acpitz",sensor="temp1"} 27.8
+node_hwmon_temp_celsius{chip="acpitz",sensor="temp2"} 29.8
+node_hwmon_temp_celsius{chip="acpitz",sensor="temp3"} 57
+node_hwmon_temp_celsius{chip="platform_coretemp_0",sensor="temp1"} 58
+node_hwmon_temp_celsius{chip="platform_coretemp_0",sensor="temp2"} 54
+node_hwmon_temp_celsius{chip="platform_coretemp_0",sensor="temp3"} 56
+node_hwmon_temp_celsius{chip="platform_coretemp_0",sensor="temp4"} 57
+node_hwmon_temp_celsius{chip="platform_coretemp_0",sensor="temp5"} 57
+# HELP node_hwmon_temp_crit_alarm_celsius Hardware monitor for temperature (crit_alarm)
+# TYPE node_hwmon_temp_crit_alarm_celsius gauge
+node_hwmon_temp_crit_alarm_celsius{chip="platform_coretemp_0",sensor="temp1"} 0
+node_hwmon_temp_crit_alarm_celsius{chip="platform_coretemp_0",sensor="temp2"} 0
+node_hwmon_temp_crit_alarm_celsius{chip="platform_coretemp_0",sensor="temp3"} 0
+node_hwmon_temp_crit_alarm_celsius{chip="platform_coretemp_0",sensor="temp4"} 0
+node_hwmon_temp_crit_alarm_celsius{chip="platform_coretemp_0",sensor="temp5"} 0
+# HELP node_hwmon_temp_crit_celsius Hardware monitor for temperature (crit)
+# TYPE node_hwmon_temp_crit_celsius gauge
+node_hwmon_temp_crit_celsius{chip="acpitz",sensor="temp1"} 105
+node_hwmon_temp_crit_celsius{chip="acpitz",sensor="temp2"} 105
+node_hwmon_temp_crit_celsius{chip="acpitz",sensor="temp3"} 100
+node_hwmon_temp_crit_celsius{chip="platform_coretemp_0",sensor="temp1"} 100
+node_hwmon_temp_crit_celsius{chip="platform_coretemp_0",sensor="temp2"} 100
+node_hwmon_temp_crit_celsius{chip="platform_coretemp_0",sensor="temp3"} 100
+node_hwmon_temp_crit_celsius{chip="platform_coretemp_0",sensor="temp4"} 100
+node_hwmon_temp_crit_celsius{chip="platform_coretemp_0",sensor="temp5"} 100
+# HELP node_hwmon_temp_max_celsius Hardware monitor for temperature (max)
+# TYPE node_hwmon_temp_max_celsius gauge
+node_hwmon_temp_max_celsius{chip="platform_coretemp_0",sensor="temp1"} 84
+node_hwmon_temp_max_celsius{chip="platform_coretemp_0",sensor="temp2"} 84
+node_hwmon_temp_max_celsius{chip="platform_coretemp_0",sensor="temp3"} 84
+node_hwmon_temp_max_celsius{chip="platform_coretemp_0",sensor="temp4"} 84
+node_hwmon_temp_max_celsius{chip="platform_coretemp_0",sensor="temp5"} 84
+# HELP node_intr_total Total number of interrupts serviced.
+# TYPE node_intr_total counter
+node_intr_total 9.96525887e+08
+# HELP node_load1 1m load average.
+# TYPE node_load1 gauge
+node_load1 0.72
+# HELP node_load15 15m load average.
+# TYPE node_load15 gauge
+node_load15 0.49
+# HELP node_load5 5m load average.
+# TYPE node_load5 gauge
+node_load5 0.53
+# HELP node_logind_sessions Number of sessions registered in logind.
+# TYPE node_logind_sessions gauge
+node_logind_sessions{class="background",remote="false",seat="",type="mir"} 0
+node_logind_sessions{class="background",remote="false",seat="",type="other"} 0
+node_logind_sessions{class="background",remote="false",seat="",type="tty"} 0
+node_logind_sessions{class="background",remote="false",seat="",type="unspecified"} 0
+node_logind_sessions{class="background",remote="false",seat="",type="wayland"} 0
+node_logind_sessions{class="background",remote="false",seat="",type="web"} 0
+node_logind_sessions{class="background",remote="false",seat="",type="x11"} 0
+node_logind_sessions{class="background",remote="false",seat="seat0",type="mir"} 0
+node_logind_sessions{class="background",remote="false",seat="seat0",type="other"} 0
+node_logind_sessions{class="background",remote="false",seat="seat0",type="tty"} 0
+node_logind_sessions{class="background",remote="false",seat="seat0",type="unspecified"} 0
+node_logind_sessions{class="background",remote="false",seat="seat0",type="wayland"} 0
+node_logind_sessions{class="background",remote="false",seat="seat0",type="web"} 0
+node_logind_sessions{class="background",remote="false",seat="seat0",type="x11"} 0
+node_logind_sessions{class="background",remote="true",seat="",type="mir"} 0
+node_logind_sessions{class="background",remote="true",seat="",type="other"} 0
+node_logind_sessions{class="background",remote="true",seat="",type="tty"} 0
+node_logind_sessions{class="background",remote="true",seat="",type="unspecified"} 0
+node_logind_sessions{class="background",remote="true",seat="",type="wayland"} 0
+node_logind_sessions{class="background",remote="true",seat="",type="web"} 0
+node_logind_sessions{class="background",remote="true",seat="",type="x11"} 0
+node_logind_sessions{class="background",remote="true",seat="seat0",type="mir"} 0
+node_logind_sessions{class="background",remote="true",seat="seat0",type="other"} 0
+node_logind_sessions{class="background",remote="true",seat="seat0",type="tty"} 0
+node_logind_sessions{class="background",remote="true",seat="seat0",type="unspecified"} 0
+node_logind_sessions{class="background",remote="true",seat="seat0",type="wayland"} 0
+node_logind_sessions{class="background",remote="true",seat="seat0",type="web"} 0
+node_logind_sessions{class="background",remote="true",seat="seat0",type="x11"} 0
+node_logind_sessions{class="greeter",remote="false",seat="",type="mir"} 0
+node_logind_sessions{class="greeter",remote="false",seat="",type="other"} 0
+node_logind_sessions{class="greeter",remote="false",seat="",type="tty"} 0
+node_logind_sessions{class="greeter",remote="false",seat="",type="unspecified"} 0
+node_logind_sessions{class="greeter",remote="false",seat="",type="wayland"} 0
+node_logind_sessions{class="greeter",remote="false",seat="",type="web"} 0
+node_logind_sessions{class="greeter",remote="false",seat="",type="x11"} 0
+node_logind_sessions{class="greeter",remote="false",seat="seat0",type="mir"} 0
+node_logind_sessions{class="greeter",remote="false",seat="seat0",type="other"} 0
+node_logind_sessions{class="greeter",remote="false",seat="seat0",type="tty"} 0
+node_logind_sessions{class="greeter",remote="false",seat="seat0",type="unspecified"} 0
+node_logind_sessions{class="greeter",remote="false",seat="seat0",type="wayland"} 0
+node_logind_sessions{class="greeter",remote="false",seat="seat0",type="web"} 0
+node_logind_sessions{class="greeter",remote="false",seat="seat0",type="x11"} 0
+node_logind_sessions{class="greeter",remote="true",seat="",type="mir"} 0
+node_logind_sessions{class="greeter",remote="true",seat="",type="other"} 0
+node_logind_sessions{class="greeter",remote="true",seat="",type="tty"} 0
+node_logind_sessions{class="greeter",remote="true",seat="",type="unspecified"} 0
+node_logind_sessions{class="greeter",remote="true",seat="",type="wayland"} 0
+node_logind_sessions{class="greeter",remote="true",seat="",type="web"} 0
+node_logind_sessions{class="greeter",remote="true",seat="",type="x11"} 0
+node_logind_sessions{class="greeter",remote="true",seat="seat0",type="mir"} 0
+node_logind_sessions{class="greeter",remote="true",seat="seat0",type="other"} 0
+node_logind_sessions{class="greeter",remote="true",seat="seat0",type="tty"} 0
+node_logind_sessions{class="greeter",remote="true",seat="seat0",type="unspecified"} 0
+node_logind_sessions{class="greeter",remote="true",seat="seat0",type="wayland"} 0
+node_logind_sessions{class="greeter",remote="true",seat="seat0",type="web"} 0
+node_logind_sessions{class="greeter",remote="true",seat="seat0",type="x11"} 0
+node_logind_sessions{class="lock-screen",remote="false",seat="",type="mir"} 0
+node_logind_sessions{class="lock-screen",remote="false",seat="",type="other"} 0
+node_logind_sessions{class="lock-screen",remote="false",seat="",type="tty"} 0
+node_logind_sessions{class="lock-screen",remote="false",seat="",type="unspecified"} 0
+node_logind_sessions{class="lock-screen",remote="false",seat="",type="wayland"} 0
+node_logind_sessions{class="lock-screen",remote="false",seat="",type="web"} 0
+node_logind_sessions{class="lock-screen",remote="false",seat="",type="x11"} 0
+node_logind_sessions{class="lock-screen",remote="false",seat="seat0",type="mir"} 0
+node_logind_sessions{class="lock-screen",remote="false",seat="seat0",type="other"} 0
+node_logind_sessions{class="lock-screen",remote="false",seat="seat0",type="tty"} 0
+node_logind_sessions{class="lock-screen",remote="false",seat="seat0",type="unspecified"} 0
+node_logind_sessions{class="lock-screen",remote="false",seat="seat0",type="wayland"} 0
+node_logind_sessions{class="lock-screen",remote="false",seat="seat0",type="web"} 0
+node_logind_sessions{class="lock-screen",remote="false",seat="seat0",type="x11"} 0
+node_logind_sessions{class="lock-screen",remote="true",seat="",type="mir"} 0
+node_logind_sessions{class="lock-screen",remote="true",seat="",type="other"} 0
+node_logind_sessions{class="lock-screen",remote="true",seat="",type="tty"} 0
+node_logind_sessions{class="lock-screen",remote="true",seat="",type="unspecified"} 0
+node_logind_sessions{class="lock-screen",remote="true",seat="",type="wayland"} 0
+node_logind_sessions{class="lock-screen",remote="true",seat="",type="web"} 0
+node_logind_sessions{class="lock-screen",remote="true",seat="",type="x11"} 0
+node_logind_sessions{class="lock-screen",remote="true",seat="seat0",type="mir"} 0
+node_logind_sessions{class="lock-screen",remote="true",seat="seat0",type="other"} 0
+node_logind_sessions{class="lock-screen",remote="true",seat="seat0",type="tty"} 0
+node_logind_sessions{class="lock-screen",remote="true",seat="seat0",type="unspecified"} 0
+node_logind_sessions{class="lock-screen",remote="true",seat="seat0",type="wayland"} 0
+node_logind_sessions{class="lock-screen",remote="true",seat="seat0",type="web"} 0
+node_logind_sessions{class="lock-screen",remote="true",seat="seat0",type="x11"} 0
+node_logind_sessions{class="other",remote="false",seat="",type="mir"} 0
+node_logind_sessions{class="other",remote="false",seat="",type="other"} 0
+node_logind_sessions{class="other",remote="false",seat="",type="tty"} 0
+node_logind_sessions{class="other",remote="false",seat="",type="unspecified"} 0
+node_logind_sessions{class="other",remote="false",seat="",type="wayland"} 0
+node_logind_sessions{class="other",remote="false",seat="",type="web"} 0
+node_logind_sessions{class="other",remote="false",seat="",type="x11"} 0
+node_logind_sessions{class="other",remote="false",seat="seat0",type="mir"} 0
+node_logind_sessions{class="other",remote="false",seat="seat0",type="other"} 0
+node_logind_sessions{class="other",remote="false",seat="seat0",type="tty"} 0
+node_logind_sessions{class="other",remote="false",seat="seat0",type="unspecified"} 0
+node_logind_sessions{class="other",remote="false",seat="seat0",type="wayland"} 0
+node_logind_sessions{class="other",remote="false",seat="seat0",type="web"} 0
+node_logind_sessions{class="other",remote="false",seat="seat0",type="x11"} 0
+node_logind_sessions{class="other",remote="true",seat="",type="mir"} 0
+node_logind_sessions{class="other",remote="true",seat="",type="other"} 0
+node_logind_sessions{class="other",remote="true",seat="",type="tty"} 0
+node_logind_sessions{class="other",remote="true",seat="",type="unspecified"} 0
+node_logind_sessions{class="other",remote="true",seat="",type="wayland"} 0
+node_logind_sessions{class="other",remote="true",seat="",type="web"} 0
+node_logind_sessions{class="other",remote="true",seat="",type="x11"} 0
+node_logind_sessions{class="other",remote="true",seat="seat0",type="mir"} 0
+node_logind_sessions{class="other",remote="true",seat="seat0",type="other"} 0
+node_logind_sessions{class="other",remote="true",seat="seat0",type="tty"} 0
+node_logind_sessions{class="other",remote="true",seat="seat0",type="unspecified"} 0
+node_logind_sessions{class="other",remote="true",seat="seat0",type="wayland"} 0
+node_logind_sessions{class="other",remote="true",seat="seat0",type="web"} 0
+node_logind_sessions{class="other",remote="true",seat="seat0",type="x11"} 0
+node_logind_sessions{class="user",remote="false",seat="",type="mir"} 0
+node_logind_sessions{class="user",remote="false",seat="",type="other"} 0
+node_logind_sessions{class="user",remote="false",seat="",type="tty"} 0
+node_logind_sessions{class="user",remote="false",seat="",type="unspecified"} 0
+node_logind_sessions{class="user",remote="false",seat="",type="wayland"} 0
+node_logind_sessions{class="user",remote="false",seat="",type="web"} 0
+node_logind_sessions{class="user",remote="false",seat="",type="x11"} 0
+node_logind_sessions{class="user",remote="false",seat="seat0",type="mir"} 0
+node_logind_sessions{class="user",remote="false",seat="seat0",type="other"} 0
+node_logind_sessions{class="user",remote="false",seat="seat0",type="tty"} 0
+node_logind_sessions{class="user",remote="false",seat="seat0",type="unspecified"} 0
+node_logind_sessions{class="user",remote="false",seat="seat0",type="wayland"} 0
+node_logind_sessions{class="user",remote="false",seat="seat0",type="web"} 0
+node_logind_sessions{class="user",remote="false",seat="seat0",type="x11"} 1
+node_logind_sessions{class="user",remote="true",seat="",type="mir"} 0
+node_logind_sessions{class="user",remote="true",seat="",type="other"} 0
+node_logind_sessions{class="user",remote="true",seat="",type="tty"} 0
+node_logind_sessions{class="user",remote="true",seat="",type="unspecified"} 0
+node_logind_sessions{class="user",remote="true",seat="",type="wayland"} 0
+node_logind_sessions{class="user",remote="true",seat="",type="web"} 0
+node_logind_sessions{class="user",remote="true",seat="",type="x11"} 0
+node_logind_sessions{class="user",remote="true",seat="seat0",type="mir"} 0
+node_logind_sessions{class="user",remote="true",seat="seat0",type="other"} 0
+node_logind_sessions{class="user",remote="true",seat="seat0",type="tty"} 0
+node_logind_sessions{class="user",remote="true",seat="seat0",type="unspecified"} 0
+node_logind_sessions{class="user",remote="true",seat="seat0",type="wayland"} 0
+node_logind_sessions{class="user",remote="true",seat="seat0",type="web"} 0
+node_logind_sessions{class="user",remote="true",seat="seat0",type="x11"} 0
+# HELP node_memory_Active_anon_bytes Memory information field Active_anon_bytes.
+# TYPE node_memory_Active_anon_bytes gauge
+node_memory_Active_anon_bytes 1.15253248e+09
+# HELP node_memory_Active_bytes Memory information field Active_bytes.
+# TYPE node_memory_Active_bytes gauge
+node_memory_Active_bytes 1.287303168e+09
+# HELP node_memory_Active_file_bytes Memory information field Active_file_bytes.
+# TYPE node_memory_Active_file_bytes gauge
+node_memory_Active_file_bytes 1.34770688e+08
+# HELP node_memory_AnonHugePages_bytes Memory information field AnonHugePages_bytes.
+# TYPE node_memory_AnonHugePages_bytes gauge
+node_memory_AnonHugePages_bytes 0
+# HELP node_memory_AnonPages_bytes Memory information field AnonPages_bytes.
+# TYPE node_memory_AnonPages_bytes gauge
+node_memory_AnonPages_bytes 8.59742208e+08
+# HELP node_memory_Bounce_bytes Memory information field Bounce_bytes.
+# TYPE node_memory_Bounce_bytes gauge
+node_memory_Bounce_bytes 0
+# HELP node_memory_Buffers_bytes Memory information field Buffers_bytes.
+# TYPE node_memory_Buffers_bytes gauge
+node_memory_Buffers_bytes 3.7888e+06
+# HELP node_memory_Cached_bytes Memory information field Cached_bytes.
+# TYPE node_memory_Cached_bytes gauge
+node_memory_Cached_bytes 1.143271424e+09
+# HELP node_memory_CmaFree_bytes Memory information field CmaFree_bytes.
+# TYPE node_memory_CmaFree_bytes gauge
+node_memory_CmaFree_bytes 0
+# HELP node_memory_CmaTotal_bytes Memory information field CmaTotal_bytes.
+# TYPE node_memory_CmaTotal_bytes gauge
+node_memory_CmaTotal_bytes 0
+# HELP node_memory_CommitLimit_bytes Memory information field CommitLimit_bytes.
+# TYPE node_memory_CommitLimit_bytes gauge
+node_memory_CommitLimit_bytes 3.75277568e+09
+# HELP node_memory_Committed_AS_bytes Memory information field Committed_AS_bytes.
+# TYPE node_memory_Committed_AS_bytes gauge
+node_memory_Committed_AS_bytes 2.88804864e+09
+# HELP node_memory_DirectMap2M_bytes Memory information field DirectMap2M_bytes.
+# TYPE node_memory_DirectMap2M_bytes gauge
+node_memory_DirectMap2M_bytes 0
+# HELP node_memory_DirectMap4k_bytes Memory information field DirectMap4k_bytes.
+# TYPE node_memory_DirectMap4k_bytes gauge
+node_memory_DirectMap4k_bytes 1.7095675904e+10
+# HELP node_memory_Dirty_bytes Memory information field Dirty_bytes.
+# TYPE node_memory_Dirty_bytes gauge
+node_memory_Dirty_bytes 0
+# HELP node_memory_HardwareCorrupted_bytes Memory information field HardwareCorrupted_bytes.
+# TYPE node_memory_HardwareCorrupted_bytes gauge
+node_memory_HardwareCorrupted_bytes 0
+# HELP node_memory_Inactive_anon_bytes Memory information field Inactive_anon_bytes.
+# TYPE node_memory_Inactive_anon_bytes gauge
+node_memory_Inactive_anon_bytes 5.66767616e+08
+# HELP node_memory_Inactive_bytes Memory information field Inactive_bytes.
+# TYPE node_memory_Inactive_bytes gauge
+node_memory_Inactive_bytes 7.19151104e+08
+# HELP node_memory_Inactive_file_bytes Memory information field Inactive_file_bytes.
+# TYPE node_memory_Inactive_file_bytes gauge
+node_memory_Inactive_file_bytes 1.52383488e+08
+# HELP node_memory_KernelStack_bytes Memory information field KernelStack_bytes.
+# TYPE node_memory_KernelStack_bytes gauge
+node_memory_KernelStack_bytes 9.781248e+06
+# HELP node_memory_Mapped_bytes Memory information field Mapped_bytes.
+# TYPE node_memory_Mapped_bytes gauge
+node_memory_Mapped_bytes 3.74382592e+08
+# HELP node_memory_MemAvailable_bytes Memory information field MemAvailable_bytes.
+# TYPE node_memory_MemAvailable_bytes gauge
+node_memory_MemAvailable_bytes 6.93772288e+08
+# HELP node_memory_MemFree_bytes Memory information field MemFree_bytes.
+# TYPE node_memory_MemFree_bytes gauge
+node_memory_MemFree_bytes 5.30509824e+08
+# HELP node_memory_MemTotal_bytes Memory information field MemTotal_bytes.
+# TYPE node_memory_MemTotal_bytes gauge
+node_memory_MemTotal_bytes 5.358075904e+09
+# HELP node_memory_Mlocked_bytes Memory information field Mlocked_bytes.
+# TYPE node_memory_Mlocked_bytes gauge
+node_memory_Mlocked_bytes 335872
+# HELP node_memory_NFS_Unstable_bytes Memory information field NFS_Unstable_bytes.
+# TYPE node_memory_NFS_Unstable_bytes gauge
+node_memory_NFS_Unstable_bytes 0
+# HELP node_memory_PageTables_bytes Memory information field PageTables_bytes.
+# TYPE node_memory_PageTables_bytes gauge
+node_memory_PageTables_bytes 4.601856e+07
+# HELP node_memory_SReclaimable_bytes Memory information field SReclaimable_bytes.
+# TYPE node_memory_SReclaimable_bytes gauge
+node_memory_SReclaimable_bytes 4.511744e+07
+# HELP node_memory_SUnreclaim_bytes Memory information field SUnreclaim_bytes.
+# TYPE node_memory_SUnreclaim_bytes gauge
+node_memory_SUnreclaim_bytes 2.98717184e+08
+# HELP node_memory_ShmemHugePages_bytes Memory information field ShmemHugePages_bytes.
+# TYPE node_memory_ShmemHugePages_bytes gauge
+node_memory_ShmemHugePages_bytes 0
+# HELP node_memory_ShmemPmdMapped_bytes Memory information field ShmemPmdMapped_bytes.
+# TYPE node_memory_ShmemPmdMapped_bytes gauge
+node_memory_ShmemPmdMapped_bytes 0
+# HELP node_memory_Shmem_bytes Memory information field Shmem_bytes.
+# TYPE node_memory_Shmem_bytes gauge
+node_memory_Shmem_bytes 8.59910144e+08
+# HELP node_memory_Slab_bytes Memory information field Slab_bytes.
+# TYPE node_memory_Slab_bytes gauge
+node_memory_Slab_bytes 3.43834624e+08
+# HELP node_memory_SwapCached_bytes Memory information field SwapCached_bytes.
+# TYPE node_memory_SwapCached_bytes gauge
+node_memory_SwapCached_bytes 0
+# HELP node_memory_SwapFree_bytes Memory information field SwapFree_bytes.
+# TYPE node_memory_SwapFree_bytes gauge
+node_memory_SwapFree_bytes 1.073737728e+09
+# HELP node_memory_SwapTotal_bytes Memory information field SwapTotal_bytes.
+# TYPE node_memory_SwapTotal_bytes gauge
+node_memory_SwapTotal_bytes 1.073737728e+09
+# HELP node_memory_Unevictable_bytes Memory information field Unevictable_bytes.
+# TYPE node_memory_Unevictable_bytes gauge
+node_memory_Unevictable_bytes 335872
+# HELP node_memory_VmallocChunk_bytes Memory information field VmallocChunk_bytes.
+# TYPE node_memory_VmallocChunk_bytes gauge
+node_memory_VmallocChunk_bytes 0
+# HELP node_memory_VmallocTotal_bytes Memory information field VmallocTotal_bytes.
+# TYPE node_memory_VmallocTotal_bytes gauge
+node_memory_VmallocTotal_bytes 3.5184372087808e+13
+# HELP node_memory_VmallocUsed_bytes Memory information field VmallocUsed_bytes.
+# TYPE node_memory_VmallocUsed_bytes gauge
+node_memory_VmallocUsed_bytes 0
+# HELP node_memory_WritebackTmp_bytes Memory information field WritebackTmp_bytes.
+# TYPE node_memory_WritebackTmp_bytes gauge
+node_memory_WritebackTmp_bytes 0
+# HELP node_memory_Writeback_bytes Memory information field Writeback_bytes.
+# TYPE node_memory_Writeback_bytes gauge
+node_memory_Writeback_bytes 0
+# HELP node_netstat_Icmp6_InErrors Statistic Icmp6InErrors.
+# TYPE node_netstat_Icmp6_InErrors untyped
+node_netstat_Icmp6_InErrors 0
+# HELP node_netstat_Icmp6_InMsgs Statistic Icmp6InMsgs.
+# TYPE node_netstat_Icmp6_InMsgs untyped
+node_netstat_Icmp6_InMsgs 0
+# HELP node_netstat_Icmp6_OutMsgs Statistic Icmp6OutMsgs.
+# TYPE node_netstat_Icmp6_OutMsgs untyped
+node_netstat_Icmp6_OutMsgs 0
+# HELP node_netstat_Icmp_InErrors Statistic IcmpInErrors.
+# TYPE node_netstat_Icmp_InErrors untyped
+node_netstat_Icmp_InErrors 0
+# HELP node_netstat_Icmp_InMsgs Statistic IcmpInMsgs.
+# TYPE node_netstat_Icmp_InMsgs untyped
+node_netstat_Icmp_InMsgs 112
+# HELP node_netstat_Icmp_OutMsgs Statistic IcmpOutMsgs.
+# TYPE node_netstat_Icmp_OutMsgs untyped
+node_netstat_Icmp_OutMsgs 112
+# HELP node_netstat_Ip6_InOctets Statistic Ip6InOctets.
+# TYPE node_netstat_Ip6_InOctets untyped
+node_netstat_Ip6_InOctets 4.572428e+06
+# HELP node_netstat_Ip6_OutOctets Statistic Ip6OutOctets.
+# TYPE node_netstat_Ip6_OutOctets untyped
+node_netstat_Ip6_OutOctets 4.572428e+06
+# HELP node_netstat_IpExt_InOctets Statistic IpExtInOctets.
+# TYPE node_netstat_IpExt_InOctets untyped
+node_netstat_IpExt_InOctets 17024
+# HELP node_netstat_IpExt_OutOctets Statistic IpExtOutOctets.
+# TYPE node_netstat_IpExt_OutOctets untyped
+node_netstat_IpExt_OutOctets 17024
+# HELP node_netstat_Ip_Forwarding Statistic IpForwarding.
+# TYPE node_netstat_Ip_Forwarding untyped
+node_netstat_Ip_Forwarding 2
+# HELP node_netstat_TcpExt_ListenDrops Statistic TcpExtListenDrops.
+# TYPE node_netstat_TcpExt_ListenDrops untyped
+node_netstat_TcpExt_ListenDrops 0
+# HELP node_netstat_TcpExt_ListenOverflows Statistic TcpExtListenOverflows.
+# TYPE node_netstat_TcpExt_ListenOverflows untyped
+node_netstat_TcpExt_ListenOverflows 0
+# HELP node_netstat_TcpExt_SyncookiesFailed Statistic TcpExtSyncookiesFailed.
+# TYPE node_netstat_TcpExt_SyncookiesFailed untyped
+node_netstat_TcpExt_SyncookiesFailed 0
+# HELP node_netstat_TcpExt_SyncookiesRecv Statistic TcpExtSyncookiesRecv.
+# TYPE node_netstat_TcpExt_SyncookiesRecv untyped
+node_netstat_TcpExt_SyncookiesRecv 0
+# HELP node_netstat_TcpExt_SyncookiesSent Statistic TcpExtSyncookiesSent.
+# TYPE node_netstat_TcpExt_SyncookiesSent untyped
+node_netstat_TcpExt_SyncookiesSent 0
+# HELP node_netstat_Tcp_ActiveOpens Statistic TcpActiveOpens.
+# TYPE node_netstat_Tcp_ActiveOpens untyped
+node_netstat_Tcp_ActiveOpens 47
+# HELP node_netstat_Tcp_CurrEstab Statistic TcpCurrEstab.
+# TYPE node_netstat_Tcp_CurrEstab untyped
+node_netstat_Tcp_CurrEstab 2
+# HELP node_netstat_Tcp_InErrs Statistic TcpInErrs.
+# TYPE node_netstat_Tcp_InErrs untyped
+node_netstat_Tcp_InErrs 0
+# HELP node_netstat_Tcp_PassiveOpens Statistic TcpPassiveOpens.
+# TYPE node_netstat_Tcp_PassiveOpens untyped
+node_netstat_Tcp_PassiveOpens 47
+# HELP node_netstat_Tcp_RetransSegs Statistic TcpRetransSegs.
+# TYPE node_netstat_Tcp_RetransSegs untyped
+node_netstat_Tcp_RetransSegs 0
+# HELP node_netstat_Udp6_InDatagrams Statistic Udp6InDatagrams.
+# TYPE node_netstat_Udp6_InDatagrams untyped
+node_netstat_Udp6_InDatagrams 0
+# HELP node_netstat_Udp6_InErrors Statistic Udp6InErrors.
+# TYPE node_netstat_Udp6_InErrors untyped
+node_netstat_Udp6_InErrors 0
+# HELP node_netstat_Udp6_NoPorts Statistic Udp6NoPorts.
+# TYPE node_netstat_Udp6_NoPorts untyped
+node_netstat_Udp6_NoPorts 0
+# HELP node_netstat_Udp6_OutDatagrams Statistic Udp6OutDatagrams.
+# TYPE node_netstat_Udp6_OutDatagrams untyped
+node_netstat_Udp6_OutDatagrams 0
+# HELP node_netstat_UdpLite6_InErrors Statistic UdpLite6InErrors.
+# TYPE node_netstat_UdpLite6_InErrors untyped
+node_netstat_UdpLite6_InErrors 0
+# HELP node_netstat_UdpLite_InErrors Statistic UdpLiteInErrors.
+# TYPE node_netstat_UdpLite_InErrors untyped
+node_netstat_UdpLite_InErrors 0
+# HELP node_netstat_Udp_InDatagrams Statistic UdpInDatagrams.
+# TYPE node_netstat_Udp_InDatagrams untyped
+node_netstat_Udp_InDatagrams 0
+# HELP node_netstat_Udp_InErrors Statistic UdpInErrors.
+# TYPE node_netstat_Udp_InErrors untyped
+node_netstat_Udp_InErrors 0
+# HELP node_netstat_Udp_NoPorts Statistic UdpNoPorts.
+# TYPE node_netstat_Udp_NoPorts untyped
+node_netstat_Udp_NoPorts 112
+# HELP node_netstat_Udp_OutDatagrams Statistic UdpOutDatagrams.
+# TYPE node_netstat_Udp_OutDatagrams untyped
+node_netstat_Udp_OutDatagrams 112
+# HELP node_network_receive_bytes_total Network device statistic receive_bytes.
+# TYPE node_network_receive_bytes_total counter
+node_network_receive_bytes_total{device="lo"} 4.589452e+06
+# HELP node_network_receive_compressed_total Network device statistic receive_compressed.
+# TYPE node_network_receive_compressed_total counter
+node_network_receive_compressed_total{device="lo"} 0
+# HELP node_network_receive_drop_total Network device statistic receive_drop.
+# TYPE node_network_receive_drop_total counter
+node_network_receive_drop_total{device="lo"} 0
+# HELP node_network_receive_errs_total Network device statistic receive_errs.
+# TYPE node_network_receive_errs_total counter
+node_network_receive_errs_total{device="lo"} 0
+# HELP node_network_receive_fifo_total Network device statistic receive_fifo.
+# TYPE node_network_receive_fifo_total counter
+node_network_receive_fifo_total{device="lo"} 0
+# HELP node_network_receive_frame_total Network device statistic receive_frame.
+# TYPE node_network_receive_frame_total counter
+node_network_receive_frame_total{device="lo"} 0
+# HELP node_network_receive_multicast_total Network device statistic receive_multicast.
+# TYPE node_network_receive_multicast_total counter
+node_network_receive_multicast_total{device="lo"} 0
+# HELP node_network_receive_packets_total Network device statistic receive_packets.
+# TYPE node_network_receive_packets_total counter
+node_network_receive_packets_total{device="lo"} 873
+# HELP node_network_transmit_bytes_total Network device statistic transmit_bytes.
+# TYPE node_network_transmit_bytes_total counter
+node_network_transmit_bytes_total{device="lo"} 4.589452e+06
+# HELP node_network_transmit_carrier_total Network device statistic transmit_carrier.
+# TYPE node_network_transmit_carrier_total counter
+node_network_transmit_carrier_total{device="lo"} 0
+# HELP node_network_transmit_colls_total Network device statistic transmit_colls.
+# TYPE node_network_transmit_colls_total counter
+node_network_transmit_colls_total{device="lo"} 0
+# HELP node_network_transmit_compressed_total Network device statistic transmit_compressed.
+# TYPE node_network_transmit_compressed_total counter
+node_network_transmit_compressed_total{device="lo"} 0
+# HELP node_network_transmit_drop_total Network device statistic transmit_drop.
+# TYPE node_network_transmit_drop_total counter
+node_network_transmit_drop_total{device="lo"} 0
+# HELP node_network_transmit_errs_total Network device statistic transmit_errs.
+# TYPE node_network_transmit_errs_total counter
+node_network_transmit_errs_total{device="lo"} 0
+# HELP node_network_transmit_fifo_total Network device statistic transmit_fifo.
+# TYPE node_network_transmit_fifo_total counter
+node_network_transmit_fifo_total{device="lo"} 0
+# HELP node_network_transmit_packets_total Network device statistic transmit_packets.
+# TYPE node_network_transmit_packets_total counter
+node_network_transmit_packets_total{device="lo"} 873
+# HELP node_procs_blocked Number of processes blocked waiting for I/O to complete.
+# TYPE node_procs_blocked gauge
+node_procs_blocked 0
+# HELP node_procs_running Number of processes in runnable state.
+# TYPE node_procs_running gauge
+node_procs_running 8
+# HELP node_scrape_collector_duration_seconds node_exporter: Duration of a collector scrape.
+# TYPE node_scrape_collector_duration_seconds gauge
+node_scrape_collector_duration_seconds{collector="arp"} 3.8281e-05
+node_scrape_collector_duration_seconds{collector="bcache"} 1.9614e-05
+node_scrape_collector_duration_seconds{collector="bonding"} 1.8427e-05
+node_scrape_collector_duration_seconds{collector="conntrack"} 2.2774e-05
+node_scrape_collector_duration_seconds{collector="cpu"} 0.001882477
+node_scrape_collector_duration_seconds{collector="diskstats"} 0.000435097
+node_scrape_collector_duration_seconds{collector="edac"} 3.5319e-05
+node_scrape_collector_duration_seconds{collector="entropy"} 3.1237e-05
+node_scrape_collector_duration_seconds{collector="filefd"} 5.8559e-05
+node_scrape_collector_duration_seconds{collector="filesystem"} 0.000342246
+node_scrape_collector_duration_seconds{collector="hwmon"} 0.003742892
+node_scrape_collector_duration_seconds{collector="infiniband"} 1.6378e-05
+node_scrape_collector_duration_seconds{collector="ipvs"} 2.621e-05
+node_scrape_collector_duration_seconds{collector="loadavg"} 5.2629e-05
+node_scrape_collector_duration_seconds{collector="logind"} 0.005326521
+node_scrape_collector_duration_seconds{collector="mdadm"} 4.9326e-05
+node_scrape_collector_duration_seconds{collector="meminfo"} 0.000917462
+node_scrape_collector_duration_seconds{collector="netdev"} 0.000113711
+node_scrape_collector_duration_seconds{collector="netstat"} 0.000707877
+node_scrape_collector_duration_seconds{collector="nfs"} 1.6218e-05
+node_scrape_collector_duration_seconds{collector="nfsd"} 1.4472e-05
+node_scrape_collector_duration_seconds{collector="sockstat"} 7.6771e-05
+node_scrape_collector_duration_seconds{collector="stat"} 0.000221732
+node_scrape_collector_duration_seconds{collector="textfile"} 6.3725e-05
+node_scrape_collector_duration_seconds{collector="time"} 9.426e-06
+node_scrape_collector_duration_seconds{collector="timex"} 1.6061e-05
+node_scrape_collector_duration_seconds{collector="uname"} 1.0088e-05
+node_scrape_collector_duration_seconds{collector="vmstat"} 0.0002131
+node_scrape_collector_duration_seconds{collector="wifi"} 0.002022141
+node_scrape_collector_duration_seconds{collector="xfs"} 1.988e-05
+node_scrape_collector_duration_seconds{collector="zfs"} 0.003449815
+# HELP node_scrape_collector_success node_exporter: Whether a collector succeeded.
+# TYPE node_scrape_collector_success gauge
+node_scrape_collector_success{collector="arp"} 1
+node_scrape_collector_success{collector="bcache"} 1
+node_scrape_collector_success{collector="bonding"} 1
+node_scrape_collector_success{collector="conntrack"} 1
+node_scrape_collector_success{collector="cpu"} 1
+node_scrape_collector_success{collector="diskstats"} 1
+node_scrape_collector_success{collector="edac"} 1
+node_scrape_collector_success{collector="entropy"} 1
+node_scrape_collector_success{collector="filefd"} 1
+node_scrape_collector_success{collector="filesystem"} 1
+node_scrape_collector_success{collector="hwmon"} 1
+node_scrape_collector_success{collector="infiniband"} 1
+node_scrape_collector_success{collector="ipvs"} 1
+node_scrape_collector_success{collector="loadavg"} 1
+node_scrape_collector_success{collector="logind"} 1
+node_scrape_collector_success{collector="mdadm"} 1
+node_scrape_collector_success{collector="meminfo"} 1
+node_scrape_collector_success{collector="netdev"} 1
+node_scrape_collector_success{collector="netstat"} 1
+node_scrape_collector_success{collector="nfs"} 1
+node_scrape_collector_success{collector="nfsd"} 1
+node_scrape_collector_success{collector="sockstat"} 1
+node_scrape_collector_success{collector="stat"} 1
+node_scrape_collector_success{collector="textfile"} 1
+node_scrape_collector_success{collector="time"} 1
+node_scrape_collector_success{collector="timex"} 1
+node_scrape_collector_success{collector="uname"} 1
+node_scrape_collector_success{collector="vmstat"} 1
+node_scrape_collector_success{collector="wifi"} 1
+node_scrape_collector_success{collector="xfs"} 1
+node_scrape_collector_success{collector="zfs"} 1
+# HELP node_sockstat_FRAG_inuse Number of FRAG sockets in state inuse.
+# TYPE node_sockstat_FRAG_inuse gauge
+node_sockstat_FRAG_inuse 0
+# HELP node_sockstat_FRAG_memory Number of FRAG sockets in state memory.
+# TYPE node_sockstat_FRAG_memory gauge
+node_sockstat_FRAG_memory 0
+# HELP node_sockstat_RAW_inuse Number of RAW sockets in state inuse.
+# TYPE node_sockstat_RAW_inuse gauge
+node_sockstat_RAW_inuse 0
+# HELP node_sockstat_TCP_alloc Number of TCP sockets in state alloc.
+# TYPE node_sockstat_TCP_alloc gauge
+node_sockstat_TCP_alloc 4
+# HELP node_sockstat_TCP_inuse Number of TCP sockets in state inuse.
+# TYPE node_sockstat_TCP_inuse gauge
+node_sockstat_TCP_inuse 0
+# HELP node_sockstat_TCP_mem Number of TCP sockets in state mem.
+# TYPE node_sockstat_TCP_mem gauge
+node_sockstat_TCP_mem 2
+# HELP node_sockstat_TCP_mem_bytes Number of TCP sockets in state mem_bytes.
+# TYPE node_sockstat_TCP_mem_bytes gauge
+node_sockstat_TCP_mem_bytes 8192
+# HELP node_sockstat_TCP_orphan Number of TCP sockets in state orphan.
+# TYPE node_sockstat_TCP_orphan gauge
+node_sockstat_TCP_orphan 0
+# HELP node_sockstat_TCP_tw Number of TCP sockets in state tw.
+# TYPE node_sockstat_TCP_tw gauge
+node_sockstat_TCP_tw 2
+# HELP node_sockstat_UDPLITE_inuse Number of UDPLITE sockets in state inuse.
+# TYPE node_sockstat_UDPLITE_inuse gauge
+node_sockstat_UDPLITE_inuse 0
+# HELP node_sockstat_UDP_inuse Number of UDP sockets in state inuse.
+# TYPE node_sockstat_UDP_inuse gauge
+node_sockstat_UDP_inuse 2
+# HELP node_sockstat_UDP_mem Number of UDP sockets in state mem.
+# TYPE node_sockstat_UDP_mem gauge
+node_sockstat_UDP_mem 0
+# HELP node_sockstat_UDP_mem_bytes Number of UDP sockets in state mem_bytes.
+# TYPE node_sockstat_UDP_mem_bytes gauge
+node_sockstat_UDP_mem_bytes 0
+# HELP node_sockstat_sockets_used Number of sockets sockets in state used.
+# TYPE node_sockstat_sockets_used gauge
+node_sockstat_sockets_used 661
+# HELP node_textfile_scrape_error 1 if there was an error opening or reading a file, 0 otherwise
+# TYPE node_textfile_scrape_error gauge
+node_textfile_scrape_error 1
+# HELP node_time_seconds System time in seconds since epoch (1970).
+# TYPE node_time_seconds gauge
+node_time_seconds 1.5494563051436381e+09
+# HELP node_timex_estimated_error_seconds Estimated error in seconds.
+# TYPE node_timex_estimated_error_seconds gauge
+node_timex_estimated_error_seconds 16
+# HELP node_timex_frequency_adjustment_ratio Local clock frequency adjustment.
+# TYPE node_timex_frequency_adjustment_ratio gauge
+node_timex_frequency_adjustment_ratio 1
+# HELP node_timex_loop_time_constant Phase-locked loop time constant.
+# TYPE node_timex_loop_time_constant gauge
+node_timex_loop_time_constant 2
+# HELP node_timex_maxerror_seconds Maximum error in seconds.
+# TYPE node_timex_maxerror_seconds gauge
+node_timex_maxerror_seconds 16
+# HELP node_timex_offset_seconds Time offset in between local system and reference clock.
+# TYPE node_timex_offset_seconds gauge
+node_timex_offset_seconds 0
+# HELP node_timex_pps_calibration_total Pulse per second count of calibration intervals.
+# TYPE node_timex_pps_calibration_total counter
+node_timex_pps_calibration_total 0
+# HELP node_timex_pps_error_total Pulse per second count of calibration errors.
+# TYPE node_timex_pps_error_total counter
+node_timex_pps_error_total 0
+# HELP node_timex_pps_frequency_hertz Pulse per second frequency.
+# TYPE node_timex_pps_frequency_hertz gauge
+node_timex_pps_frequency_hertz 0
+# HELP node_timex_pps_jitter_seconds Pulse per second jitter.
+# TYPE node_timex_pps_jitter_seconds gauge
+node_timex_pps_jitter_seconds 0
+# HELP node_timex_pps_jitter_total Pulse per second count of jitter limit exceeded events.
+# TYPE node_timex_pps_jitter_total counter
+node_timex_pps_jitter_total 0
+# HELP node_timex_pps_shift_seconds Pulse per second interval duration.
+# TYPE node_timex_pps_shift_seconds gauge
+node_timex_pps_shift_seconds 0
+# HELP node_timex_pps_stability_exceeded_total Pulse per second count of stability limit exceeded events.
+# TYPE node_timex_pps_stability_exceeded_total counter
+node_timex_pps_stability_exceeded_total 0
+# HELP node_timex_pps_stability_hertz Pulse per second stability, average of recent frequency changes.
+# TYPE node_timex_pps_stability_hertz gauge
+node_timex_pps_stability_hertz 0
+# HELP node_timex_status Value of the status array bits.
+# TYPE node_timex_status gauge
+node_timex_status 64
+# HELP node_timex_sync_status Is clock synchronized to a reliable server (1 = yes, 0 = no).
+# TYPE node_timex_sync_status gauge
+node_timex_sync_status 0
+# HELP node_timex_tai_offset_seconds International Atomic Time (TAI) offset.
+# TYPE node_timex_tai_offset_seconds gauge
+node_timex_tai_offset_seconds 0
+# HELP node_timex_tick_seconds Seconds between clock ticks.
+# TYPE node_timex_tick_seconds gauge
+node_timex_tick_seconds 0.01
+# HELP node_uname_info Labeled system information as provided by the uname system call.
+# TYPE node_uname_info gauge
+node_uname_info{domainname="(none)",machine="x86_64",nodename="dom0",release="4.18.7-3.pvops.qubes.x86_64",sysname="Linux",version="#1 SMP Thu Sep 13 03:51:56 UTC 2018"} 1
+# HELP node_vmstat_oom_kill /proc/vmstat information field oom_kill.
+# TYPE node_vmstat_oom_kill untyped
+node_vmstat_oom_kill 0
+# HELP node_vmstat_pgfault /proc/vmstat information field pgfault.
+# TYPE node_vmstat_pgfault untyped
+node_vmstat_pgfault 4.4813569e+07
+# HELP node_vmstat_pgmajfault /proc/vmstat information field pgmajfault.
+# TYPE node_vmstat_pgmajfault untyped
+node_vmstat_pgmajfault 69251
+# HELP node_vmstat_pgpgin /proc/vmstat information field pgpgin.
+# TYPE node_vmstat_pgpgin untyped
+node_vmstat_pgpgin 8.2935549e+07
+# HELP node_vmstat_pgpgout /proc/vmstat information field pgpgout.
+# TYPE node_vmstat_pgpgout untyped
+node_vmstat_pgpgout 1.86456421e+08
+# HELP node_vmstat_pswpin /proc/vmstat information field pswpin.
+# TYPE node_vmstat_pswpin untyped
+node_vmstat_pswpin 0
+# HELP node_vmstat_pswpout /proc/vmstat information field pswpout.
+# TYPE node_vmstat_pswpout untyped
+node_vmstat_pswpout 0
+# HELP node_zfs_abd_linear_cnt kstat.zfs.misc.abdstats.linear_cnt
+# TYPE node_zfs_abd_linear_cnt untyped
+node_zfs_abd_linear_cnt 7595
+# HELP node_zfs_abd_linear_data_size kstat.zfs.misc.abdstats.linear_data_size
+# TYPE node_zfs_abd_linear_data_size untyped
+node_zfs_abd_linear_data_size 2.7313664e+07
+# HELP node_zfs_abd_scatter_chunk_waste kstat.zfs.misc.abdstats.scatter_chunk_waste
+# TYPE node_zfs_abd_scatter_chunk_waste untyped
+node_zfs_abd_scatter_chunk_waste 30208
+# HELP node_zfs_abd_scatter_cnt kstat.zfs.misc.abdstats.scatter_cnt
+# TYPE node_zfs_abd_scatter_cnt untyped
+node_zfs_abd_scatter_cnt 33638
+# HELP node_zfs_abd_scatter_data_size kstat.zfs.misc.abdstats.scatter_data_size
+# TYPE node_zfs_abd_scatter_data_size untyped
+node_zfs_abd_scatter_data_size 1.900194304e+09
+# HELP node_zfs_abd_scatter_order_0 kstat.zfs.misc.abdstats.scatter_order_0
+# TYPE node_zfs_abd_scatter_order_0 untyped
+node_zfs_abd_scatter_order_0 14366
+# HELP node_zfs_abd_scatter_order_1 kstat.zfs.misc.abdstats.scatter_order_1
+# TYPE node_zfs_abd_scatter_order_1 untyped
+node_zfs_abd_scatter_order_1 15480
+# HELP node_zfs_abd_scatter_order_10 kstat.zfs.misc.abdstats.scatter_order_10
+# TYPE node_zfs_abd_scatter_order_10 untyped
+node_zfs_abd_scatter_order_10 0
+# HELP node_zfs_abd_scatter_order_2 kstat.zfs.misc.abdstats.scatter_order_2
+# TYPE node_zfs_abd_scatter_order_2 untyped
+node_zfs_abd_scatter_order_2 14411
+# HELP node_zfs_abd_scatter_order_3 kstat.zfs.misc.abdstats.scatter_order_3
+# TYPE node_zfs_abd_scatter_order_3 untyped
+node_zfs_abd_scatter_order_3 12655
+# HELP node_zfs_abd_scatter_order_4 kstat.zfs.misc.abdstats.scatter_order_4
+# TYPE node_zfs_abd_scatter_order_4 untyped
+node_zfs_abd_scatter_order_4 8976
+# HELP node_zfs_abd_scatter_order_5 kstat.zfs.misc.abdstats.scatter_order_5
+# TYPE node_zfs_abd_scatter_order_5 untyped
+node_zfs_abd_scatter_order_5 3628
+# HELP node_zfs_abd_scatter_order_6 kstat.zfs.misc.abdstats.scatter_order_6
+# TYPE node_zfs_abd_scatter_order_6 untyped
+node_zfs_abd_scatter_order_6 0
+# HELP node_zfs_abd_scatter_order_7 kstat.zfs.misc.abdstats.scatter_order_7
+# TYPE node_zfs_abd_scatter_order_7 untyped
+node_zfs_abd_scatter_order_7 0
+# HELP node_zfs_abd_scatter_order_8 kstat.zfs.misc.abdstats.scatter_order_8
+# TYPE node_zfs_abd_scatter_order_8 untyped
+node_zfs_abd_scatter_order_8 0
+# HELP node_zfs_abd_scatter_order_9 kstat.zfs.misc.abdstats.scatter_order_9
+# TYPE node_zfs_abd_scatter_order_9 untyped
+node_zfs_abd_scatter_order_9 0
+# HELP node_zfs_abd_scatter_page_alloc_retry kstat.zfs.misc.abdstats.scatter_page_alloc_retry
+# TYPE node_zfs_abd_scatter_page_alloc_retry untyped
+node_zfs_abd_scatter_page_alloc_retry 0
+# HELP node_zfs_abd_scatter_page_multi_chunk kstat.zfs.misc.abdstats.scatter_page_multi_chunk
+# TYPE node_zfs_abd_scatter_page_multi_chunk untyped
+node_zfs_abd_scatter_page_multi_chunk 23724
+# HELP node_zfs_abd_scatter_page_multi_zone kstat.zfs.misc.abdstats.scatter_page_multi_zone
+# TYPE node_zfs_abd_scatter_page_multi_zone untyped
+node_zfs_abd_scatter_page_multi_zone 0
+# HELP node_zfs_abd_scatter_sg_table_retry kstat.zfs.misc.abdstats.scatter_sg_table_retry
+# TYPE node_zfs_abd_scatter_sg_table_retry untyped
+node_zfs_abd_scatter_sg_table_retry 0
+# HELP node_zfs_abd_struct_size kstat.zfs.misc.abdstats.struct_size
+# TYPE node_zfs_abd_struct_size untyped
+node_zfs_abd_struct_size 1.64932e+06
+# HELP node_zfs_arc_access_skip kstat.zfs.misc.arcstats.access_skip
+# TYPE node_zfs_arc_access_skip untyped
+node_zfs_arc_access_skip 21
+# HELP node_zfs_arc_anon_evictable_data kstat.zfs.misc.arcstats.anon_evictable_data
+# TYPE node_zfs_arc_anon_evictable_data untyped
+node_zfs_arc_anon_evictable_data 0
+# HELP node_zfs_arc_anon_evictable_metadata kstat.zfs.misc.arcstats.anon_evictable_metadata
+# TYPE node_zfs_arc_anon_evictable_metadata untyped
+node_zfs_arc_anon_evictable_metadata 0
+# HELP node_zfs_arc_anon_size kstat.zfs.misc.arcstats.anon_size
+# TYPE node_zfs_arc_anon_size untyped
+node_zfs_arc_anon_size 6.477312e+06
+# HELP node_zfs_arc_arc_dnode_limit kstat.zfs.misc.arcstats.arc_dnode_limit
+# TYPE node_zfs_arc_arc_dnode_limit untyped
+node_zfs_arc_arc_dnode_limit 1.61061273e+08
+# HELP node_zfs_arc_arc_loaned_bytes kstat.zfs.misc.arcstats.arc_loaned_bytes
+# TYPE node_zfs_arc_arc_loaned_bytes untyped
+node_zfs_arc_arc_loaned_bytes 0
+# HELP node_zfs_arc_arc_meta_limit kstat.zfs.misc.arcstats.arc_meta_limit
+# TYPE node_zfs_arc_arc_meta_limit untyped
+node_zfs_arc_arc_meta_limit 1.610612736e+09
+# HELP node_zfs_arc_arc_meta_max kstat.zfs.misc.arcstats.arc_meta_max
+# TYPE node_zfs_arc_arc_meta_max untyped
+node_zfs_arc_arc_meta_max 2.0951192e+08
+# HELP node_zfs_arc_arc_meta_min kstat.zfs.misc.arcstats.arc_meta_min
+# TYPE node_zfs_arc_arc_meta_min untyped
+node_zfs_arc_arc_meta_min 1.6777216e+07
+# HELP node_zfs_arc_arc_meta_used kstat.zfs.misc.arcstats.arc_meta_used
+# TYPE node_zfs_arc_arc_meta_used untyped
+node_zfs_arc_arc_meta_used 1.7433932e+08
+# HELP node_zfs_arc_arc_need_free kstat.zfs.misc.arcstats.arc_need_free
+# TYPE node_zfs_arc_arc_need_free untyped
+node_zfs_arc_arc_need_free 0
+# HELP node_zfs_arc_arc_no_grow kstat.zfs.misc.arcstats.arc_no_grow
+# TYPE node_zfs_arc_arc_no_grow untyped
+node_zfs_arc_arc_no_grow 0
+# HELP node_zfs_arc_arc_prune kstat.zfs.misc.arcstats.arc_prune
+# TYPE node_zfs_arc_arc_prune untyped
+node_zfs_arc_arc_prune 0
+# HELP node_zfs_arc_arc_raw_size kstat.zfs.misc.arcstats.arc_raw_size
+# TYPE node_zfs_arc_arc_raw_size untyped
+node_zfs_arc_arc_raw_size 0
+# HELP node_zfs_arc_arc_sys_free kstat.zfs.misc.arcstats.arc_sys_free
+# TYPE node_zfs_arc_arc_sys_free untyped
+node_zfs_arc_arc_sys_free 2.5472832e+08
+# HELP node_zfs_arc_arc_tempreserve kstat.zfs.misc.arcstats.arc_tempreserve
+# TYPE node_zfs_arc_arc_tempreserve untyped
+node_zfs_arc_arc_tempreserve 0
+# HELP node_zfs_arc_async_upgrade_sync kstat.zfs.misc.arcstats.async_upgrade_sync
+# TYPE node_zfs_arc_async_upgrade_sync untyped
+node_zfs_arc_async_upgrade_sync 1265
+# HELP node_zfs_arc_bonus_size kstat.zfs.misc.arcstats.bonus_size
+# TYPE node_zfs_arc_bonus_size untyped
+node_zfs_arc_bonus_size 5.80672e+06
+# HELP node_zfs_arc_c kstat.zfs.misc.arcstats.c
+# TYPE node_zfs_arc_c untyped
+node_zfs_arc_c 2.147483648e+09
+# HELP node_zfs_arc_c_max kstat.zfs.misc.arcstats.c_max
+# TYPE node_zfs_arc_c_max untyped
+node_zfs_arc_c_max 2.147483648e+09
+# HELP node_zfs_arc_c_min kstat.zfs.misc.arcstats.c_min
+# TYPE node_zfs_arc_c_min untyped
+node_zfs_arc_c_min 2.147483648e+09
+# HELP node_zfs_arc_compressed_size kstat.zfs.misc.arcstats.compressed_size
+# TYPE node_zfs_arc_compressed_size untyped
+node_zfs_arc_compressed_size 1.927507968e+09
+# HELP node_zfs_arc_data_size kstat.zfs.misc.arcstats.data_size
+# TYPE node_zfs_arc_data_size untyped
+node_zfs_arc_data_size 1.937548288e+09
+# HELP node_zfs_arc_dbuf_size kstat.zfs.misc.arcstats.dbuf_size
+# TYPE node_zfs_arc_dbuf_size untyped
+node_zfs_arc_dbuf_size 7.002216e+06
+# HELP node_zfs_arc_deleted kstat.zfs.misc.arcstats.deleted
+# TYPE node_zfs_arc_deleted untyped
+node_zfs_arc_deleted 240384
+# HELP node_zfs_arc_demand_data_hits kstat.zfs.misc.arcstats.demand_data_hits
+# TYPE node_zfs_arc_demand_data_hits untyped
+node_zfs_arc_demand_data_hits 1.9812436e+07
+# HELP node_zfs_arc_demand_data_misses kstat.zfs.misc.arcstats.demand_data_misses
+# TYPE node_zfs_arc_demand_data_misses untyped
+node_zfs_arc_demand_data_misses 234137
+# HELP node_zfs_arc_demand_hit_predictive_prefetch kstat.zfs.misc.arcstats.demand_hit_predictive_prefetch
+# TYPE node_zfs_arc_demand_hit_predictive_prefetch untyped
+node_zfs_arc_demand_hit_predictive_prefetch 37798
+# HELP node_zfs_arc_demand_hit_prescient_prefetch kstat.zfs.misc.arcstats.demand_hit_prescient_prefetch
+# TYPE node_zfs_arc_demand_hit_prescient_prefetch untyped
+node_zfs_arc_demand_hit_prescient_prefetch 0
+# HELP node_zfs_arc_demand_metadata_hits kstat.zfs.misc.arcstats.demand_metadata_hits
+# TYPE node_zfs_arc_demand_metadata_hits untyped
+node_zfs_arc_demand_metadata_hits 4.7799986e+07
+# HELP node_zfs_arc_demand_metadata_misses kstat.zfs.misc.arcstats.demand_metadata_misses
+# TYPE node_zfs_arc_demand_metadata_misses untyped
+node_zfs_arc_demand_metadata_misses 693638
+# HELP node_zfs_arc_dnode_size kstat.zfs.misc.arcstats.dnode_size
+# TYPE node_zfs_arc_dnode_size untyped
+node_zfs_arc_dnode_size 1.766016e+07
+# HELP node_zfs_arc_evict_l2_cached kstat.zfs.misc.arcstats.evict_l2_cached
+# TYPE node_zfs_arc_evict_l2_cached untyped
+node_zfs_arc_evict_l2_cached 0
+# HELP node_zfs_arc_evict_l2_eligible kstat.zfs.misc.arcstats.evict_l2_eligible
+# TYPE node_zfs_arc_evict_l2_eligible untyped
+node_zfs_arc_evict_l2_eligible 4.2363045376e+10
+# HELP node_zfs_arc_evict_l2_ineligible kstat.zfs.misc.arcstats.evict_l2_ineligible
+# TYPE node_zfs_arc_evict_l2_ineligible untyped
+node_zfs_arc_evict_l2_ineligible 2.002454528e+09
+# HELP node_zfs_arc_evict_l2_skip kstat.zfs.misc.arcstats.evict_l2_skip
+# TYPE node_zfs_arc_evict_l2_skip untyped
+node_zfs_arc_evict_l2_skip 0
+# HELP node_zfs_arc_evict_not_enough kstat.zfs.misc.arcstats.evict_not_enough
+# TYPE node_zfs_arc_evict_not_enough untyped
+node_zfs_arc_evict_not_enough 47
+# HELP node_zfs_arc_evict_skip kstat.zfs.misc.arcstats.evict_skip
+# TYPE node_zfs_arc_evict_skip untyped
+node_zfs_arc_evict_skip 833
+# HELP node_zfs_arc_hash_chain_max kstat.zfs.misc.arcstats.hash_chain_max
+# TYPE node_zfs_arc_hash_chain_max untyped
+node_zfs_arc_hash_chain_max 3
+# HELP node_zfs_arc_hash_chains kstat.zfs.misc.arcstats.hash_chains
+# TYPE node_zfs_arc_hash_chains untyped
+node_zfs_arc_hash_chains 784
+# HELP node_zfs_arc_hash_collisions kstat.zfs.misc.arcstats.hash_collisions
+# TYPE node_zfs_arc_hash_collisions untyped
+node_zfs_arc_hash_collisions 128237
+# HELP node_zfs_arc_hash_elements kstat.zfs.misc.arcstats.hash_elements
+# TYPE node_zfs_arc_hash_elements untyped
+node_zfs_arc_hash_elements 58357
+# HELP node_zfs_arc_hash_elements_max kstat.zfs.misc.arcstats.hash_elements_max
+# TYPE node_zfs_arc_hash_elements_max untyped
+node_zfs_arc_hash_elements_max 62472
+# HELP node_zfs_arc_hdr_size kstat.zfs.misc.arcstats.hdr_size
+# TYPE node_zfs_arc_hdr_size untyped
+node_zfs_arc_hdr_size 1.949672e+07
+# HELP node_zfs_arc_hits kstat.zfs.misc.arcstats.hits
+# TYPE node_zfs_arc_hits untyped
+node_zfs_arc_hits 6.7697382e+07
+# HELP node_zfs_arc_l2_abort_lowmem kstat.zfs.misc.arcstats.l2_abort_lowmem
+# TYPE node_zfs_arc_l2_abort_lowmem untyped
+node_zfs_arc_l2_abort_lowmem 0
+# HELP node_zfs_arc_l2_asize kstat.zfs.misc.arcstats.l2_asize
+# TYPE node_zfs_arc_l2_asize untyped
+node_zfs_arc_l2_asize 0
+# HELP node_zfs_arc_l2_cksum_bad kstat.zfs.misc.arcstats.l2_cksum_bad
+# TYPE node_zfs_arc_l2_cksum_bad untyped
+node_zfs_arc_l2_cksum_bad 0
+# HELP node_zfs_arc_l2_evict_l1cached kstat.zfs.misc.arcstats.l2_evict_l1cached
+# TYPE node_zfs_arc_l2_evict_l1cached untyped
+node_zfs_arc_l2_evict_l1cached 0
+# HELP node_zfs_arc_l2_evict_lock_retry kstat.zfs.misc.arcstats.l2_evict_lock_retry
+# TYPE node_zfs_arc_l2_evict_lock_retry untyped
+node_zfs_arc_l2_evict_lock_retry 0
+# HELP node_zfs_arc_l2_evict_reading kstat.zfs.misc.arcstats.l2_evict_reading
+# TYPE node_zfs_arc_l2_evict_reading untyped
+node_zfs_arc_l2_evict_reading 0
+# HELP node_zfs_arc_l2_feeds kstat.zfs.misc.arcstats.l2_feeds
+# TYPE node_zfs_arc_l2_feeds untyped
+node_zfs_arc_l2_feeds 0
+# HELP node_zfs_arc_l2_free_on_write kstat.zfs.misc.arcstats.l2_free_on_write
+# TYPE node_zfs_arc_l2_free_on_write untyped
+node_zfs_arc_l2_free_on_write 0
+# HELP node_zfs_arc_l2_hdr_size kstat.zfs.misc.arcstats.l2_hdr_size
+# TYPE node_zfs_arc_l2_hdr_size untyped
+node_zfs_arc_l2_hdr_size 0
+# HELP node_zfs_arc_l2_hits kstat.zfs.misc.arcstats.l2_hits
+# TYPE node_zfs_arc_l2_hits untyped
+node_zfs_arc_l2_hits 0
+# HELP node_zfs_arc_l2_io_error kstat.zfs.misc.arcstats.l2_io_error
+# TYPE node_zfs_arc_l2_io_error untyped
+node_zfs_arc_l2_io_error 0
+# HELP node_zfs_arc_l2_misses kstat.zfs.misc.arcstats.l2_misses
+# TYPE node_zfs_arc_l2_misses untyped
+node_zfs_arc_l2_misses 0
+# HELP node_zfs_arc_l2_read_bytes kstat.zfs.misc.arcstats.l2_read_bytes
+# TYPE node_zfs_arc_l2_read_bytes untyped
+node_zfs_arc_l2_read_bytes 0
+# HELP node_zfs_arc_l2_rw_clash kstat.zfs.misc.arcstats.l2_rw_clash
+# TYPE node_zfs_arc_l2_rw_clash untyped
+node_zfs_arc_l2_rw_clash 0
+# HELP node_zfs_arc_l2_size kstat.zfs.misc.arcstats.l2_size
+# TYPE node_zfs_arc_l2_size untyped
+node_zfs_arc_l2_size 0
+# HELP node_zfs_arc_l2_write_bytes kstat.zfs.misc.arcstats.l2_write_bytes
+# TYPE node_zfs_arc_l2_write_bytes untyped
+node_zfs_arc_l2_write_bytes 0
+# HELP node_zfs_arc_l2_writes_done kstat.zfs.misc.arcstats.l2_writes_done
+# TYPE node_zfs_arc_l2_writes_done untyped
+node_zfs_arc_l2_writes_done 0
+# HELP node_zfs_arc_l2_writes_error kstat.zfs.misc.arcstats.l2_writes_error
+# TYPE node_zfs_arc_l2_writes_error untyped
+node_zfs_arc_l2_writes_error 0
+# HELP node_zfs_arc_l2_writes_lock_retry kstat.zfs.misc.arcstats.l2_writes_lock_retry
+# TYPE node_zfs_arc_l2_writes_lock_retry untyped
+node_zfs_arc_l2_writes_lock_retry 0
+# HELP node_zfs_arc_l2_writes_sent kstat.zfs.misc.arcstats.l2_writes_sent
+# TYPE node_zfs_arc_l2_writes_sent untyped
+node_zfs_arc_l2_writes_sent 0
+# HELP node_zfs_arc_memory_all_bytes kstat.zfs.misc.arcstats.memory_all_bytes
+# TYPE node_zfs_arc_memory_all_bytes untyped
+node_zfs_arc_memory_all_bytes 5.358075904e+09
+# HELP node_zfs_arc_memory_direct_count kstat.zfs.misc.arcstats.memory_direct_count
+# TYPE node_zfs_arc_memory_direct_count untyped
+node_zfs_arc_memory_direct_count 0
+# HELP node_zfs_arc_memory_free_bytes kstat.zfs.misc.arcstats.memory_free_bytes
+# TYPE node_zfs_arc_memory_free_bytes untyped
+node_zfs_arc_memory_free_bytes 1.294524416e+09
+# HELP node_zfs_arc_memory_indirect_count kstat.zfs.misc.arcstats.memory_indirect_count
+# TYPE node_zfs_arc_memory_indirect_count untyped
+node_zfs_arc_memory_indirect_count 0
+# HELP node_zfs_arc_memory_throttle_count kstat.zfs.misc.arcstats.memory_throttle_count
+# TYPE node_zfs_arc_memory_throttle_count untyped
+node_zfs_arc_memory_throttle_count 0
+# HELP node_zfs_arc_metadata_size kstat.zfs.misc.arcstats.metadata_size
+# TYPE node_zfs_arc_metadata_size untyped
+node_zfs_arc_metadata_size 1.24373504e+08
+# HELP node_zfs_arc_mfu_evictable_data kstat.zfs.misc.arcstats.mfu_evictable_data
+# TYPE node_zfs_arc_mfu_evictable_data untyped
+node_zfs_arc_mfu_evictable_data 1.081195008e+09
+# HELP node_zfs_arc_mfu_evictable_metadata kstat.zfs.misc.arcstats.mfu_evictable_metadata
+# TYPE node_zfs_arc_mfu_evictable_metadata untyped
+node_zfs_arc_mfu_evictable_metadata 1.875456e+07
+# HELP node_zfs_arc_mfu_ghost_evictable_data kstat.zfs.misc.arcstats.mfu_ghost_evictable_data
+# TYPE node_zfs_arc_mfu_ghost_evictable_data untyped
+node_zfs_arc_mfu_ghost_evictable_data 8.9500672e+08
+# HELP node_zfs_arc_mfu_ghost_evictable_metadata kstat.zfs.misc.arcstats.mfu_ghost_evictable_metadata
+# TYPE node_zfs_arc_mfu_ghost_evictable_metadata untyped
+node_zfs_arc_mfu_ghost_evictable_metadata 1.1733248e+08
+# HELP node_zfs_arc_mfu_ghost_hits kstat.zfs.misc.arcstats.mfu_ghost_hits
+# TYPE node_zfs_arc_mfu_ghost_hits untyped
+node_zfs_arc_mfu_ghost_hits 40964
+# HELP node_zfs_arc_mfu_ghost_size kstat.zfs.misc.arcstats.mfu_ghost_size
+# TYPE node_zfs_arc_mfu_ghost_size untyped
+node_zfs_arc_mfu_ghost_size 1.0123392e+09
+# HELP node_zfs_arc_mfu_hits kstat.zfs.misc.arcstats.mfu_hits
+# TYPE node_zfs_arc_mfu_hits untyped
+node_zfs_arc_mfu_hits 5.804675e+07
+# HELP node_zfs_arc_mfu_size kstat.zfs.misc.arcstats.mfu_size
+# TYPE node_zfs_arc_mfu_size untyped
+node_zfs_arc_mfu_size 1.127908864e+09
+# HELP node_zfs_arc_misses kstat.zfs.misc.arcstats.misses
+# TYPE node_zfs_arc_misses untyped
+node_zfs_arc_misses 990627
+# HELP node_zfs_arc_mru_evictable_data kstat.zfs.misc.arcstats.mru_evictable_data
+# TYPE node_zfs_arc_mru_evictable_data untyped
+node_zfs_arc_mru_evictable_data 7.87930112e+08
+# HELP node_zfs_arc_mru_evictable_metadata kstat.zfs.misc.arcstats.mru_evictable_metadata
+# TYPE node_zfs_arc_mru_evictable_metadata untyped
+node_zfs_arc_mru_evictable_metadata 8.980992e+06
+# HELP node_zfs_arc_mru_ghost_evictable_data kstat.zfs.misc.arcstats.mru_ghost_evictable_data
+# TYPE node_zfs_arc_mru_ghost_evictable_data untyped
+node_zfs_arc_mru_ghost_evictable_data 8.89022976e+08
+# HELP node_zfs_arc_mru_ghost_evictable_metadata kstat.zfs.misc.arcstats.mru_ghost_evictable_metadata
+# TYPE node_zfs_arc_mru_ghost_evictable_metadata untyped
+node_zfs_arc_mru_ghost_evictable_metadata 1.06008064e+08
+# HELP node_zfs_arc_mru_ghost_hits kstat.zfs.misc.arcstats.mru_ghost_hits
+# TYPE node_zfs_arc_mru_ghost_hits untyped
+node_zfs_arc_mru_ghost_hits 32508
+# HELP node_zfs_arc_mru_ghost_size kstat.zfs.misc.arcstats.mru_ghost_size
+# TYPE node_zfs_arc_mru_ghost_size untyped
+node_zfs_arc_mru_ghost_size 9.9503104e+08
+# HELP node_zfs_arc_mru_hits kstat.zfs.misc.arcstats.mru_hits
+# TYPE node_zfs_arc_mru_hits untyped
+node_zfs_arc_mru_hits 9.599033e+06
+# HELP node_zfs_arc_mru_size kstat.zfs.misc.arcstats.mru_size
+# TYPE node_zfs_arc_mru_size untyped
+node_zfs_arc_mru_size 9.27535616e+08
+# HELP node_zfs_arc_mutex_miss kstat.zfs.misc.arcstats.mutex_miss
+# TYPE node_zfs_arc_mutex_miss untyped
+node_zfs_arc_mutex_miss 9
+# HELP node_zfs_arc_overhead_size kstat.zfs.misc.arcstats.overhead_size
+# TYPE node_zfs_arc_overhead_size untyped
+node_zfs_arc_overhead_size 1.34413824e+08
+# HELP node_zfs_arc_p kstat.zfs.misc.arcstats.p
+# TYPE node_zfs_arc_p untyped
+node_zfs_arc_p 1.214708224e+09
+# HELP node_zfs_arc_prefetch_data_hits kstat.zfs.misc.arcstats.prefetch_data_hits
+# TYPE node_zfs_arc_prefetch_data_hits untyped
+node_zfs_arc_prefetch_data_hits 63419
+# HELP node_zfs_arc_prefetch_data_misses kstat.zfs.misc.arcstats.prefetch_data_misses
+# TYPE node_zfs_arc_prefetch_data_misses untyped
+node_zfs_arc_prefetch_data_misses 58142
+# HELP node_zfs_arc_prefetch_metadata_hits kstat.zfs.misc.arcstats.prefetch_metadata_hits
+# TYPE node_zfs_arc_prefetch_metadata_hits untyped
+node_zfs_arc_prefetch_metadata_hits 21541
+# HELP node_zfs_arc_prefetch_metadata_misses kstat.zfs.misc.arcstats.prefetch_metadata_misses
+# TYPE node_zfs_arc_prefetch_metadata_misses untyped
+node_zfs_arc_prefetch_metadata_misses 4710
+# HELP node_zfs_arc_size kstat.zfs.misc.arcstats.size
+# TYPE node_zfs_arc_size untyped
+node_zfs_arc_size 2.111887608e+09
+# HELP node_zfs_arc_uncompressed_size kstat.zfs.misc.arcstats.uncompressed_size
+# TYPE node_zfs_arc_uncompressed_size untyped
+node_zfs_arc_uncompressed_size 4.744454144e+09
+# HELP node_zfs_dmu_tx_dmu_tx_assigned kstat.zfs.misc.dmu_tx.dmu_tx_assigned
+# TYPE node_zfs_dmu_tx_dmu_tx_assigned untyped
+node_zfs_dmu_tx_dmu_tx_assigned 1.4242718e+07
+# HELP node_zfs_dmu_tx_dmu_tx_delay kstat.zfs.misc.dmu_tx.dmu_tx_delay
+# TYPE node_zfs_dmu_tx_dmu_tx_delay untyped
+node_zfs_dmu_tx_dmu_tx_delay 0
+# HELP node_zfs_dmu_tx_dmu_tx_dirty_delay kstat.zfs.misc.dmu_tx.dmu_tx_dirty_delay
+# TYPE node_zfs_dmu_tx_dmu_tx_dirty_delay untyped
+node_zfs_dmu_tx_dmu_tx_dirty_delay 0
+# HELP node_zfs_dmu_tx_dmu_tx_dirty_frees_delay kstat.zfs.misc.dmu_tx.dmu_tx_dirty_frees_delay
+# TYPE node_zfs_dmu_tx_dmu_tx_dirty_frees_delay untyped
+node_zfs_dmu_tx_dmu_tx_dirty_frees_delay 178
+# HELP node_zfs_dmu_tx_dmu_tx_dirty_over_max kstat.zfs.misc.dmu_tx.dmu_tx_dirty_over_max
+# TYPE node_zfs_dmu_tx_dmu_tx_dirty_over_max untyped
+node_zfs_dmu_tx_dmu_tx_dirty_over_max 0
+# HELP node_zfs_dmu_tx_dmu_tx_dirty_throttle kstat.zfs.misc.dmu_tx.dmu_tx_dirty_throttle
+# TYPE node_zfs_dmu_tx_dmu_tx_dirty_throttle untyped
+node_zfs_dmu_tx_dmu_tx_dirty_throttle 4
+# HELP node_zfs_dmu_tx_dmu_tx_error kstat.zfs.misc.dmu_tx.dmu_tx_error
+# TYPE node_zfs_dmu_tx_dmu_tx_error untyped
+node_zfs_dmu_tx_dmu_tx_error 0
+# HELP node_zfs_dmu_tx_dmu_tx_group kstat.zfs.misc.dmu_tx.dmu_tx_group
+# TYPE node_zfs_dmu_tx_dmu_tx_group untyped
+node_zfs_dmu_tx_dmu_tx_group 0
+# HELP node_zfs_dmu_tx_dmu_tx_memory_reclaim kstat.zfs.misc.dmu_tx.dmu_tx_memory_reclaim
+# TYPE node_zfs_dmu_tx_dmu_tx_memory_reclaim untyped
+node_zfs_dmu_tx_dmu_tx_memory_reclaim 0
+# HELP node_zfs_dmu_tx_dmu_tx_memory_reserve kstat.zfs.misc.dmu_tx.dmu_tx_memory_reserve
+# TYPE node_zfs_dmu_tx_dmu_tx_memory_reserve untyped
+node_zfs_dmu_tx_dmu_tx_memory_reserve 0
+# HELP node_zfs_dmu_tx_dmu_tx_quota kstat.zfs.misc.dmu_tx.dmu_tx_quota
+# TYPE node_zfs_dmu_tx_dmu_tx_quota untyped
+node_zfs_dmu_tx_dmu_tx_quota 0
+# HELP node_zfs_dmu_tx_dmu_tx_suspended kstat.zfs.misc.dmu_tx.dmu_tx_suspended
+# TYPE node_zfs_dmu_tx_dmu_tx_suspended untyped
+node_zfs_dmu_tx_dmu_tx_suspended 0
+# HELP node_zfs_dnode_dnode_alloc_next_block kstat.zfs.misc.dnodestats.dnode_alloc_next_block
+# TYPE node_zfs_dnode_dnode_alloc_next_block untyped
+node_zfs_dnode_dnode_alloc_next_block 0
+# HELP node_zfs_dnode_dnode_alloc_next_chunk kstat.zfs.misc.dnodestats.dnode_alloc_next_chunk
+# TYPE node_zfs_dnode_dnode_alloc_next_chunk untyped
+node_zfs_dnode_dnode_alloc_next_chunk 30
+# HELP node_zfs_dnode_dnode_alloc_race kstat.zfs.misc.dnodestats.dnode_alloc_race
+# TYPE node_zfs_dnode_dnode_alloc_race untyped
+node_zfs_dnode_dnode_alloc_race 0
+# HELP node_zfs_dnode_dnode_allocate kstat.zfs.misc.dnodestats.dnode_allocate
+# TYPE node_zfs_dnode_dnode_allocate untyped
+node_zfs_dnode_dnode_allocate 1708
+# HELP node_zfs_dnode_dnode_buf_evict kstat.zfs.misc.dnodestats.dnode_buf_evict
+# TYPE node_zfs_dnode_dnode_buf_evict untyped
+node_zfs_dnode_dnode_buf_evict 88
+# HELP node_zfs_dnode_dnode_free_interior_lock_retry kstat.zfs.misc.dnodestats.dnode_free_interior_lock_retry
+# TYPE node_zfs_dnode_dnode_free_interior_lock_retry untyped
+node_zfs_dnode_dnode_free_interior_lock_retry 0
+# HELP node_zfs_dnode_dnode_hold_alloc_hits kstat.zfs.misc.dnodestats.dnode_hold_alloc_hits
+# TYPE node_zfs_dnode_dnode_hold_alloc_hits untyped
+node_zfs_dnode_dnode_hold_alloc_hits 4.6097203e+07
+# HELP node_zfs_dnode_dnode_hold_alloc_interior kstat.zfs.misc.dnodestats.dnode_hold_alloc_interior
+# TYPE node_zfs_dnode_dnode_hold_alloc_interior untyped
+node_zfs_dnode_dnode_hold_alloc_interior 0
+# HELP node_zfs_dnode_dnode_hold_alloc_lock_misses kstat.zfs.misc.dnodestats.dnode_hold_alloc_lock_misses
+# TYPE node_zfs_dnode_dnode_hold_alloc_lock_misses untyped
+node_zfs_dnode_dnode_hold_alloc_lock_misses 0
+# HELP node_zfs_dnode_dnode_hold_alloc_lock_retry kstat.zfs.misc.dnodestats.dnode_hold_alloc_lock_retry
+# TYPE node_zfs_dnode_dnode_hold_alloc_lock_retry untyped
+node_zfs_dnode_dnode_hold_alloc_lock_retry 0
+# HELP node_zfs_dnode_dnode_hold_alloc_misses kstat.zfs.misc.dnodestats.dnode_hold_alloc_misses
+# TYPE node_zfs_dnode_dnode_hold_alloc_misses untyped
+node_zfs_dnode_dnode_hold_alloc_misses 0
+# HELP node_zfs_dnode_dnode_hold_alloc_type_none kstat.zfs.misc.dnodestats.dnode_hold_alloc_type_none
+# TYPE node_zfs_dnode_dnode_hold_alloc_type_none untyped
+node_zfs_dnode_dnode_hold_alloc_type_none 0
+# HELP node_zfs_dnode_dnode_hold_dbuf_hold kstat.zfs.misc.dnodestats.dnode_hold_dbuf_hold
+# TYPE node_zfs_dnode_dnode_hold_dbuf_hold untyped
+node_zfs_dnode_dnode_hold_dbuf_hold 0
+# HELP node_zfs_dnode_dnode_hold_dbuf_read kstat.zfs.misc.dnodestats.dnode_hold_dbuf_read
+# TYPE node_zfs_dnode_dnode_hold_dbuf_read untyped
+node_zfs_dnode_dnode_hold_dbuf_read 0
+# HELP node_zfs_dnode_dnode_hold_free_hits kstat.zfs.misc.dnodestats.dnode_hold_free_hits
+# TYPE node_zfs_dnode_dnode_hold_free_hits untyped
+node_zfs_dnode_dnode_hold_free_hits 1708
+# HELP node_zfs_dnode_dnode_hold_free_lock_misses kstat.zfs.misc.dnodestats.dnode_hold_free_lock_misses
+# TYPE node_zfs_dnode_dnode_hold_free_lock_misses untyped
+node_zfs_dnode_dnode_hold_free_lock_misses 0
+# HELP node_zfs_dnode_dnode_hold_free_lock_retry kstat.zfs.misc.dnodestats.dnode_hold_free_lock_retry
+# TYPE node_zfs_dnode_dnode_hold_free_lock_retry untyped
+node_zfs_dnode_dnode_hold_free_lock_retry 0
+# HELP node_zfs_dnode_dnode_hold_free_misses kstat.zfs.misc.dnodestats.dnode_hold_free_misses
+# TYPE node_zfs_dnode_dnode_hold_free_misses untyped
+node_zfs_dnode_dnode_hold_free_misses 380
+# HELP node_zfs_dnode_dnode_hold_free_overflow kstat.zfs.misc.dnodestats.dnode_hold_free_overflow
+# TYPE node_zfs_dnode_dnode_hold_free_overflow untyped
+node_zfs_dnode_dnode_hold_free_overflow 0
+# HELP node_zfs_dnode_dnode_hold_free_refcount kstat.zfs.misc.dnodestats.dnode_hold_free_refcount
+# TYPE node_zfs_dnode_dnode_hold_free_refcount untyped
+node_zfs_dnode_dnode_hold_free_refcount 0
+# HELP node_zfs_dnode_dnode_hold_free_txg kstat.zfs.misc.dnodestats.dnode_hold_free_txg
+# TYPE node_zfs_dnode_dnode_hold_free_txg untyped
+node_zfs_dnode_dnode_hold_free_txg 87
+# HELP node_zfs_dnode_dnode_move_active kstat.zfs.misc.dnodestats.dnode_move_active
+# TYPE node_zfs_dnode_dnode_move_active untyped
+node_zfs_dnode_dnode_move_active 0
+# HELP node_zfs_dnode_dnode_move_handle kstat.zfs.misc.dnodestats.dnode_move_handle
+# TYPE node_zfs_dnode_dnode_move_handle untyped
+node_zfs_dnode_dnode_move_handle 0
+# HELP node_zfs_dnode_dnode_move_invalid kstat.zfs.misc.dnodestats.dnode_move_invalid
+# TYPE node_zfs_dnode_dnode_move_invalid untyped
+node_zfs_dnode_dnode_move_invalid 0
+# HELP node_zfs_dnode_dnode_move_recheck1 kstat.zfs.misc.dnodestats.dnode_move_recheck1
+# TYPE node_zfs_dnode_dnode_move_recheck1 untyped
+node_zfs_dnode_dnode_move_recheck1 0
+# HELP node_zfs_dnode_dnode_move_recheck2 kstat.zfs.misc.dnodestats.dnode_move_recheck2
+# TYPE node_zfs_dnode_dnode_move_recheck2 untyped
+node_zfs_dnode_dnode_move_recheck2 0
+# HELP node_zfs_dnode_dnode_move_rwlock kstat.zfs.misc.dnodestats.dnode_move_rwlock
+# TYPE node_zfs_dnode_dnode_move_rwlock untyped
+node_zfs_dnode_dnode_move_rwlock 0
+# HELP node_zfs_dnode_dnode_move_special kstat.zfs.misc.dnodestats.dnode_move_special
+# TYPE node_zfs_dnode_dnode_move_special untyped
+node_zfs_dnode_dnode_move_special 0
+# HELP node_zfs_dnode_dnode_reallocate kstat.zfs.misc.dnodestats.dnode_reallocate
+# TYPE node_zfs_dnode_dnode_reallocate untyped
+node_zfs_dnode_dnode_reallocate 0
+# HELP node_zfs_fm_erpt_dropped kstat.zfs.misc.fm.erpt-dropped
+# TYPE node_zfs_fm_erpt_dropped untyped
+node_zfs_fm_erpt_dropped 0
+# HELP node_zfs_fm_erpt_set_failed kstat.zfs.misc.fm.erpt-set-failed
+# TYPE node_zfs_fm_erpt_set_failed untyped
+node_zfs_fm_erpt_set_failed 0
+# HELP node_zfs_fm_fmri_set_failed kstat.zfs.misc.fm.fmri-set-failed
+# TYPE node_zfs_fm_fmri_set_failed untyped
+node_zfs_fm_fmri_set_failed 0
+# HELP node_zfs_fm_payload_set_failed kstat.zfs.misc.fm.payload-set-failed
+# TYPE node_zfs_fm_payload_set_failed untyped
+node_zfs_fm_payload_set_failed 0
+# HELP node_zfs_vdev_cache_delegations kstat.zfs.misc.vdev_cache_stats.delegations
+# TYPE node_zfs_vdev_cache_delegations untyped
+node_zfs_vdev_cache_delegations 0
+# HELP node_zfs_vdev_cache_hits kstat.zfs.misc.vdev_cache_stats.hits
+# TYPE node_zfs_vdev_cache_hits untyped
+node_zfs_vdev_cache_hits 0
+# HELP node_zfs_vdev_cache_misses kstat.zfs.misc.vdev_cache_stats.misses
+# TYPE node_zfs_vdev_cache_misses untyped
+node_zfs_vdev_cache_misses 0
+# HELP node_zfs_vdev_mirror_non_rotating_linear kstat.zfs.misc.vdev_mirror_stats.non_rotating_linear
+# TYPE node_zfs_vdev_mirror_non_rotating_linear untyped
+node_zfs_vdev_mirror_non_rotating_linear 0
+# HELP node_zfs_vdev_mirror_non_rotating_seek kstat.zfs.misc.vdev_mirror_stats.non_rotating_seek
+# TYPE node_zfs_vdev_mirror_non_rotating_seek untyped
+node_zfs_vdev_mirror_non_rotating_seek 0
+# HELP node_zfs_vdev_mirror_preferred_found kstat.zfs.misc.vdev_mirror_stats.preferred_found
+# TYPE node_zfs_vdev_mirror_preferred_found untyped
+node_zfs_vdev_mirror_preferred_found 266642
+# HELP node_zfs_vdev_mirror_preferred_not_found kstat.zfs.misc.vdev_mirror_stats.preferred_not_found
+# TYPE node_zfs_vdev_mirror_preferred_not_found untyped
+node_zfs_vdev_mirror_preferred_not_found 20787
+# HELP node_zfs_vdev_mirror_rotating_linear kstat.zfs.misc.vdev_mirror_stats.rotating_linear
+# TYPE node_zfs_vdev_mirror_rotating_linear untyped
+node_zfs_vdev_mirror_rotating_linear 0
+# HELP node_zfs_vdev_mirror_rotating_offset kstat.zfs.misc.vdev_mirror_stats.rotating_offset
+# TYPE node_zfs_vdev_mirror_rotating_offset untyped
+node_zfs_vdev_mirror_rotating_offset 0
+# HELP node_zfs_vdev_mirror_rotating_seek kstat.zfs.misc.vdev_mirror_stats.rotating_seek
+# TYPE node_zfs_vdev_mirror_rotating_seek untyped
+node_zfs_vdev_mirror_rotating_seek 0
+# HELP node_zfs_xuio_onloan_read_buf kstat.zfs.misc.xuio_stats.onloan_read_buf
+# TYPE node_zfs_xuio_onloan_read_buf untyped
+node_zfs_xuio_onloan_read_buf 0
+# HELP node_zfs_xuio_onloan_write_buf kstat.zfs.misc.xuio_stats.onloan_write_buf
+# TYPE node_zfs_xuio_onloan_write_buf untyped
+node_zfs_xuio_onloan_write_buf 0
+# HELP node_zfs_xuio_read_buf_copied kstat.zfs.misc.xuio_stats.read_buf_copied
+# TYPE node_zfs_xuio_read_buf_copied untyped
+node_zfs_xuio_read_buf_copied 0
+# HELP node_zfs_xuio_read_buf_nocopy kstat.zfs.misc.xuio_stats.read_buf_nocopy
+# TYPE node_zfs_xuio_read_buf_nocopy untyped
+node_zfs_xuio_read_buf_nocopy 0
+# HELP node_zfs_xuio_write_buf_copied kstat.zfs.misc.xuio_stats.write_buf_copied
+# TYPE node_zfs_xuio_write_buf_copied untyped
+node_zfs_xuio_write_buf_copied 0
+# HELP node_zfs_xuio_write_buf_nocopy kstat.zfs.misc.xuio_stats.write_buf_nocopy
+# TYPE node_zfs_xuio_write_buf_nocopy untyped
+node_zfs_xuio_write_buf_nocopy 2334
+# HELP node_zfs_zfetch_hits kstat.zfs.misc.zfetchstats.hits
+# TYPE node_zfs_zfetch_hits untyped
+node_zfs_zfetch_hits 1.132006e+06
+# HELP node_zfs_zfetch_max_streams kstat.zfs.misc.zfetchstats.max_streams
+# TYPE node_zfs_zfetch_max_streams untyped
+node_zfs_zfetch_max_streams 2.5212916e+07
+# HELP node_zfs_zfetch_misses kstat.zfs.misc.zfetchstats.misses
+# TYPE node_zfs_zfetch_misses untyped
+node_zfs_zfetch_misses 2.5726022e+07
+# HELP node_zfs_zil_zil_commit_count kstat.zfs.misc.zil.zil_commit_count
+# TYPE node_zfs_zil_zil_commit_count untyped
+node_zfs_zil_zil_commit_count 261752
+# HELP node_zfs_zil_zil_commit_writer_count kstat.zfs.misc.zil.zil_commit_writer_count
+# TYPE node_zfs_zil_zil_commit_writer_count untyped
+node_zfs_zil_zil_commit_writer_count 261733
+# HELP node_zfs_zil_zil_itx_copied_bytes kstat.zfs.misc.zil.zil_itx_copied_bytes
+# TYPE node_zfs_zil_zil_itx_copied_bytes untyped
+node_zfs_zil_zil_itx_copied_bytes 0
+# HELP node_zfs_zil_zil_itx_copied_count kstat.zfs.misc.zil.zil_itx_copied_count
+# TYPE node_zfs_zil_zil_itx_copied_count untyped
+node_zfs_zil_zil_itx_copied_count 0
+# HELP node_zfs_zil_zil_itx_count kstat.zfs.misc.zil.zil_itx_count
+# TYPE node_zfs_zil_zil_itx_count untyped
+node_zfs_zil_zil_itx_count 6.932164e+06
+# HELP node_zfs_zil_zil_itx_indirect_bytes kstat.zfs.misc.zil.zil_itx_indirect_bytes
+# TYPE node_zfs_zil_zil_itx_indirect_bytes untyped
+node_zfs_zil_zil_itx_indirect_bytes 2.514731e+07
+# HELP node_zfs_zil_zil_itx_indirect_count kstat.zfs.misc.zil.zil_itx_indirect_count
+# TYPE node_zfs_zil_zil_itx_indirect_count untyped
+node_zfs_zil_zil_itx_indirect_count 480
+# HELP node_zfs_zil_zil_itx_metaslab_normal_bytes kstat.zfs.misc.zil.zil_itx_metaslab_normal_bytes
+# TYPE node_zfs_zil_zil_itx_metaslab_normal_bytes untyped
+node_zfs_zil_zil_itx_metaslab_normal_bytes 2.9709011016e+10
+# HELP node_zfs_zil_zil_itx_metaslab_normal_count kstat.zfs.misc.zil.zil_itx_metaslab_normal_count
+# TYPE node_zfs_zil_zil_itx_metaslab_normal_count untyped
+node_zfs_zil_zil_itx_metaslab_normal_count 427215
+# HELP node_zfs_zil_zil_itx_metaslab_slog_bytes kstat.zfs.misc.zil.zil_itx_metaslab_slog_bytes
+# TYPE node_zfs_zil_zil_itx_metaslab_slog_bytes untyped
+node_zfs_zil_zil_itx_metaslab_slog_bytes 0
+# HELP node_zfs_zil_zil_itx_metaslab_slog_count kstat.zfs.misc.zil.zil_itx_metaslab_slog_count
+# TYPE node_zfs_zil_zil_itx_metaslab_slog_count untyped
+node_zfs_zil_zil_itx_metaslab_slog_count 0
+# HELP node_zfs_zil_zil_itx_needcopy_bytes kstat.zfs.misc.zil.zil_itx_needcopy_bytes
+# TYPE node_zfs_zil_zil_itx_needcopy_bytes untyped
+node_zfs_zil_zil_itx_needcopy_bytes 2.8301155952e+10
+# HELP node_zfs_zil_zil_itx_needcopy_count kstat.zfs.misc.zil.zil_itx_needcopy_count
+# TYPE node_zfs_zil_zil_itx_needcopy_count untyped
+node_zfs_zil_zil_itx_needcopy_count 6.918474e+06
+# HELP node_zfs_zpool_nread kstat.zfs.misc.io.nread
+# TYPE node_zfs_zpool_nread untyped
+node_zfs_zpool_nread{zpool="fortressworkstation"} 1.6916717568e+10
+# HELP node_zfs_zpool_nwritten kstat.zfs.misc.io.nwritten
+# TYPE node_zfs_zpool_nwritten untyped
+node_zfs_zpool_nwritten{zpool="fortressworkstation"} 1.43322144768e+11
+# HELP node_zfs_zpool_rcnt kstat.zfs.misc.io.rcnt
+# TYPE node_zfs_zpool_rcnt untyped
+node_zfs_zpool_rcnt{zpool="fortressworkstation"} 0
+# HELP node_zfs_zpool_reads kstat.zfs.misc.io.reads
+# TYPE node_zfs_zpool_reads untyped
+node_zfs_zpool_reads{zpool="fortressworkstation"} 264723
+# HELP node_zfs_zpool_rlentime kstat.zfs.misc.io.rlentime
+# TYPE node_zfs_zpool_rlentime untyped
+node_zfs_zpool_rlentime{zpool="fortressworkstation"} 6.232487133945e+12
+# HELP node_zfs_zpool_rtime kstat.zfs.misc.io.rtime
+# TYPE node_zfs_zpool_rtime untyped
+node_zfs_zpool_rtime{zpool="fortressworkstation"} 1.810764049084e+12
+# HELP node_zfs_zpool_rupdate kstat.zfs.misc.io.rupdate
+# TYPE node_zfs_zpool_rupdate untyped
+node_zfs_zpool_rupdate{zpool="fortressworkstation"} 2.24456897448377e+14
+# HELP node_zfs_zpool_wcnt kstat.zfs.misc.io.wcnt
+# TYPE node_zfs_zpool_wcnt untyped
+node_zfs_zpool_wcnt{zpool="fortressworkstation"} 0
+# HELP node_zfs_zpool_wlentime kstat.zfs.misc.io.wlentime
+# TYPE node_zfs_zpool_wlentime untyped
+node_zfs_zpool_wlentime{zpool="fortressworkstation"} 1.05580320313631e+14
+# HELP node_zfs_zpool_writes kstat.zfs.misc.io.writes
+# TYPE node_zfs_zpool_writes untyped
+node_zfs_zpool_writes{zpool="fortressworkstation"} 5.076393e+06
+# HELP node_zfs_zpool_wtime kstat.zfs.misc.io.wtime
+# TYPE node_zfs_zpool_wtime untyped
+node_zfs_zpool_wtime{zpool="fortressworkstation"} 1.108124492702e+12
+# HELP node_zfs_zpool_wupdate kstat.zfs.misc.io.wupdate
+# TYPE node_zfs_zpool_wupdate untyped
+node_zfs_zpool_wupdate{zpool="fortressworkstation"} 2.24456897269942e+14
+# HELP process_cpu_seconds_total Total user and system CPU time spent in seconds.
+# TYPE process_cpu_seconds_total counter
+process_cpu_seconds_total 1.04
+# HELP process_max_fds Maximum number of open file descriptors.
+# TYPE process_max_fds gauge
+process_max_fds 1024
+# HELP process_open_fds Number of open file descriptors.
+# TYPE process_open_fds gauge
+process_open_fds 7
+# HELP process_resident_memory_bytes Resident memory size in bytes.
+# TYPE process_resident_memory_bytes gauge
+process_resident_memory_bytes 1.1112448e+07
+# HELP process_start_time_seconds Start time of the process since unix epoch in seconds.
+# TYPE process_start_time_seconds gauge
+process_start_time_seconds 1.54943965596e+09
+# HELP process_virtual_memory_bytes Virtual memory size in bytes.
+# TYPE process_virtual_memory_bytes gauge
+process_virtual_memory_bytes 2.90353152e+08
+# HELP promhttp_metric_handler_requests_in_flight Current number of scrapes being served.
+# TYPE promhttp_metric_handler_requests_in_flight gauge
+promhttp_metric_handler_requests_in_flight 1
+# HELP promhttp_metric_handler_requests_total Total number of scrapes by HTTP status code.
+# TYPE promhttp_metric_handler_requests_total counter
+promhttp_metric_handler_requests_total{code="200"} 0
+promhttp_metric_handler_requests_total{code="500"} 0
+promhttp_metric_handler_requests_total{code="503"} 0
+==============================
+
+# HELP go_gc_duration_seconds A summary of the GC invocation durations.
+# TYPE go_gc_duration_seconds summary
+go_gc_duration_seconds{quantile="0"} 4.6788e-05
+go_gc_duration_seconds{quantile="0.25"} 9.5869e-05
+go_gc_duration_seconds{quantile="0.5"} 0.000118775
+go_gc_duration_seconds{quantile="0.75"} 0.000163162
+go_gc_duration_seconds{quantile="1"} 0.002185543
+go_gc_duration_seconds_sum 0.03567781
+go_gc_duration_seconds_count 179
+# HELP go_goroutines Number of goroutines that currently exist.
+# TYPE go_goroutines gauge
+go_goroutines 6
+# HELP go_info Information about the Go environment.
+# TYPE go_info gauge
+go_info{version="go1.9.6"} 1
+# HELP go_memstats_alloc_bytes Number of bytes allocated and still in use.
+# TYPE go_memstats_alloc_bytes gauge
+go_memstats_alloc_bytes 2.918264e+06
+# HELP go_memstats_alloc_bytes_total Total number of bytes allocated, even if freed.
+# TYPE go_memstats_alloc_bytes_total counter
+go_memstats_alloc_bytes_total 1.15176904e+08
+# HELP go_memstats_buck_hash_sys_bytes Number of bytes used by the profiling bucket hash table.
+# TYPE go_memstats_buck_hash_sys_bytes gauge
+go_memstats_buck_hash_sys_bytes 1.482424e+06
+# HELP go_memstats_frees_total Total number of frees.
+# TYPE go_memstats_frees_total counter
+go_memstats_frees_total 1.658549e+06
+# HELP go_memstats_gc_cpu_fraction The fraction of this program's available CPU time used by the GC since the program started.
+# TYPE go_memstats_gc_cpu_fraction gauge
+go_memstats_gc_cpu_fraction 3.581452516016717e-06
+# HELP go_memstats_gc_sys_bytes Number of bytes used for garbage collection system metadata.
+# TYPE go_memstats_gc_sys_bytes gauge
+go_memstats_gc_sys_bytes 438272
+# HELP go_memstats_heap_alloc_bytes Number of heap bytes allocated and still in use.
+# TYPE go_memstats_heap_alloc_bytes gauge
+go_memstats_heap_alloc_bytes 2.918264e+06
+# HELP go_memstats_heap_idle_bytes Number of heap bytes waiting to be used.
+# TYPE go_memstats_heap_idle_bytes gauge
+go_memstats_heap_idle_bytes 2.064384e+06
+# HELP go_memstats_heap_inuse_bytes Number of heap bytes that are in use.
+# TYPE go_memstats_heap_inuse_bytes gauge
+go_memstats_heap_inuse_bytes 4.653056e+06
+# HELP go_memstats_heap_objects Number of allocated objects.
+# TYPE go_memstats_heap_objects gauge
+go_memstats_heap_objects 33763
+# HELP go_memstats_heap_released_bytes Number of heap bytes released to OS.
+# TYPE go_memstats_heap_released_bytes gauge
+go_memstats_heap_released_bytes 1.122304e+06
+# HELP go_memstats_heap_sys_bytes Number of heap bytes obtained from system.
+# TYPE go_memstats_heap_sys_bytes gauge
+go_memstats_heap_sys_bytes 6.71744e+06
+# HELP go_memstats_last_gc_time_seconds Number of seconds since 1970 of last garbage collection.
+# TYPE go_memstats_last_gc_time_seconds gauge
+go_memstats_last_gc_time_seconds 1.5494563051466303e+09
+# HELP go_memstats_lookups_total Total number of pointer lookups.
+# TYPE go_memstats_lookups_total counter
+go_memstats_lookups_total 8653
+# HELP go_memstats_mallocs_total Total number of mallocs.
+# TYPE go_memstats_mallocs_total counter
+go_memstats_mallocs_total 1.692312e+06
+# HELP go_memstats_mcache_inuse_bytes Number of bytes in use by mcache structures.
+# TYPE go_memstats_mcache_inuse_bytes gauge
+go_memstats_mcache_inuse_bytes 6944
+# HELP go_memstats_mcache_sys_bytes Number of bytes used for mcache structures obtained from system.
+# TYPE go_memstats_mcache_sys_bytes gauge
+go_memstats_mcache_sys_bytes 16384
+# HELP go_memstats_mspan_inuse_bytes Number of bytes in use by mspan structures.
+# TYPE go_memstats_mspan_inuse_bytes gauge
+go_memstats_mspan_inuse_bytes 65360
+# HELP go_memstats_mspan_sys_bytes Number of bytes used for mspan structures obtained from system.
+# TYPE go_memstats_mspan_sys_bytes gauge
+go_memstats_mspan_sys_bytes 81920
+# HELP go_memstats_next_gc_bytes Number of heap bytes when next garbage collection will take place.
+# TYPE go_memstats_next_gc_bytes gauge
+go_memstats_next_gc_bytes 4.194304e+06
+# HELP go_memstats_other_sys_bytes Number of bytes used for other system allocations.
+# TYPE go_memstats_other_sys_bytes gauge
+go_memstats_other_sys_bytes 1.231424e+06
+# HELP go_memstats_stack_inuse_bytes Number of bytes in use by the stack allocator.
+# TYPE go_memstats_stack_inuse_bytes gauge
+go_memstats_stack_inuse_bytes 622592
+# HELP go_memstats_stack_sys_bytes Number of bytes obtained from system for stack allocator.
+# TYPE go_memstats_stack_sys_bytes gauge
+go_memstats_stack_sys_bytes 622592
+# HELP go_memstats_sys_bytes Number of bytes obtained from system.
+# TYPE go_memstats_sys_bytes gauge
+go_memstats_sys_bytes 1.0590456e+07
+# HELP go_threads Number of OS threads created.
+# TYPE go_threads gauge
+go_threads 10
+# HELP node_boot_time_seconds Node boot time, in unixtime.
+# TYPE node_boot_time_seconds gauge
+node_boot_time_seconds 1.549231848e+09
+# HELP node_context_switches_total Total number of context switches.
+# TYPE node_context_switches_total counter
+node_context_switches_total 1.588064297e+09
+# HELP node_cpu_guest_seconds_total Seconds the cpus spent in guests (VMs) for each mode.
+# TYPE node_cpu_guest_seconds_total counter
+node_cpu_guest_seconds_total{cpu="0",mode="nice"} 0
+node_cpu_guest_seconds_total{cpu="0",mode="user"} 0
+node_cpu_guest_seconds_total{cpu="1",mode="nice"} 0
+node_cpu_guest_seconds_total{cpu="1",mode="user"} 0
+node_cpu_guest_seconds_total{cpu="2",mode="nice"} 0
+node_cpu_guest_seconds_total{cpu="2",mode="user"} 0
+node_cpu_guest_seconds_total{cpu="3",mode="nice"} 0
+node_cpu_guest_seconds_total{cpu="3",mode="user"} 0
+# HELP node_cpu_seconds_total Seconds the cpus spent in each mode.
+# TYPE node_cpu_seconds_total counter
+node_cpu_seconds_total{cpu="0",mode="idle"} 213189.15
+node_cpu_seconds_total{cpu="0",mode="iowait"} 551.59
+node_cpu_seconds_total{cpu="0",mode="irq"} 654.3
+node_cpu_seconds_total{cpu="0",mode="nice"} 4.76
+node_cpu_seconds_total{cpu="0",mode="softirq"} 255.21
+node_cpu_seconds_total{cpu="0",mode="steal"} 1409.28
+node_cpu_seconds_total{cpu="0",mode="system"} 3455.62
+node_cpu_seconds_total{cpu="0",mode="user"} 3671.19
+node_cpu_seconds_total{cpu="1",mode="idle"} 213505.38
+node_cpu_seconds_total{cpu="1",mode="iowait"} 611
+node_cpu_seconds_total{cpu="1",mode="irq"} 392.75
+node_cpu_seconds_total{cpu="1",mode="nice"} 4.17
+node_cpu_seconds_total{cpu="1",mode="softirq"} 251.04
+node_cpu_seconds_total{cpu="1",mode="steal"} 1283.7
+node_cpu_seconds_total{cpu="1",mode="system"} 3193.83
+node_cpu_seconds_total{cpu="1",mode="user"} 3663.59
+node_cpu_seconds_total{cpu="2",mode="idle"} 214035.57
+node_cpu_seconds_total{cpu="2",mode="iowait"} 544.65
+node_cpu_seconds_total{cpu="2",mode="irq"} 362.94
+node_cpu_seconds_total{cpu="2",mode="nice"} 3.48
+node_cpu_seconds_total{cpu="2",mode="softirq"} 250.05
+node_cpu_seconds_total{cpu="2",mode="steal"} 1237.12
+node_cpu_seconds_total{cpu="2",mode="system"} 3213.67
+node_cpu_seconds_total{cpu="2",mode="user"} 3389.02
+node_cpu_seconds_total{cpu="3",mode="idle"} 214214.32
+node_cpu_seconds_total{cpu="3",mode="iowait"} 554.04
+node_cpu_seconds_total{cpu="3",mode="irq"} 365.9
+node_cpu_seconds_total{cpu="3",mode="nice"} 5.58
+node_cpu_seconds_total{cpu="3",mode="softirq"} 267.87
+node_cpu_seconds_total{cpu="3",mode="steal"} 1230.31
+node_cpu_seconds_total{cpu="3",mode="system"} 3105.24
+node_cpu_seconds_total{cpu="3",mode="user"} 3270.11
+# HELP node_disk_io_now The number of I/Os currently in progress.
+# TYPE node_disk_io_now gauge
+node_disk_io_now{device="dm-0"} 0
+node_disk_io_now{device="dm-1"} 0
+node_disk_io_now{device="dm-2"} 0
+node_disk_io_now{device="sda"} 0
+node_disk_io_now{device="sdb"} 0
+node_disk_io_now{device="sdc"} 0
+node_disk_io_now{device="zd0"} 0
+# HELP node_disk_io_time_seconds_total Total seconds spent doing I/Os.
+# TYPE node_disk_io_time_seconds_total counter
+node_disk_io_time_seconds_total{device="dm-0"} 3834.849
+node_disk_io_time_seconds_total{device="dm-1"} 36.385
+node_disk_io_time_seconds_total{device="dm-2"} 240.948
+node_disk_io_time_seconds_total{device="sda"} 0.023
+node_disk_io_time_seconds_total{device="sdb"} 0.098
+node_disk_io_time_seconds_total{device="sdc"} 3663.0860000000002
+node_disk_io_time_seconds_total{device="zd0"} 0.07
+# HELP node_disk_io_time_weighted_seconds_total The weighted # of seconds spent doing I/Os. See https://www.kernel.org/doc/Documentation/iostats.txt.
+# TYPE node_disk_io_time_weighted_seconds_total counter
+node_disk_io_time_weighted_seconds_total{device="dm-0"} 25493.46
+node_disk_io_time_weighted_seconds_total{device="dm-1"} 104.512
+node_disk_io_time_weighted_seconds_total{device="dm-2"} 923.186
+node_disk_io_time_weighted_seconds_total{device="sda"} 0.032
+node_disk_io_time_weighted_seconds_total{device="sdb"} 0.21
+node_disk_io_time_weighted_seconds_total{device="sdc"} 26321.952
+node_disk_io_time_weighted_seconds_total{device="zd0"} 0.07
+# HELP node_disk_read_bytes_total The total number of bytes read successfully.
+# TYPE node_disk_read_bytes_total counter
+node_disk_read_bytes_total{device="dm-0"} 1.6919891968e+10
+node_disk_read_bytes_total{device="dm-1"} 6.540639232e+09
+node_disk_read_bytes_total{device="dm-2"} 5.415558656e+10
+node_disk_read_bytes_total{device="sda"} 3.289088e+06
+node_disk_read_bytes_total{device="sdb"} 8.786432e+06
+node_disk_read_bytes_total{device="sdc"} 1.693488896e+10
+node_disk_read_bytes_total{device="zd0"} 196608
+# HELP node_disk_read_time_seconds_total The total number of milliseconds spent by all reads.
+# TYPE node_disk_read_time_seconds_total counter
+node_disk_read_time_seconds_total{device="dm-0"} 19960.196
+node_disk_read_time_seconds_total{device="dm-1"} 104.505
+node_disk_read_time_seconds_total{device="dm-2"} 922.955
+node_disk_read_time_seconds_total{device="sda"} 0.002
+node_disk_read_time_seconds_total{device="sdb"} 0.064
+node_disk_read_time_seconds_total{device="sdc"} 544.282
+node_disk_read_time_seconds_total{device="zd0"} 0.07
+# HELP node_disk_reads_completed_total The total number of reads completed successfully.
+# TYPE node_disk_reads_completed_total counter
+node_disk_reads_completed_total{device="dm-0"} 774642
+node_disk_reads_completed_total{device="dm-1"} 331983
+node_disk_reads_completed_total{device="dm-2"} 4.844461e+06
+node_disk_reads_completed_total{device="sda"} 353
+node_disk_reads_completed_total{device="sdb"} 2822
+node_disk_reads_completed_total{device="sdc"} 267071
+node_disk_reads_completed_total{device="zd0"} 26
+# HELP node_disk_reads_merged_total The total number of reads merged. See https://www.kernel.org/doc/Documentation/iostats.txt.
+# TYPE node_disk_reads_merged_total counter
+node_disk_reads_merged_total{device="dm-0"} 0
+node_disk_reads_merged_total{device="dm-1"} 0
+node_disk_reads_merged_total{device="dm-2"} 0
+node_disk_reads_merged_total{device="sda"} 0
+node_disk_reads_merged_total{device="sdb"} 0
+node_disk_reads_merged_total{device="sdc"} 910
+node_disk_reads_merged_total{device="zd0"} 0
+# HELP node_disk_write_time_seconds_total This is the total number of seconds spent by all writes.
+# TYPE node_disk_write_time_seconds_total counter
+node_disk_write_time_seconds_total{device="dm-0"} 5529.28
+node_disk_write_time_seconds_total{device="dm-1"} 0
+node_disk_write_time_seconds_total{device="dm-2"} 0
+node_disk_write_time_seconds_total{device="sda"} 0
+node_disk_write_time_seconds_total{device="sdb"} 0
+node_disk_write_time_seconds_total{device="sdc"} 24805.146
+node_disk_write_time_seconds_total{device="zd0"} 0
+# HELP node_disk_writes_completed_total The total number of writes completed successfully.
+# TYPE node_disk_writes_completed_total counter
+node_disk_writes_completed_total{device="dm-0"} 5.076644e+06
+node_disk_writes_completed_total{device="dm-1"} 0
+node_disk_writes_completed_total{device="dm-2"} 0
+node_disk_writes_completed_total{device="sda"} 0
+node_disk_writes_completed_total{device="sdb"} 0
+node_disk_writes_completed_total{device="sdc"} 5.536019e+06
+node_disk_writes_completed_total{device="zd0"} 0
+# HELP node_disk_writes_merged_total The number of writes merged. See https://www.kernel.org/doc/Documentation/iostats.txt.
+# TYPE node_disk_writes_merged_total counter
+node_disk_writes_merged_total{device="dm-0"} 0
+node_disk_writes_merged_total{device="dm-1"} 0
+node_disk_writes_merged_total{device="dm-2"} 0
+node_disk_writes_merged_total{device="sda"} 0
+node_disk_writes_merged_total{device="sdb"} 0
+node_disk_writes_merged_total{device="sdc"} 75408
+node_disk_writes_merged_total{device="zd0"} 0
+# HELP node_disk_written_bytes_total The total number of bytes written successfully.
+# TYPE node_disk_written_bytes_total counter
+node_disk_written_bytes_total{device="dm-0"} 1.43326687232e+11
+node_disk_written_bytes_total{device="dm-1"} 0
+node_disk_written_bytes_total{device="dm-2"} 0
+node_disk_written_bytes_total{device="sda"} 0
+node_disk_written_bytes_total{device="sdb"} 0
+node_disk_written_bytes_total{device="sdc"} 1.43326721024e+11
+node_disk_written_bytes_total{device="zd0"} 0
+# HELP node_entropy_available_bits Bits of available entropy.
+# TYPE node_entropy_available_bits gauge
+node_entropy_available_bits 3701
+# HELP node_exporter_build_info A metric with a constant '1' value labeled by version, revision, branch, and goversion from which node_exporter was built.
+# TYPE node_exporter_build_info gauge
+node_exporter_build_info{branch="HEAD",goversion="go1.9.6",revision="d42bd70f4363dced6b77d8fc311ea57b63387e4f",version="0.16.0"} 1
+# HELP node_filefd_allocated File descriptor statistics: allocated.
+# TYPE node_filefd_allocated gauge
+node_filefd_allocated 12672
+# HELP node_filefd_maximum File descriptor statistics: maximum.
+# TYPE node_filefd_maximum gauge
+node_filefd_maximum 1.585351e+06
+# HELP node_filesystem_avail_bytes Filesystem space available to non-root users in bytes.
+# TYPE node_filesystem_avail_bytes gauge
+node_filesystem_avail_bytes{device="/dev/sdc2",fstype="vfat",mountpoint="/boot/efi"} 1.014992896e+09
+node_filesystem_avail_bytes{device="/dev/sdc3",fstype="ext4",mountpoint="/boot"} 7.09484544e+08
+node_filesystem_avail_bytes{device="fortressworkstation/ROOT/os",fstype="zfs",mountpoint="/"} 4.97948295168e+11
+node_filesystem_avail_bytes{device="fortressworkstation/ROOT/os-borg-2018-12-02",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-uRtWclTBtE"} 4.97948295168e+11
+node_filesystem_avail_bytes{device="fortressworkstation/ROOT/os-borg-2019-01-06",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-1lUku9wUmv"} 4.97948295168e+11
+node_filesystem_avail_bytes{device="fortressworkstation/ROOT/os-borg-2019-01-23",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-bF2DolWWag"} 4.97948295168e+11
+node_filesystem_avail_bytes{device="fortressworkstation/ROOT/os-borg-2019-02-03",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-1LVq6UOPBe"} 4.97948295168e+11
+node_filesystem_avail_bytes{device="fortressworkstation/ROOT/os-borg-2019-02-06",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-IEDpbEYFIT"} 4.97948295168e+11
+node_filesystem_avail_bytes{device="tmpfs",fstype="tmpfs",mountpoint="/run"} 8.146743296e+09
+node_filesystem_avail_bytes{device="tmpfs",fstype="tmpfs",mountpoint="/run/user/1000"} 1.63024896e+09
+node_filesystem_avail_bytes{device="tmpfs",fstype="tmpfs",mountpoint="/tmp"} 8.15128576e+09
+node_filesystem_avail_bytes{device="xenstore",fstype="tmpfs",mountpoint="/var/lib/xenstored"} 8.150700032e+09
+# HELP node_filesystem_device_error Whether an error occurred while getting statistics for the given device.
+# TYPE node_filesystem_device_error gauge
+node_filesystem_device_error{device="/dev/sdc2",fstype="vfat",mountpoint="/boot/efi"} 0
+node_filesystem_device_error{device="/dev/sdc3",fstype="ext4",mountpoint="/boot"} 0
+node_filesystem_device_error{device="fortressworkstation/ROOT/os",fstype="zfs",mountpoint="/"} 0
+node_filesystem_device_error{device="fortressworkstation/ROOT/os-borg-2018-12-02",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-uRtWclTBtE"} 0
+node_filesystem_device_error{device="fortressworkstation/ROOT/os-borg-2019-01-06",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-1lUku9wUmv"} 0
+node_filesystem_device_error{device="fortressworkstation/ROOT/os-borg-2019-01-23",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-bF2DolWWag"} 0
+node_filesystem_device_error{device="fortressworkstation/ROOT/os-borg-2019-02-03",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-1LVq6UOPBe"} 0
+node_filesystem_device_error{device="fortressworkstation/ROOT/os-borg-2019-02-06",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-IEDpbEYFIT"} 0
+node_filesystem_device_error{device="tmpfs",fstype="tmpfs",mountpoint="/run"} 0
+node_filesystem_device_error{device="tmpfs",fstype="tmpfs",mountpoint="/run/user/1000"} 0
+node_filesystem_device_error{device="tmpfs",fstype="tmpfs",mountpoint="/tmp"} 0
+node_filesystem_device_error{device="xenstore",fstype="tmpfs",mountpoint="/var/lib/xenstored"} 0
+# HELP node_filesystem_files Filesystem total file nodes.
+# TYPE node_filesystem_files gauge
+node_filesystem_files{device="/dev/sdc2",fstype="vfat",mountpoint="/boot/efi"} 0
+node_filesystem_files{device="/dev/sdc3",fstype="ext4",mountpoint="/boot"} 65536
+node_filesystem_files{device="fortressworkstation/ROOT/os",fstype="zfs",mountpoint="/"} 9.72825741e+08
+node_filesystem_files{device="fortressworkstation/ROOT/os-borg-2018-12-02",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-uRtWclTBtE"} 9.72822784e+08
+node_filesystem_files{device="fortressworkstation/ROOT/os-borg-2019-01-06",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-1lUku9wUmv"} 9.72822798e+08
+node_filesystem_files{device="fortressworkstation/ROOT/os-borg-2019-01-23",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-bF2DolWWag"} 9.72825679e+08
+node_filesystem_files{device="fortressworkstation/ROOT/os-borg-2019-02-03",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-1LVq6UOPBe"} 9.72825712e+08
+node_filesystem_files{device="fortressworkstation/ROOT/os-borg-2019-02-06",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-IEDpbEYFIT"} 9.72825722e+08
+node_filesystem_files{device="tmpfs",fstype="tmpfs",mountpoint="/run"} 1.990065e+06
+node_filesystem_files{device="tmpfs",fstype="tmpfs",mountpoint="/run/user/1000"} 1.810383e+06
+node_filesystem_files{device="tmpfs",fstype="tmpfs",mountpoint="/tmp"} 1.990065e+06
+node_filesystem_files{device="xenstore",fstype="tmpfs",mountpoint="/var/lib/xenstored"} 1.990065e+06
+# HELP node_filesystem_files_free Filesystem total free file nodes.
+# TYPE node_filesystem_files_free gauge
+node_filesystem_files_free{device="/dev/sdc2",fstype="vfat",mountpoint="/boot/efi"} 0
+node_filesystem_files_free{device="/dev/sdc3",fstype="ext4",mountpoint="/boot"} 65120
+node_filesystem_files_free{device="fortressworkstation/ROOT/os",fstype="zfs",mountpoint="/"} 9.72555472e+08
+node_filesystem_files_free{device="fortressworkstation/ROOT/os-borg-2018-12-02",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-uRtWclTBtE"} 9.72555472e+08
+node_filesystem_files_free{device="fortressworkstation/ROOT/os-borg-2019-01-06",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-1lUku9wUmv"} 9.72555472e+08
+node_filesystem_files_free{device="fortressworkstation/ROOT/os-borg-2019-01-23",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-bF2DolWWag"} 9.72555472e+08
+node_filesystem_files_free{device="fortressworkstation/ROOT/os-borg-2019-02-03",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-1LVq6UOPBe"} 9.72555472e+08
+node_filesystem_files_free{device="fortressworkstation/ROOT/os-borg-2019-02-06",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-IEDpbEYFIT"} 9.72555472e+08
+node_filesystem_files_free{device="tmpfs",fstype="tmpfs",mountpoint="/run"} 1.988335e+06
+node_filesystem_files_free{device="tmpfs",fstype="tmpfs",mountpoint="/run/user/1000"} 1.810369e+06
+node_filesystem_files_free{device="tmpfs",fstype="tmpfs",mountpoint="/tmp"} 1.990023e+06
+node_filesystem_files_free{device="xenstore",fstype="tmpfs",mountpoint="/var/lib/xenstored"} 1.990063e+06
+# HELP node_filesystem_free_bytes Filesystem free space in bytes.
+# TYPE node_filesystem_free_bytes gauge
+node_filesystem_free_bytes{device="/dev/sdc2",fstype="vfat",mountpoint="/boot/efi"} 1.014992896e+09
+node_filesystem_free_bytes{device="/dev/sdc3",fstype="ext4",mountpoint="/boot"} 7.79948032e+08
+node_filesystem_free_bytes{device="fortressworkstation/ROOT/os",fstype="zfs",mountpoint="/"} 4.97948295168e+11
+node_filesystem_free_bytes{device="fortressworkstation/ROOT/os-borg-2018-12-02",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-uRtWclTBtE"} 4.97948295168e+11
+node_filesystem_free_bytes{device="fortressworkstation/ROOT/os-borg-2019-01-06",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-1lUku9wUmv"} 4.97948295168e+11
+node_filesystem_free_bytes{device="fortressworkstation/ROOT/os-borg-2019-01-23",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-bF2DolWWag"} 4.97948295168e+11
+node_filesystem_free_bytes{device="fortressworkstation/ROOT/os-borg-2019-02-03",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-1LVq6UOPBe"} 4.97948295168e+11
+node_filesystem_free_bytes{device="fortressworkstation/ROOT/os-borg-2019-02-06",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-IEDpbEYFIT"} 4.97948295168e+11
+node_filesystem_free_bytes{device="tmpfs",fstype="tmpfs",mountpoint="/run"} 8.146743296e+09
+node_filesystem_free_bytes{device="tmpfs",fstype="tmpfs",mountpoint="/run/user/1000"} 1.63024896e+09
+node_filesystem_free_bytes{device="tmpfs",fstype="tmpfs",mountpoint="/tmp"} 8.15128576e+09
+node_filesystem_free_bytes{device="xenstore",fstype="tmpfs",mountpoint="/var/lib/xenstored"} 8.150700032e+09
+# HELP node_filesystem_readonly Filesystem read-only status.
+# TYPE node_filesystem_readonly gauge
+node_filesystem_readonly{device="/dev/sdc2",fstype="vfat",mountpoint="/boot/efi"} 0
+node_filesystem_readonly{device="/dev/sdc3",fstype="ext4",mountpoint="/boot"} 0
+node_filesystem_readonly{device="fortressworkstation/ROOT/os",fstype="zfs",mountpoint="/"} 0
+node_filesystem_readonly{device="fortressworkstation/ROOT/os-borg-2018-12-02",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-uRtWclTBtE"} 0
+node_filesystem_readonly{device="fortressworkstation/ROOT/os-borg-2019-01-06",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-1lUku9wUmv"} 0
+node_filesystem_readonly{device="fortressworkstation/ROOT/os-borg-2019-01-23",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-bF2DolWWag"} 0
+node_filesystem_readonly{device="fortressworkstation/ROOT/os-borg-2019-02-03",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-1LVq6UOPBe"} 0
+node_filesystem_readonly{device="fortressworkstation/ROOT/os-borg-2019-02-06",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-IEDpbEYFIT"} 0
+node_filesystem_readonly{device="tmpfs",fstype="tmpfs",mountpoint="/run"} 0
+node_filesystem_readonly{device="tmpfs",fstype="tmpfs",mountpoint="/run/user/1000"} 0
+node_filesystem_readonly{device="tmpfs",fstype="tmpfs",mountpoint="/tmp"} 0
+node_filesystem_readonly{device="xenstore",fstype="tmpfs",mountpoint="/var/lib/xenstored"} 0
+# HELP node_filesystem_size_bytes Filesystem size in bytes.
+# TYPE node_filesystem_size_bytes gauge
+node_filesystem_size_bytes{device="/dev/sdc2",fstype="vfat",mountpoint="/boot/efi"} 1.068490752e+09
+node_filesystem_size_bytes{device="/dev/sdc3",fstype="ext4",mountpoint="/boot"} 1.02330368e+09
+node_filesystem_size_bytes{device="fortressworkstation/ROOT/os",fstype="zfs",mountpoint="/"} 9.12559570944e+11
+node_filesystem_size_bytes{device="fortressworkstation/ROOT/os-borg-2018-12-02",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-uRtWclTBtE"} 8.97127677952e+11
+node_filesystem_size_bytes{device="fortressworkstation/ROOT/os-borg-2019-01-06",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-1lUku9wUmv"} 9.047801856e+11
+node_filesystem_size_bytes{device="fortressworkstation/ROOT/os-borg-2019-01-23",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-bF2DolWWag"} 9.10835449856e+11
+node_filesystem_size_bytes{device="fortressworkstation/ROOT/os-borg-2019-02-03",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-1LVq6UOPBe"} 9.15508690944e+11
+node_filesystem_size_bytes{device="fortressworkstation/ROOT/os-borg-2019-02-06",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-IEDpbEYFIT"} 9.1149500416e+11
+node_filesystem_size_bytes{device="tmpfs",fstype="tmpfs",mountpoint="/run"} 8.15130624e+09
+node_filesystem_size_bytes{device="tmpfs",fstype="tmpfs",mountpoint="/run/user/1000"} 1.630261248e+09
+node_filesystem_size_bytes{device="tmpfs",fstype="tmpfs",mountpoint="/tmp"} 8.15130624e+09
+node_filesystem_size_bytes{device="xenstore",fstype="tmpfs",mountpoint="/var/lib/xenstored"} 8.15130624e+09
+# HELP node_forks_total Total number of forks.
+# TYPE node_forks_total counter
+node_forks_total 1.668213e+06
+# HELP node_hwmon_chip_names Annotation metric for human-readable chip names
+# TYPE node_hwmon_chip_names gauge
+node_hwmon_chip_names{chip="acpitz",chip_name="acpitz"} 1
+node_hwmon_chip_names{chip="platform_coretemp_0",chip_name="coretemp"} 1
+# HELP node_hwmon_sensor_label Label for given chip and sensor
+# TYPE node_hwmon_sensor_label gauge
+node_hwmon_sensor_label{chip="platform_coretemp_0",label="core_0",sensor="temp2"} 1
+node_hwmon_sensor_label{chip="platform_coretemp_0",label="core_1",sensor="temp3"} 1
+node_hwmon_sensor_label{chip="platform_coretemp_0",label="core_2",sensor="temp4"} 1
+node_hwmon_sensor_label{chip="platform_coretemp_0",label="core_3",sensor="temp5"} 1
+node_hwmon_sensor_label{chip="platform_coretemp_0",label="package_id_0",sensor="temp1"} 1
+# HELP node_hwmon_temp_celsius Hardware monitor for temperature (input)
+# TYPE node_hwmon_temp_celsius gauge
+node_hwmon_temp_celsius{chip="acpitz",sensor="temp1"} 27.8
+node_hwmon_temp_celsius{chip="acpitz",sensor="temp2"} 29.8
+node_hwmon_temp_celsius{chip="acpitz",sensor="temp3"} 57
+node_hwmon_temp_celsius{chip="platform_coretemp_0",sensor="temp1"} 56
+node_hwmon_temp_celsius{chip="platform_coretemp_0",sensor="temp2"} 56
+node_hwmon_temp_celsius{chip="platform_coretemp_0",sensor="temp3"} 56
+node_hwmon_temp_celsius{chip="platform_coretemp_0",sensor="temp4"} 55
+node_hwmon_temp_celsius{chip="platform_coretemp_0",sensor="temp5"} 56
+# HELP node_hwmon_temp_crit_alarm_celsius Hardware monitor for temperature (crit_alarm)
+# TYPE node_hwmon_temp_crit_alarm_celsius gauge
+node_hwmon_temp_crit_alarm_celsius{chip="platform_coretemp_0",sensor="temp1"} 0
+node_hwmon_temp_crit_alarm_celsius{chip="platform_coretemp_0",sensor="temp2"} 0
+node_hwmon_temp_crit_alarm_celsius{chip="platform_coretemp_0",sensor="temp3"} 0
+node_hwmon_temp_crit_alarm_celsius{chip="platform_coretemp_0",sensor="temp4"} 0
+node_hwmon_temp_crit_alarm_celsius{chip="platform_coretemp_0",sensor="temp5"} 0
+# HELP node_hwmon_temp_crit_celsius Hardware monitor for temperature (crit)
+# TYPE node_hwmon_temp_crit_celsius gauge
+node_hwmon_temp_crit_celsius{chip="acpitz",sensor="temp1"} 105
+node_hwmon_temp_crit_celsius{chip="acpitz",sensor="temp2"} 105
+node_hwmon_temp_crit_celsius{chip="acpitz",sensor="temp3"} 100
+node_hwmon_temp_crit_celsius{chip="platform_coretemp_0",sensor="temp1"} 100
+node_hwmon_temp_crit_celsius{chip="platform_coretemp_0",sensor="temp2"} 100
+node_hwmon_temp_crit_celsius{chip="platform_coretemp_0",sensor="temp3"} 100
+node_hwmon_temp_crit_celsius{chip="platform_coretemp_0",sensor="temp4"} 100
+node_hwmon_temp_crit_celsius{chip="platform_coretemp_0",sensor="temp5"} 100
+# HELP node_hwmon_temp_max_celsius Hardware monitor for temperature (max)
+# TYPE node_hwmon_temp_max_celsius gauge
+node_hwmon_temp_max_celsius{chip="platform_coretemp_0",sensor="temp1"} 84
+node_hwmon_temp_max_celsius{chip="platform_coretemp_0",sensor="temp2"} 84
+node_hwmon_temp_max_celsius{chip="platform_coretemp_0",sensor="temp3"} 84
+node_hwmon_temp_max_celsius{chip="platform_coretemp_0",sensor="temp4"} 84
+node_hwmon_temp_max_celsius{chip="platform_coretemp_0",sensor="temp5"} 84
+# HELP node_intr_total Total number of interrupts serviced.
+# TYPE node_intr_total counter
+node_intr_total 9.96629085e+08
+# HELP node_load1 1m load average.
+# TYPE node_load1 gauge
+node_load1 0.69
+# HELP node_load15 15m load average.
+# TYPE node_load15 gauge
+node_load15 0.49
+# HELP node_load5 5m load average.
+# TYPE node_load5 gauge
+node_load5 0.53
+# HELP node_logind_sessions Number of sessions registered in logind.
+# TYPE node_logind_sessions gauge
+node_logind_sessions{class="background",remote="false",seat="",type="mir"} 0
+node_logind_sessions{class="background",remote="false",seat="",type="other"} 0
+node_logind_sessions{class="background",remote="false",seat="",type="tty"} 0
+node_logind_sessions{class="background",remote="false",seat="",type="unspecified"} 0
+node_logind_sessions{class="background",remote="false",seat="",type="wayland"} 0
+node_logind_sessions{class="background",remote="false",seat="",type="web"} 0
+node_logind_sessions{class="background",remote="false",seat="",type="x11"} 0
+node_logind_sessions{class="background",remote="false",seat="seat0",type="mir"} 0
+node_logind_sessions{class="background",remote="false",seat="seat0",type="other"} 0
+node_logind_sessions{class="background",remote="false",seat="seat0",type="tty"} 0
+node_logind_sessions{class="background",remote="false",seat="seat0",type="unspecified"} 0
+node_logind_sessions{class="background",remote="false",seat="seat0",type="wayland"} 0
+node_logind_sessions{class="background",remote="false",seat="seat0",type="web"} 0
+node_logind_sessions{class="background",remote="false",seat="seat0",type="x11"} 0
+node_logind_sessions{class="background",remote="true",seat="",type="mir"} 0
+node_logind_sessions{class="background",remote="true",seat="",type="other"} 0
+node_logind_sessions{class="background",remote="true",seat="",type="tty"} 0
+node_logind_sessions{class="background",remote="true",seat="",type="unspecified"} 0
+node_logind_sessions{class="background",remote="true",seat="",type="wayland"} 0
+node_logind_sessions{class="background",remote="true",seat="",type="web"} 0
+node_logind_sessions{class="background",remote="true",seat="",type="x11"} 0
+node_logind_sessions{class="background",remote="true",seat="seat0",type="mir"} 0
+node_logind_sessions{class="background",remote="true",seat="seat0",type="other"} 0
+node_logind_sessions{class="background",remote="true",seat="seat0",type="tty"} 0
+node_logind_sessions{class="background",remote="true",seat="seat0",type="unspecified"} 0
+node_logind_sessions{class="background",remote="true",seat="seat0",type="wayland"} 0
+node_logind_sessions{class="background",remote="true",seat="seat0",type="web"} 0
+node_logind_sessions{class="background",remote="true",seat="seat0",type="x11"} 0
+node_logind_sessions{class="greeter",remote="false",seat="",type="mir"} 0
+node_logind_sessions{class="greeter",remote="false",seat="",type="other"} 0
+node_logind_sessions{class="greeter",remote="false",seat="",type="tty"} 0
+node_logind_sessions{class="greeter",remote="false",seat="",type="unspecified"} 0
+node_logind_sessions{class="greeter",remote="false",seat="",type="wayland"} 0
+node_logind_sessions{class="greeter",remote="false",seat="",type="web"} 0
+node_logind_sessions{class="greeter",remote="false",seat="",type="x11"} 0
+node_logind_sessions{class="greeter",remote="false",seat="seat0",type="mir"} 0
+node_logind_sessions{class="greeter",remote="false",seat="seat0",type="other"} 0
+node_logind_sessions{class="greeter",remote="false",seat="seat0",type="tty"} 0
+node_logind_sessions{class="greeter",remote="false",seat="seat0",type="unspecified"} 0
+node_logind_sessions{class="greeter",remote="false",seat="seat0",type="wayland"} 0
+node_logind_sessions{class="greeter",remote="false",seat="seat0",type="web"} 0
+node_logind_sessions{class="greeter",remote="false",seat="seat0",type="x11"} 0
+node_logind_sessions{class="greeter",remote="true",seat="",type="mir"} 0
+node_logind_sessions{class="greeter",remote="true",seat="",type="other"} 0
+node_logind_sessions{class="greeter",remote="true",seat="",type="tty"} 0
+node_logind_sessions{class="greeter",remote="true",seat="",type="unspecified"} 0
+node_logind_sessions{class="greeter",remote="true",seat="",type="wayland"} 0
+node_logind_sessions{class="greeter",remote="true",seat="",type="web"} 0
+node_logind_sessions{class="greeter",remote="true",seat="",type="x11"} 0
+node_logind_sessions{class="greeter",remote="true",seat="seat0",type="mir"} 0
+node_logind_sessions{class="greeter",remote="true",seat="seat0",type="other"} 0
+node_logind_sessions{class="greeter",remote="true",seat="seat0",type="tty"} 0
+node_logind_sessions{class="greeter",remote="true",seat="seat0",type="unspecified"} 0
+node_logind_sessions{class="greeter",remote="true",seat="seat0",type="wayland"} 0
+node_logind_sessions{class="greeter",remote="true",seat="seat0",type="web"} 0
+node_logind_sessions{class="greeter",remote="true",seat="seat0",type="x11"} 0
+node_logind_sessions{class="lock-screen",remote="false",seat="",type="mir"} 0
+node_logind_sessions{class="lock-screen",remote="false",seat="",type="other"} 0
+node_logind_sessions{class="lock-screen",remote="false",seat="",type="tty"} 0
+node_logind_sessions{class="lock-screen",remote="false",seat="",type="unspecified"} 0
+node_logind_sessions{class="lock-screen",remote="false",seat="",type="wayland"} 0
+node_logind_sessions{class="lock-screen",remote="false",seat="",type="web"} 0
+node_logind_sessions{class="lock-screen",remote="false",seat="",type="x11"} 0
+node_logind_sessions{class="lock-screen",remote="false",seat="seat0",type="mir"} 0
+node_logind_sessions{class="lock-screen",remote="false",seat="seat0",type="other"} 0
+node_logind_sessions{class="lock-screen",remote="false",seat="seat0",type="tty"} 0
+node_logind_sessions{class="lock-screen",remote="false",seat="seat0",type="unspecified"} 0
+node_logind_sessions{class="lock-screen",remote="false",seat="seat0",type="wayland"} 0
+node_logind_sessions{class="lock-screen",remote="false",seat="seat0",type="web"} 0
+node_logind_sessions{class="lock-screen",remote="false",seat="seat0",type="x11"} 0
+node_logind_sessions{class="lock-screen",remote="true",seat="",type="mir"} 0
+node_logind_sessions{class="lock-screen",remote="true",seat="",type="other"} 0
+node_logind_sessions{class="lock-screen",remote="true",seat="",type="tty"} 0
+node_logind_sessions{class="lock-screen",remote="true",seat="",type="unspecified"} 0
+node_logind_sessions{class="lock-screen",remote="true",seat="",type="wayland"} 0
+node_logind_sessions{class="lock-screen",remote="true",seat="",type="web"} 0
+node_logind_sessions{class="lock-screen",remote="true",seat="",type="x11"} 0
+node_logind_sessions{class="lock-screen",remote="true",seat="seat0",type="mir"} 0
+node_logind_sessions{class="lock-screen",remote="true",seat="seat0",type="other"} 0
+node_logind_sessions{class="lock-screen",remote="true",seat="seat0",type="tty"} 0
+node_logind_sessions{class="lock-screen",remote="true",seat="seat0",type="unspecified"} 0
+node_logind_sessions{class="lock-screen",remote="true",seat="seat0",type="wayland"} 0
+node_logind_sessions{class="lock-screen",remote="true",seat="seat0",type="web"} 0
+node_logind_sessions{class="lock-screen",remote="true",seat="seat0",type="x11"} 0
+node_logind_sessions{class="other",remote="false",seat="",type="mir"} 0
+node_logind_sessions{class="other",remote="false",seat="",type="other"} 0
+node_logind_sessions{class="other",remote="false",seat="",type="tty"} 0
+node_logind_sessions{class="other",remote="false",seat="",type="unspecified"} 0
+node_logind_sessions{class="other",remote="false",seat="",type="wayland"} 0
+node_logind_sessions{class="other",remote="false",seat="",type="web"} 0
+node_logind_sessions{class="other",remote="false",seat="",type="x11"} 0
+node_logind_sessions{class="other",remote="false",seat="seat0",type="mir"} 0
+node_logind_sessions{class="other",remote="false",seat="seat0",type="other"} 0
+node_logind_sessions{class="other",remote="false",seat="seat0",type="tty"} 0
+node_logind_sessions{class="other",remote="false",seat="seat0",type="unspecified"} 0
+node_logind_sessions{class="other",remote="false",seat="seat0",type="wayland"} 0
+node_logind_sessions{class="other",remote="false",seat="seat0",type="web"} 0
+node_logind_sessions{class="other",remote="false",seat="seat0",type="x11"} 0
+node_logind_sessions{class="other",remote="true",seat="",type="mir"} 0
+node_logind_sessions{class="other",remote="true",seat="",type="other"} 0
+node_logind_sessions{class="other",remote="true",seat="",type="tty"} 0
+node_logind_sessions{class="other",remote="true",seat="",type="unspecified"} 0
+node_logind_sessions{class="other",remote="true",seat="",type="wayland"} 0
+node_logind_sessions{class="other",remote="true",seat="",type="web"} 0
+node_logind_sessions{class="other",remote="true",seat="",type="x11"} 0
+node_logind_sessions{class="other",remote="true",seat="seat0",type="mir"} 0
+node_logind_sessions{class="other",remote="true",seat="seat0",type="other"} 0
+node_logind_sessions{class="other",remote="true",seat="seat0",type="tty"} 0
+node_logind_sessions{class="other",remote="true",seat="seat0",type="unspecified"} 0
+node_logind_sessions{class="other",remote="true",seat="seat0",type="wayland"} 0
+node_logind_sessions{class="other",remote="true",seat="seat0",type="web"} 0
+node_logind_sessions{class="other",remote="true",seat="seat0",type="x11"} 0
+node_logind_sessions{class="user",remote="false",seat="",type="mir"} 0
+node_logind_sessions{class="user",remote="false",seat="",type="other"} 0
+node_logind_sessions{class="user",remote="false",seat="",type="tty"} 0
+node_logind_sessions{class="user",remote="false",seat="",type="unspecified"} 0
+node_logind_sessions{class="user",remote="false",seat="",type="wayland"} 0
+node_logind_sessions{class="user",remote="false",seat="",type="web"} 0
+node_logind_sessions{class="user",remote="false",seat="",type="x11"} 0
+node_logind_sessions{class="user",remote="false",seat="seat0",type="mir"} 0
+node_logind_sessions{class="user",remote="false",seat="seat0",type="other"} 0
+node_logind_sessions{class="user",remote="false",seat="seat0",type="tty"} 0
+node_logind_sessions{class="user",remote="false",seat="seat0",type="unspecified"} 0
+node_logind_sessions{class="user",remote="false",seat="seat0",type="wayland"} 0
+node_logind_sessions{class="user",remote="false",seat="seat0",type="web"} 0
+node_logind_sessions{class="user",remote="false",seat="seat0",type="x11"} 1
+node_logind_sessions{class="user",remote="true",seat="",type="mir"} 0
+node_logind_sessions{class="user",remote="true",seat="",type="other"} 0
+node_logind_sessions{class="user",remote="true",seat="",type="tty"} 0
+node_logind_sessions{class="user",remote="true",seat="",type="unspecified"} 0
+node_logind_sessions{class="user",remote="true",seat="",type="wayland"} 0
+node_logind_sessions{class="user",remote="true",seat="",type="web"} 0
+node_logind_sessions{class="user",remote="true",seat="",type="x11"} 0
+node_logind_sessions{class="user",remote="true",seat="seat0",type="mir"} 0
+node_logind_sessions{class="user",remote="true",seat="seat0",type="other"} 0
+node_logind_sessions{class="user",remote="true",seat="seat0",type="tty"} 0
+node_logind_sessions{class="user",remote="true",seat="seat0",type="unspecified"} 0
+node_logind_sessions{class="user",remote="true",seat="seat0",type="wayland"} 0
+node_logind_sessions{class="user",remote="true",seat="seat0",type="web"} 0
+node_logind_sessions{class="user",remote="true",seat="seat0",type="x11"} 0
+# HELP node_memory_Active_anon_bytes Memory information field Active_anon_bytes.
+# TYPE node_memory_Active_anon_bytes gauge
+node_memory_Active_anon_bytes 1.153007616e+09
+# HELP node_memory_Active_bytes Memory information field Active_bytes.
+# TYPE node_memory_Active_bytes gauge
+node_memory_Active_bytes 1.287778304e+09
+# HELP node_memory_Active_file_bytes Memory information field Active_file_bytes.
+# TYPE node_memory_Active_file_bytes gauge
+node_memory_Active_file_bytes 1.34770688e+08
+# HELP node_memory_AnonHugePages_bytes Memory information field AnonHugePages_bytes.
+# TYPE node_memory_AnonHugePages_bytes gauge
+node_memory_AnonHugePages_bytes 0
+# HELP node_memory_AnonPages_bytes Memory information field AnonPages_bytes.
+# TYPE node_memory_AnonPages_bytes gauge
+node_memory_AnonPages_bytes 8.60209152e+08
+# HELP node_memory_Bounce_bytes Memory information field Bounce_bytes.
+# TYPE node_memory_Bounce_bytes gauge
+node_memory_Bounce_bytes 0
+# HELP node_memory_Buffers_bytes Memory information field Buffers_bytes.
+# TYPE node_memory_Buffers_bytes gauge
+node_memory_Buffers_bytes 3.7888e+06
+# HELP node_memory_Cached_bytes Memory information field Cached_bytes.
+# TYPE node_memory_Cached_bytes gauge
+node_memory_Cached_bytes 1.190363136e+09
+# HELP node_memory_CmaFree_bytes Memory information field CmaFree_bytes.
+# TYPE node_memory_CmaFree_bytes gauge
+node_memory_CmaFree_bytes 0
+# HELP node_memory_CmaTotal_bytes Memory information field CmaTotal_bytes.
+# TYPE node_memory_CmaTotal_bytes gauge
+node_memory_CmaTotal_bytes 0
+# HELP node_memory_CommitLimit_bytes Memory information field CommitLimit_bytes.
+# TYPE node_memory_CommitLimit_bytes gauge
+node_memory_CommitLimit_bytes 3.75277568e+09
+# HELP node_memory_Committed_AS_bytes Memory information field Committed_AS_bytes.
+# TYPE node_memory_Committed_AS_bytes gauge
+node_memory_Committed_AS_bytes 2.91987456e+09
+# HELP node_memory_DirectMap2M_bytes Memory information field DirectMap2M_bytes.
+# TYPE node_memory_DirectMap2M_bytes gauge
+node_memory_DirectMap2M_bytes 0
+# HELP node_memory_DirectMap4k_bytes Memory information field DirectMap4k_bytes.
+# TYPE node_memory_DirectMap4k_bytes gauge
+node_memory_DirectMap4k_bytes 1.7095675904e+10
+# HELP node_memory_Dirty_bytes Memory information field Dirty_bytes.
+# TYPE node_memory_Dirty_bytes gauge
+node_memory_Dirty_bytes 98304
+# HELP node_memory_HardwareCorrupted_bytes Memory information field HardwareCorrupted_bytes.
+# TYPE node_memory_HardwareCorrupted_bytes gauge
+node_memory_HardwareCorrupted_bytes 0
+# HELP node_memory_Inactive_anon_bytes Memory information field Inactive_anon_bytes.
+# TYPE node_memory_Inactive_anon_bytes gauge
+node_memory_Inactive_anon_bytes 6.13859328e+08
+# HELP node_memory_Inactive_bytes Memory information field Inactive_bytes.
+# TYPE node_memory_Inactive_bytes gauge
+node_memory_Inactive_bytes 7.66242816e+08
+# HELP node_memory_Inactive_file_bytes Memory information field Inactive_file_bytes.
+# TYPE node_memory_Inactive_file_bytes gauge
+node_memory_Inactive_file_bytes 1.52383488e+08
+# HELP node_memory_KernelStack_bytes Memory information field KernelStack_bytes.
+# TYPE node_memory_KernelStack_bytes gauge
+node_memory_KernelStack_bytes 9.797632e+06
+# HELP node_memory_Mapped_bytes Memory information field Mapped_bytes.
+# TYPE node_memory_Mapped_bytes gauge
+node_memory_Mapped_bytes 4.18840576e+08
+# HELP node_memory_MemAvailable_bytes Memory information field MemAvailable_bytes.
+# TYPE node_memory_MemAvailable_bytes gauge
+node_memory_MemAvailable_bytes 6.44476928e+08
+# HELP node_memory_MemFree_bytes Memory information field MemFree_bytes.
+# TYPE node_memory_MemFree_bytes gauge
+node_memory_MemFree_bytes 4.81202176e+08
+# HELP node_memory_MemTotal_bytes Memory information field MemTotal_bytes.
+# TYPE node_memory_MemTotal_bytes gauge
+node_memory_MemTotal_bytes 5.358075904e+09
+# HELP node_memory_Mlocked_bytes Memory information field Mlocked_bytes.
+# TYPE node_memory_Mlocked_bytes gauge
+node_memory_Mlocked_bytes 335872
+# HELP node_memory_NFS_Unstable_bytes Memory information field NFS_Unstable_bytes.
+# TYPE node_memory_NFS_Unstable_bytes gauge
+node_memory_NFS_Unstable_bytes 0
+# HELP node_memory_PageTables_bytes Memory information field PageTables_bytes.
+# TYPE node_memory_PageTables_bytes gauge
+node_memory_PageTables_bytes 4.6309376e+07
+# HELP node_memory_SReclaimable_bytes Memory information field SReclaimable_bytes.
+# TYPE node_memory_SReclaimable_bytes gauge
+node_memory_SReclaimable_bytes 4.5142016e+07
+# HELP node_memory_SUnreclaim_bytes Memory information field SUnreclaim_bytes.
+# TYPE node_memory_SUnreclaim_bytes gauge
+node_memory_SUnreclaim_bytes 2.98688512e+08
+# HELP node_memory_ShmemHugePages_bytes Memory information field ShmemHugePages_bytes.
+# TYPE node_memory_ShmemHugePages_bytes gauge
+node_memory_ShmemHugePages_bytes 0
+# HELP node_memory_ShmemPmdMapped_bytes Memory information field ShmemPmdMapped_bytes.
+# TYPE node_memory_ShmemPmdMapped_bytes gauge
+node_memory_ShmemPmdMapped_bytes 0
+# HELP node_memory_Shmem_bytes Memory information field Shmem_bytes.
+# TYPE node_memory_Shmem_bytes gauge
+node_memory_Shmem_bytes 9.07001856e+08
+# HELP node_memory_Slab_bytes Memory information field Slab_bytes.
+# TYPE node_memory_Slab_bytes gauge
+node_memory_Slab_bytes 3.43830528e+08
+# HELP node_memory_SwapCached_bytes Memory information field SwapCached_bytes.
+# TYPE node_memory_SwapCached_bytes gauge
+node_memory_SwapCached_bytes 0
+# HELP node_memory_SwapFree_bytes Memory information field SwapFree_bytes.
+# TYPE node_memory_SwapFree_bytes gauge
+node_memory_SwapFree_bytes 1.073737728e+09
+# HELP node_memory_SwapTotal_bytes Memory information field SwapTotal_bytes.
+# TYPE node_memory_SwapTotal_bytes gauge
+node_memory_SwapTotal_bytes 1.073737728e+09
+# HELP node_memory_Unevictable_bytes Memory information field Unevictable_bytes.
+# TYPE node_memory_Unevictable_bytes gauge
+node_memory_Unevictable_bytes 335872
+# HELP node_memory_VmallocChunk_bytes Memory information field VmallocChunk_bytes.
+# TYPE node_memory_VmallocChunk_bytes gauge
+node_memory_VmallocChunk_bytes 0
+# HELP node_memory_VmallocTotal_bytes Memory information field VmallocTotal_bytes.
+# TYPE node_memory_VmallocTotal_bytes gauge
+node_memory_VmallocTotal_bytes 3.5184372087808e+13
+# HELP node_memory_VmallocUsed_bytes Memory information field VmallocUsed_bytes.
+# TYPE node_memory_VmallocUsed_bytes gauge
+node_memory_VmallocUsed_bytes 0
+# HELP node_memory_WritebackTmp_bytes Memory information field WritebackTmp_bytes.
+# TYPE node_memory_WritebackTmp_bytes gauge
+node_memory_WritebackTmp_bytes 0
+# HELP node_memory_Writeback_bytes Memory information field Writeback_bytes.
+# TYPE node_memory_Writeback_bytes gauge
+node_memory_Writeback_bytes 0
+# HELP node_netstat_Icmp6_InErrors Statistic Icmp6InErrors.
+# TYPE node_netstat_Icmp6_InErrors untyped
+node_netstat_Icmp6_InErrors 0
+# HELP node_netstat_Icmp6_InMsgs Statistic Icmp6InMsgs.
+# TYPE node_netstat_Icmp6_InMsgs untyped
+node_netstat_Icmp6_InMsgs 0
+# HELP node_netstat_Icmp6_OutMsgs Statistic Icmp6OutMsgs.
+# TYPE node_netstat_Icmp6_OutMsgs untyped
+node_netstat_Icmp6_OutMsgs 0
+# HELP node_netstat_Icmp_InErrors Statistic IcmpInErrors.
+# TYPE node_netstat_Icmp_InErrors untyped
+node_netstat_Icmp_InErrors 0
+# HELP node_netstat_Icmp_InMsgs Statistic IcmpInMsgs.
+# TYPE node_netstat_Icmp_InMsgs untyped
+node_netstat_Icmp_InMsgs 112
+# HELP node_netstat_Icmp_OutMsgs Statistic IcmpOutMsgs.
+# TYPE node_netstat_Icmp_OutMsgs untyped
+node_netstat_Icmp_OutMsgs 112
+# HELP node_netstat_Ip6_InOctets Statistic Ip6InOctets.
+# TYPE node_netstat_Ip6_InOctets untyped
+node_netstat_Ip6_InOctets 4.671846e+06
+# HELP node_netstat_Ip6_OutOctets Statistic Ip6OutOctets.
+# TYPE node_netstat_Ip6_OutOctets untyped
+node_netstat_Ip6_OutOctets 4.671846e+06
+# HELP node_netstat_IpExt_InOctets Statistic IpExtInOctets.
+# TYPE node_netstat_IpExt_InOctets untyped
+node_netstat_IpExt_InOctets 17024
+# HELP node_netstat_IpExt_OutOctets Statistic IpExtOutOctets.
+# TYPE node_netstat_IpExt_OutOctets untyped
+node_netstat_IpExt_OutOctets 17024
+# HELP node_netstat_Ip_Forwarding Statistic IpForwarding.
+# TYPE node_netstat_Ip_Forwarding untyped
+node_netstat_Ip_Forwarding 2
+# HELP node_netstat_TcpExt_ListenDrops Statistic TcpExtListenDrops.
+# TYPE node_netstat_TcpExt_ListenDrops untyped
+node_netstat_TcpExt_ListenDrops 0
+# HELP node_netstat_TcpExt_ListenOverflows Statistic TcpExtListenOverflows.
+# TYPE node_netstat_TcpExt_ListenOverflows untyped
+node_netstat_TcpExt_ListenOverflows 0
+# HELP node_netstat_TcpExt_SyncookiesFailed Statistic TcpExtSyncookiesFailed.
+# TYPE node_netstat_TcpExt_SyncookiesFailed untyped
+node_netstat_TcpExt_SyncookiesFailed 0
+# HELP node_netstat_TcpExt_SyncookiesRecv Statistic TcpExtSyncookiesRecv.
+# TYPE node_netstat_TcpExt_SyncookiesRecv untyped
+node_netstat_TcpExt_SyncookiesRecv 0
+# HELP node_netstat_TcpExt_SyncookiesSent Statistic TcpExtSyncookiesSent.
+# TYPE node_netstat_TcpExt_SyncookiesSent untyped
+node_netstat_TcpExt_SyncookiesSent 0
+# HELP node_netstat_Tcp_ActiveOpens Statistic TcpActiveOpens.
+# TYPE node_netstat_Tcp_ActiveOpens untyped
+node_netstat_Tcp_ActiveOpens 48
+# HELP node_netstat_Tcp_CurrEstab Statistic TcpCurrEstab.
+# TYPE node_netstat_Tcp_CurrEstab untyped
+node_netstat_Tcp_CurrEstab 2
+# HELP node_netstat_Tcp_InErrs Statistic TcpInErrs.
+# TYPE node_netstat_Tcp_InErrs untyped
+node_netstat_Tcp_InErrs 0
+# HELP node_netstat_Tcp_PassiveOpens Statistic TcpPassiveOpens.
+# TYPE node_netstat_Tcp_PassiveOpens untyped
+node_netstat_Tcp_PassiveOpens 48
+# HELP node_netstat_Tcp_RetransSegs Statistic TcpRetransSegs.
+# TYPE node_netstat_Tcp_RetransSegs untyped
+node_netstat_Tcp_RetransSegs 0
+# HELP node_netstat_Udp6_InDatagrams Statistic Udp6InDatagrams.
+# TYPE node_netstat_Udp6_InDatagrams untyped
+node_netstat_Udp6_InDatagrams 0
+# HELP node_netstat_Udp6_InErrors Statistic Udp6InErrors.
+# TYPE node_netstat_Udp6_InErrors untyped
+node_netstat_Udp6_InErrors 0
+# HELP node_netstat_Udp6_NoPorts Statistic Udp6NoPorts.
+# TYPE node_netstat_Udp6_NoPorts untyped
+node_netstat_Udp6_NoPorts 0
+# HELP node_netstat_Udp6_OutDatagrams Statistic Udp6OutDatagrams.
+# TYPE node_netstat_Udp6_OutDatagrams untyped
+node_netstat_Udp6_OutDatagrams 0
+# HELP node_netstat_UdpLite6_InErrors Statistic UdpLite6InErrors.
+# TYPE node_netstat_UdpLite6_InErrors untyped
+node_netstat_UdpLite6_InErrors 0
+# HELP node_netstat_UdpLite_InErrors Statistic UdpLiteInErrors.
+# TYPE node_netstat_UdpLite_InErrors untyped
+node_netstat_UdpLite_InErrors 0
+# HELP node_netstat_Udp_InDatagrams Statistic UdpInDatagrams.
+# TYPE node_netstat_Udp_InDatagrams untyped
+node_netstat_Udp_InDatagrams 0
+# HELP node_netstat_Udp_InErrors Statistic UdpInErrors.
+# TYPE node_netstat_Udp_InErrors untyped
+node_netstat_Udp_InErrors 0
+# HELP node_netstat_Udp_NoPorts Statistic UdpNoPorts.
+# TYPE node_netstat_Udp_NoPorts untyped
+node_netstat_Udp_NoPorts 112
+# HELP node_netstat_Udp_OutDatagrams Statistic UdpOutDatagrams.
+# TYPE node_netstat_Udp_OutDatagrams untyped
+node_netstat_Udp_OutDatagrams 112
+# HELP node_network_receive_bytes_total Network device statistic receive_bytes.
+# TYPE node_network_receive_bytes_total counter
+node_network_receive_bytes_total{device="lo"} 4.68887e+06
+# HELP node_network_receive_compressed_total Network device statistic receive_compressed.
+# TYPE node_network_receive_compressed_total counter
+node_network_receive_compressed_total{device="lo"} 0
+# HELP node_network_receive_drop_total Network device statistic receive_drop.
+# TYPE node_network_receive_drop_total counter
+node_network_receive_drop_total{device="lo"} 0
+# HELP node_network_receive_errs_total Network device statistic receive_errs.
+# TYPE node_network_receive_errs_total counter
+node_network_receive_errs_total{device="lo"} 0
+# HELP node_network_receive_fifo_total Network device statistic receive_fifo.
+# TYPE node_network_receive_fifo_total counter
+node_network_receive_fifo_total{device="lo"} 0
+# HELP node_network_receive_frame_total Network device statistic receive_frame.
+# TYPE node_network_receive_frame_total counter
+node_network_receive_frame_total{device="lo"} 0
+# HELP node_network_receive_multicast_total Network device statistic receive_multicast.
+# TYPE node_network_receive_multicast_total counter
+node_network_receive_multicast_total{device="lo"} 0
+# HELP node_network_receive_packets_total Network device statistic receive_packets.
+# TYPE node_network_receive_packets_total counter
+node_network_receive_packets_total{device="lo"} 887
+# HELP node_network_transmit_bytes_total Network device statistic transmit_bytes.
+# TYPE node_network_transmit_bytes_total counter
+node_network_transmit_bytes_total{device="lo"} 4.68887e+06
+# HELP node_network_transmit_carrier_total Network device statistic transmit_carrier.
+# TYPE node_network_transmit_carrier_total counter
+node_network_transmit_carrier_total{device="lo"} 0
+# HELP node_network_transmit_colls_total Network device statistic transmit_colls.
+# TYPE node_network_transmit_colls_total counter
+node_network_transmit_colls_total{device="lo"} 0
+# HELP node_network_transmit_compressed_total Network device statistic transmit_compressed.
+# TYPE node_network_transmit_compressed_total counter
+node_network_transmit_compressed_total{device="lo"} 0
+# HELP node_network_transmit_drop_total Network device statistic transmit_drop.
+# TYPE node_network_transmit_drop_total counter
+node_network_transmit_drop_total{device="lo"} 0
+# HELP node_network_transmit_errs_total Network device statistic transmit_errs.
+# TYPE node_network_transmit_errs_total counter
+node_network_transmit_errs_total{device="lo"} 0
+# HELP node_network_transmit_fifo_total Network device statistic transmit_fifo.
+# TYPE node_network_transmit_fifo_total counter
+node_network_transmit_fifo_total{device="lo"} 0
+# HELP node_network_transmit_packets_total Network device statistic transmit_packets.
+# TYPE node_network_transmit_packets_total counter
+node_network_transmit_packets_total{device="lo"} 887
+# HELP node_procs_blocked Number of processes blocked waiting for I/O to complete.
+# TYPE node_procs_blocked gauge
+node_procs_blocked 0
+# HELP node_procs_running Number of processes in runnable state.
+# TYPE node_procs_running gauge
+node_procs_running 5
+# HELP node_scrape_collector_duration_seconds node_exporter: Duration of a collector scrape.
+# TYPE node_scrape_collector_duration_seconds gauge
+node_scrape_collector_duration_seconds{collector="arp"} 8.8026e-05
+node_scrape_collector_duration_seconds{collector="bcache"} 0.000715532
+node_scrape_collector_duration_seconds{collector="bonding"} 3.1403e-05
+node_scrape_collector_duration_seconds{collector="conntrack"} 2.6093e-05
+node_scrape_collector_duration_seconds{collector="cpu"} 0.001786459
+node_scrape_collector_duration_seconds{collector="diskstats"} 0.000446506
+node_scrape_collector_duration_seconds{collector="edac"} 4.5127e-05
+node_scrape_collector_duration_seconds{collector="entropy"} 0.00081645
+node_scrape_collector_duration_seconds{collector="filefd"} 0.001278702
+node_scrape_collector_duration_seconds{collector="filesystem"} 0.000706258
+node_scrape_collector_duration_seconds{collector="hwmon"} 0.00439902
+node_scrape_collector_duration_seconds{collector="infiniband"} 4.1688e-05
+node_scrape_collector_duration_seconds{collector="ipvs"} 0.000857522
+node_scrape_collector_duration_seconds{collector="loadavg"} 0.000983753
+node_scrape_collector_duration_seconds{collector="logind"} 0.005167549
+node_scrape_collector_duration_seconds{collector="mdadm"} 4.3994e-05
+node_scrape_collector_duration_seconds{collector="meminfo"} 0.000255098
+node_scrape_collector_duration_seconds{collector="netdev"} 0.000851354
+node_scrape_collector_duration_seconds{collector="netstat"} 0.001204014
+node_scrape_collector_duration_seconds{collector="nfs"} 0.000867684
+node_scrape_collector_duration_seconds{collector="nfsd"} 2.4003e-05
+node_scrape_collector_duration_seconds{collector="sockstat"} 8.9678e-05
+node_scrape_collector_duration_seconds{collector="stat"} 0.000244707
+node_scrape_collector_duration_seconds{collector="textfile"} 0.001285336
+node_scrape_collector_duration_seconds{collector="time"} 0.001245311
+node_scrape_collector_duration_seconds{collector="timex"} 0.000855567
+node_scrape_collector_duration_seconds{collector="uname"} 0.000694399
+node_scrape_collector_duration_seconds{collector="vmstat"} 0.000179363
+node_scrape_collector_duration_seconds{collector="wifi"} 0.002534242
+node_scrape_collector_duration_seconds{collector="xfs"} 0.000727281
+node_scrape_collector_duration_seconds{collector="zfs"} 0.001787605
+# HELP node_scrape_collector_success node_exporter: Whether a collector succeeded.
+# TYPE node_scrape_collector_success gauge
+node_scrape_collector_success{collector="arp"} 1
+node_scrape_collector_success{collector="bcache"} 1
+node_scrape_collector_success{collector="bonding"} 1
+node_scrape_collector_success{collector="conntrack"} 1
+node_scrape_collector_success{collector="cpu"} 1
+node_scrape_collector_success{collector="diskstats"} 1
+node_scrape_collector_success{collector="edac"} 1
+node_scrape_collector_success{collector="entropy"} 1
+node_scrape_collector_success{collector="filefd"} 1
+node_scrape_collector_success{collector="filesystem"} 1
+node_scrape_collector_success{collector="hwmon"} 1
+node_scrape_collector_success{collector="infiniband"} 1
+node_scrape_collector_success{collector="ipvs"} 1
+node_scrape_collector_success{collector="loadavg"} 1
+node_scrape_collector_success{collector="logind"} 1
+node_scrape_collector_success{collector="mdadm"} 1
+node_scrape_collector_success{collector="meminfo"} 1
+node_scrape_collector_success{collector="netdev"} 1
+node_scrape_collector_success{collector="netstat"} 1
+node_scrape_collector_success{collector="nfs"} 1
+node_scrape_collector_success{collector="nfsd"} 1
+node_scrape_collector_success{collector="sockstat"} 1
+node_scrape_collector_success{collector="stat"} 1
+node_scrape_collector_success{collector="textfile"} 1
+node_scrape_collector_success{collector="time"} 1
+node_scrape_collector_success{collector="timex"} 1
+node_scrape_collector_success{collector="uname"} 1
+node_scrape_collector_success{collector="vmstat"} 1
+node_scrape_collector_success{collector="wifi"} 1
+node_scrape_collector_success{collector="xfs"} 1
+node_scrape_collector_success{collector="zfs"} 1
+# HELP node_sockstat_FRAG_inuse Number of FRAG sockets in state inuse.
+# TYPE node_sockstat_FRAG_inuse gauge
+node_sockstat_FRAG_inuse 0
+# HELP node_sockstat_FRAG_memory Number of FRAG sockets in state memory.
+# TYPE node_sockstat_FRAG_memory gauge
+node_sockstat_FRAG_memory 0
+# HELP node_sockstat_RAW_inuse Number of RAW sockets in state inuse.
+# TYPE node_sockstat_RAW_inuse gauge
+node_sockstat_RAW_inuse 0
+# HELP node_sockstat_TCP_alloc Number of TCP sockets in state alloc.
+# TYPE node_sockstat_TCP_alloc gauge
+node_sockstat_TCP_alloc 4
+# HELP node_sockstat_TCP_inuse Number of TCP sockets in state inuse.
+# TYPE node_sockstat_TCP_inuse gauge
+node_sockstat_TCP_inuse 0
+# HELP node_sockstat_TCP_mem Number of TCP sockets in state mem.
+# TYPE node_sockstat_TCP_mem gauge
+node_sockstat_TCP_mem 2
+# HELP node_sockstat_TCP_mem_bytes Number of TCP sockets in state mem_bytes.
+# TYPE node_sockstat_TCP_mem_bytes gauge
+node_sockstat_TCP_mem_bytes 8192
+# HELP node_sockstat_TCP_orphan Number of TCP sockets in state orphan.
+# TYPE node_sockstat_TCP_orphan gauge
+node_sockstat_TCP_orphan 0
+# HELP node_sockstat_TCP_tw Number of TCP sockets in state tw.
+# TYPE node_sockstat_TCP_tw gauge
+node_sockstat_TCP_tw 3
+# HELP node_sockstat_UDPLITE_inuse Number of UDPLITE sockets in state inuse.
+# TYPE node_sockstat_UDPLITE_inuse gauge
+node_sockstat_UDPLITE_inuse 0
+# HELP node_sockstat_UDP_inuse Number of UDP sockets in state inuse.
+# TYPE node_sockstat_UDP_inuse gauge
+node_sockstat_UDP_inuse 2
+# HELP node_sockstat_UDP_mem Number of UDP sockets in state mem.
+# TYPE node_sockstat_UDP_mem gauge
+node_sockstat_UDP_mem 0
+# HELP node_sockstat_UDP_mem_bytes Number of UDP sockets in state mem_bytes.
+# TYPE node_sockstat_UDP_mem_bytes gauge
+node_sockstat_UDP_mem_bytes 0
+# HELP node_sockstat_sockets_used Number of sockets sockets in state used.
+# TYPE node_sockstat_sockets_used gauge
+node_sockstat_sockets_used 662
+# HELP node_textfile_scrape_error 1 if there was an error opening or reading a file, 0 otherwise
+# TYPE node_textfile_scrape_error gauge
+node_textfile_scrape_error 1
+# HELP node_time_seconds System time in seconds since epoch (1970).
+# TYPE node_time_seconds gauge
+node_time_seconds 1.5494563146535447e+09
+# HELP node_timex_estimated_error_seconds Estimated error in seconds.
+# TYPE node_timex_estimated_error_seconds gauge
+node_timex_estimated_error_seconds 16
+# HELP node_timex_frequency_adjustment_ratio Local clock frequency adjustment.
+# TYPE node_timex_frequency_adjustment_ratio gauge
+node_timex_frequency_adjustment_ratio 1
+# HELP node_timex_loop_time_constant Phase-locked loop time constant.
+# TYPE node_timex_loop_time_constant gauge
+node_timex_loop_time_constant 2
+# HELP node_timex_maxerror_seconds Maximum error in seconds.
+# TYPE node_timex_maxerror_seconds gauge
+node_timex_maxerror_seconds 16
+# HELP node_timex_offset_seconds Time offset in between local system and reference clock.
+# TYPE node_timex_offset_seconds gauge
+node_timex_offset_seconds 0
+# HELP node_timex_pps_calibration_total Pulse per second count of calibration intervals.
+# TYPE node_timex_pps_calibration_total counter
+node_timex_pps_calibration_total 0
+# HELP node_timex_pps_error_total Pulse per second count of calibration errors.
+# TYPE node_timex_pps_error_total counter
+node_timex_pps_error_total 0
+# HELP node_timex_pps_frequency_hertz Pulse per second frequency.
+# TYPE node_timex_pps_frequency_hertz gauge
+node_timex_pps_frequency_hertz 0
+# HELP node_timex_pps_jitter_seconds Pulse per second jitter.
+# TYPE node_timex_pps_jitter_seconds gauge
+node_timex_pps_jitter_seconds 0
+# HELP node_timex_pps_jitter_total Pulse per second count of jitter limit exceeded events.
+# TYPE node_timex_pps_jitter_total counter
+node_timex_pps_jitter_total 0
+# HELP node_timex_pps_shift_seconds Pulse per second interval duration.
+# TYPE node_timex_pps_shift_seconds gauge
+node_timex_pps_shift_seconds 0
+# HELP node_timex_pps_stability_exceeded_total Pulse per second count of stability limit exceeded events.
+# TYPE node_timex_pps_stability_exceeded_total counter
+node_timex_pps_stability_exceeded_total 0
+# HELP node_timex_pps_stability_hertz Pulse per second stability, average of recent frequency changes.
+# TYPE node_timex_pps_stability_hertz gauge
+node_timex_pps_stability_hertz 0
+# HELP node_timex_status Value of the status array bits.
+# TYPE node_timex_status gauge
+node_timex_status 64
+# HELP node_timex_sync_status Is clock synchronized to a reliable server (1 = yes, 0 = no).
+# TYPE node_timex_sync_status gauge
+node_timex_sync_status 0
+# HELP node_timex_tai_offset_seconds International Atomic Time (TAI) offset.
+# TYPE node_timex_tai_offset_seconds gauge
+node_timex_tai_offset_seconds 0
+# HELP node_timex_tick_seconds Seconds between clock ticks.
+# TYPE node_timex_tick_seconds gauge
+node_timex_tick_seconds 0.01
+# HELP node_uname_info Labeled system information as provided by the uname system call.
+# TYPE node_uname_info gauge
+node_uname_info{domainname="(none)",machine="x86_64",nodename="dom0",release="4.18.7-3.pvops.qubes.x86_64",sysname="Linux",version="#1 SMP Thu Sep 13 03:51:56 UTC 2018"} 1
+# HELP node_vmstat_oom_kill /proc/vmstat information field oom_kill.
+# TYPE node_vmstat_oom_kill untyped
+node_vmstat_oom_kill 0
+# HELP node_vmstat_pgfault /proc/vmstat information field pgfault.
+# TYPE node_vmstat_pgfault untyped
+node_vmstat_pgfault 4.4836924e+07
+# HELP node_vmstat_pgmajfault /proc/vmstat information field pgmajfault.
+# TYPE node_vmstat_pgmajfault untyped
+node_vmstat_pgmajfault 69251
+# HELP node_vmstat_pgpgin /proc/vmstat information field pgpgin.
+# TYPE node_vmstat_pgpgin untyped
+node_vmstat_pgpgin 8.2935549e+07
+# HELP node_vmstat_pgpgout /proc/vmstat information field pgpgout.
+# TYPE node_vmstat_pgpgout untyped
+node_vmstat_pgpgout 1.86461329e+08
+# HELP node_vmstat_pswpin /proc/vmstat information field pswpin.
+# TYPE node_vmstat_pswpin untyped
+node_vmstat_pswpin 0
+# HELP node_vmstat_pswpout /proc/vmstat information field pswpout.
+# TYPE node_vmstat_pswpout untyped
+node_vmstat_pswpout 0
+# HELP node_zfs_abd_linear_cnt kstat.zfs.misc.abdstats.linear_cnt
+# TYPE node_zfs_abd_linear_cnt untyped
+node_zfs_abd_linear_cnt 7599
+# HELP node_zfs_abd_linear_data_size kstat.zfs.misc.abdstats.linear_data_size
+# TYPE node_zfs_abd_linear_data_size untyped
+node_zfs_abd_linear_data_size 2.7330048e+07
+# HELP node_zfs_abd_scatter_chunk_waste kstat.zfs.misc.abdstats.scatter_chunk_waste
+# TYPE node_zfs_abd_scatter_chunk_waste untyped
+node_zfs_abd_scatter_chunk_waste 30208
+# HELP node_zfs_abd_scatter_cnt kstat.zfs.misc.abdstats.scatter_cnt
+# TYPE node_zfs_abd_scatter_cnt untyped
+node_zfs_abd_scatter_cnt 33636
+# HELP node_zfs_abd_scatter_data_size kstat.zfs.misc.abdstats.scatter_data_size
+# TYPE node_zfs_abd_scatter_data_size untyped
+node_zfs_abd_scatter_data_size 1.90015744e+09
+# HELP node_zfs_abd_scatter_order_0 kstat.zfs.misc.abdstats.scatter_order_0
+# TYPE node_zfs_abd_scatter_order_0 untyped
+node_zfs_abd_scatter_order_0 14365
+# HELP node_zfs_abd_scatter_order_1 kstat.zfs.misc.abdstats.scatter_order_1
+# TYPE node_zfs_abd_scatter_order_1 untyped
+node_zfs_abd_scatter_order_1 15478
+# HELP node_zfs_abd_scatter_order_10 kstat.zfs.misc.abdstats.scatter_order_10
+# TYPE node_zfs_abd_scatter_order_10 untyped
+node_zfs_abd_scatter_order_10 0
+# HELP node_zfs_abd_scatter_order_2 kstat.zfs.misc.abdstats.scatter_order_2
+# TYPE node_zfs_abd_scatter_order_2 untyped
+node_zfs_abd_scatter_order_2 14412
+# HELP node_zfs_abd_scatter_order_3 kstat.zfs.misc.abdstats.scatter_order_3
+# TYPE node_zfs_abd_scatter_order_3 untyped
+node_zfs_abd_scatter_order_3 12654
+# HELP node_zfs_abd_scatter_order_4 kstat.zfs.misc.abdstats.scatter_order_4
+# TYPE node_zfs_abd_scatter_order_4 untyped
+node_zfs_abd_scatter_order_4 8976
+# HELP node_zfs_abd_scatter_order_5 kstat.zfs.misc.abdstats.scatter_order_5
+# TYPE node_zfs_abd_scatter_order_5 untyped
+node_zfs_abd_scatter_order_5 3628
+# HELP node_zfs_abd_scatter_order_6 kstat.zfs.misc.abdstats.scatter_order_6
+# TYPE node_zfs_abd_scatter_order_6 untyped
+node_zfs_abd_scatter_order_6 0
+# HELP node_zfs_abd_scatter_order_7 kstat.zfs.misc.abdstats.scatter_order_7
+# TYPE node_zfs_abd_scatter_order_7 untyped
+node_zfs_abd_scatter_order_7 0
+# HELP node_zfs_abd_scatter_order_8 kstat.zfs.misc.abdstats.scatter_order_8
+# TYPE node_zfs_abd_scatter_order_8 untyped
+node_zfs_abd_scatter_order_8 0
+# HELP node_zfs_abd_scatter_order_9 kstat.zfs.misc.abdstats.scatter_order_9
+# TYPE node_zfs_abd_scatter_order_9 untyped
+node_zfs_abd_scatter_order_9 0
+# HELP node_zfs_abd_scatter_page_alloc_retry kstat.zfs.misc.abdstats.scatter_page_alloc_retry
+# TYPE node_zfs_abd_scatter_page_alloc_retry untyped
+node_zfs_abd_scatter_page_alloc_retry 0
+# HELP node_zfs_abd_scatter_page_multi_chunk kstat.zfs.misc.abdstats.scatter_page_multi_chunk
+# TYPE node_zfs_abd_scatter_page_multi_chunk untyped
+node_zfs_abd_scatter_page_multi_chunk 23723
+# HELP node_zfs_abd_scatter_page_multi_zone kstat.zfs.misc.abdstats.scatter_page_multi_zone
+# TYPE node_zfs_abd_scatter_page_multi_zone untyped
+node_zfs_abd_scatter_page_multi_zone 0
+# HELP node_zfs_abd_scatter_sg_table_retry kstat.zfs.misc.abdstats.scatter_sg_table_retry
+# TYPE node_zfs_abd_scatter_sg_table_retry untyped
+node_zfs_abd_scatter_sg_table_retry 0
+# HELP node_zfs_abd_struct_size kstat.zfs.misc.abdstats.struct_size
+# TYPE node_zfs_abd_struct_size untyped
+node_zfs_abd_struct_size 1.6494e+06
+# HELP node_zfs_arc_access_skip kstat.zfs.misc.arcstats.access_skip
+# TYPE node_zfs_arc_access_skip untyped
+node_zfs_arc_access_skip 21
+# HELP node_zfs_arc_anon_evictable_data kstat.zfs.misc.arcstats.anon_evictable_data
+# TYPE node_zfs_arc_anon_evictable_data untyped
+node_zfs_arc_anon_evictable_data 0
+# HELP node_zfs_arc_anon_evictable_metadata kstat.zfs.misc.arcstats.anon_evictable_metadata
+# TYPE node_zfs_arc_anon_evictable_metadata untyped
+node_zfs_arc_anon_evictable_metadata 0
+# HELP node_zfs_arc_anon_size kstat.zfs.misc.arcstats.anon_size
+# TYPE node_zfs_arc_anon_size untyped
+node_zfs_arc_anon_size 5.617152e+06
+# HELP node_zfs_arc_arc_dnode_limit kstat.zfs.misc.arcstats.arc_dnode_limit
+# TYPE node_zfs_arc_arc_dnode_limit untyped
+node_zfs_arc_arc_dnode_limit 1.61061273e+08
+# HELP node_zfs_arc_arc_loaned_bytes kstat.zfs.misc.arcstats.arc_loaned_bytes
+# TYPE node_zfs_arc_arc_loaned_bytes untyped
+node_zfs_arc_arc_loaned_bytes 0
+# HELP node_zfs_arc_arc_meta_limit kstat.zfs.misc.arcstats.arc_meta_limit
+# TYPE node_zfs_arc_arc_meta_limit untyped
+node_zfs_arc_arc_meta_limit 1.610612736e+09
+# HELP node_zfs_arc_arc_meta_max kstat.zfs.misc.arcstats.arc_meta_max
+# TYPE node_zfs_arc_arc_meta_max untyped
+node_zfs_arc_arc_meta_max 2.0951192e+08
+# HELP node_zfs_arc_arc_meta_min kstat.zfs.misc.arcstats.arc_meta_min
+# TYPE node_zfs_arc_arc_meta_min untyped
+node_zfs_arc_arc_meta_min 1.6777216e+07
+# HELP node_zfs_arc_arc_meta_used kstat.zfs.misc.arcstats.arc_meta_used
+# TYPE node_zfs_arc_arc_meta_used untyped
+node_zfs_arc_arc_meta_used 1.74505776e+08
+# HELP node_zfs_arc_arc_need_free kstat.zfs.misc.arcstats.arc_need_free
+# TYPE node_zfs_arc_arc_need_free untyped
+node_zfs_arc_arc_need_free 0
+# HELP node_zfs_arc_arc_no_grow kstat.zfs.misc.arcstats.arc_no_grow
+# TYPE node_zfs_arc_arc_no_grow untyped
+node_zfs_arc_arc_no_grow 0
+# HELP node_zfs_arc_arc_prune kstat.zfs.misc.arcstats.arc_prune
+# TYPE node_zfs_arc_arc_prune untyped
+node_zfs_arc_arc_prune 0
+# HELP node_zfs_arc_arc_raw_size kstat.zfs.misc.arcstats.arc_raw_size
+# TYPE node_zfs_arc_arc_raw_size untyped
+node_zfs_arc_arc_raw_size 0
+# HELP node_zfs_arc_arc_sys_free kstat.zfs.misc.arcstats.arc_sys_free
+# TYPE node_zfs_arc_arc_sys_free untyped
+node_zfs_arc_arc_sys_free 2.5472832e+08
+# HELP node_zfs_arc_arc_tempreserve kstat.zfs.misc.arcstats.arc_tempreserve
+# TYPE node_zfs_arc_arc_tempreserve untyped
+node_zfs_arc_arc_tempreserve 0
+# HELP node_zfs_arc_async_upgrade_sync kstat.zfs.misc.arcstats.async_upgrade_sync
+# TYPE node_zfs_arc_async_upgrade_sync untyped
+node_zfs_arc_async_upgrade_sync 1265
+# HELP node_zfs_arc_bonus_size kstat.zfs.misc.arcstats.bonus_size
+# TYPE node_zfs_arc_bonus_size untyped
+node_zfs_arc_bonus_size 5.80672e+06
+# HELP node_zfs_arc_c kstat.zfs.misc.arcstats.c
+# TYPE node_zfs_arc_c untyped
+node_zfs_arc_c 2.147483648e+09
+# HELP node_zfs_arc_c_max kstat.zfs.misc.arcstats.c_max
+# TYPE node_zfs_arc_c_max untyped
+node_zfs_arc_c_max 2.147483648e+09
+# HELP node_zfs_arc_c_min kstat.zfs.misc.arcstats.c_min
+# TYPE node_zfs_arc_c_min untyped
+node_zfs_arc_c_min 2.147483648e+09
+# HELP node_zfs_arc_compressed_size kstat.zfs.misc.arcstats.compressed_size
+# TYPE node_zfs_arc_compressed_size untyped
+node_zfs_arc_compressed_size 1.927487488e+09
+# HELP node_zfs_arc_data_size kstat.zfs.misc.arcstats.data_size
+# TYPE node_zfs_arc_data_size untyped
+node_zfs_arc_data_size 1.937511424e+09
+# HELP node_zfs_arc_dbuf_size kstat.zfs.misc.arcstats.dbuf_size
+# TYPE node_zfs_arc_dbuf_size untyped
+node_zfs_arc_dbuf_size 7.003776e+06
+# HELP node_zfs_arc_deleted kstat.zfs.misc.arcstats.deleted
+# TYPE node_zfs_arc_deleted untyped
+node_zfs_arc_deleted 240384
+# HELP node_zfs_arc_demand_data_hits kstat.zfs.misc.arcstats.demand_data_hits
+# TYPE node_zfs_arc_demand_data_hits untyped
+node_zfs_arc_demand_data_hits 1.9812514e+07
+# HELP node_zfs_arc_demand_data_misses kstat.zfs.misc.arcstats.demand_data_misses
+# TYPE node_zfs_arc_demand_data_misses untyped
+node_zfs_arc_demand_data_misses 234140
+# HELP node_zfs_arc_demand_hit_predictive_prefetch kstat.zfs.misc.arcstats.demand_hit_predictive_prefetch
+# TYPE node_zfs_arc_demand_hit_predictive_prefetch untyped
+node_zfs_arc_demand_hit_predictive_prefetch 37798
+# HELP node_zfs_arc_demand_hit_prescient_prefetch kstat.zfs.misc.arcstats.demand_hit_prescient_prefetch
+# TYPE node_zfs_arc_demand_hit_prescient_prefetch untyped
+node_zfs_arc_demand_hit_prescient_prefetch 0
+# HELP node_zfs_arc_demand_metadata_hits kstat.zfs.misc.arcstats.demand_metadata_hits
+# TYPE node_zfs_arc_demand_metadata_hits untyped
+node_zfs_arc_demand_metadata_hits 4.7800691e+07
+# HELP node_zfs_arc_demand_metadata_misses kstat.zfs.misc.arcstats.demand_metadata_misses
+# TYPE node_zfs_arc_demand_metadata_misses untyped
+node_zfs_arc_demand_metadata_misses 693653
+# HELP node_zfs_arc_dnode_size kstat.zfs.misc.arcstats.dnode_size
+# TYPE node_zfs_arc_dnode_size untyped
+node_zfs_arc_dnode_size 1.766016e+07
+# HELP node_zfs_arc_evict_l2_cached kstat.zfs.misc.arcstats.evict_l2_cached
+# TYPE node_zfs_arc_evict_l2_cached untyped
+node_zfs_arc_evict_l2_cached 0
+# HELP node_zfs_arc_evict_l2_eligible kstat.zfs.misc.arcstats.evict_l2_eligible
+# TYPE node_zfs_arc_evict_l2_eligible untyped
+node_zfs_arc_evict_l2_eligible 4.2363045376e+10
+# HELP node_zfs_arc_evict_l2_ineligible kstat.zfs.misc.arcstats.evict_l2_ineligible
+# TYPE node_zfs_arc_evict_l2_ineligible untyped
+node_zfs_arc_evict_l2_ineligible 2.002454528e+09
+# HELP node_zfs_arc_evict_l2_skip kstat.zfs.misc.arcstats.evict_l2_skip
+# TYPE node_zfs_arc_evict_l2_skip untyped
+node_zfs_arc_evict_l2_skip 0
+# HELP node_zfs_arc_evict_not_enough kstat.zfs.misc.arcstats.evict_not_enough
+# TYPE node_zfs_arc_evict_not_enough untyped
+node_zfs_arc_evict_not_enough 47
+# HELP node_zfs_arc_evict_skip kstat.zfs.misc.arcstats.evict_skip
+# TYPE node_zfs_arc_evict_skip untyped
+node_zfs_arc_evict_skip 833
+# HELP node_zfs_arc_hash_chain_max kstat.zfs.misc.arcstats.hash_chain_max
+# TYPE node_zfs_arc_hash_chain_max untyped
+node_zfs_arc_hash_chain_max 3
+# HELP node_zfs_arc_hash_chains kstat.zfs.misc.arcstats.hash_chains
+# TYPE node_zfs_arc_hash_chains untyped
+node_zfs_arc_hash_chains 783
+# HELP node_zfs_arc_hash_collisions kstat.zfs.misc.arcstats.hash_collisions
+# TYPE node_zfs_arc_hash_collisions untyped
+node_zfs_arc_hash_collisions 128240
+# HELP node_zfs_arc_hash_elements kstat.zfs.misc.arcstats.hash_elements
+# TYPE node_zfs_arc_hash_elements untyped
+node_zfs_arc_hash_elements 58364
+# HELP node_zfs_arc_hash_elements_max kstat.zfs.misc.arcstats.hash_elements_max
+# TYPE node_zfs_arc_hash_elements_max untyped
+node_zfs_arc_hash_elements_max 62472
+# HELP node_zfs_arc_hdr_size kstat.zfs.misc.arcstats.hdr_size
+# TYPE node_zfs_arc_hdr_size untyped
+node_zfs_arc_hdr_size 1.9497776e+07
+# HELP node_zfs_arc_hits kstat.zfs.misc.arcstats.hits
+# TYPE node_zfs_arc_hits untyped
+node_zfs_arc_hits 6.7698165e+07
+# HELP node_zfs_arc_l2_abort_lowmem kstat.zfs.misc.arcstats.l2_abort_lowmem
+# TYPE node_zfs_arc_l2_abort_lowmem untyped
+node_zfs_arc_l2_abort_lowmem 0
+# HELP node_zfs_arc_l2_asize kstat.zfs.misc.arcstats.l2_asize
+# TYPE node_zfs_arc_l2_asize untyped
+node_zfs_arc_l2_asize 0
+# HELP node_zfs_arc_l2_cksum_bad kstat.zfs.misc.arcstats.l2_cksum_bad
+# TYPE node_zfs_arc_l2_cksum_bad untyped
+node_zfs_arc_l2_cksum_bad 0
+# HELP node_zfs_arc_l2_evict_l1cached kstat.zfs.misc.arcstats.l2_evict_l1cached
+# TYPE node_zfs_arc_l2_evict_l1cached untyped
+node_zfs_arc_l2_evict_l1cached 0
+# HELP node_zfs_arc_l2_evict_lock_retry kstat.zfs.misc.arcstats.l2_evict_lock_retry
+# TYPE node_zfs_arc_l2_evict_lock_retry untyped
+node_zfs_arc_l2_evict_lock_retry 0
+# HELP node_zfs_arc_l2_evict_reading kstat.zfs.misc.arcstats.l2_evict_reading
+# TYPE node_zfs_arc_l2_evict_reading untyped
+node_zfs_arc_l2_evict_reading 0
+# HELP node_zfs_arc_l2_feeds kstat.zfs.misc.arcstats.l2_feeds
+# TYPE node_zfs_arc_l2_feeds untyped
+node_zfs_arc_l2_feeds 0
+# HELP node_zfs_arc_l2_free_on_write kstat.zfs.misc.arcstats.l2_free_on_write
+# TYPE node_zfs_arc_l2_free_on_write untyped
+node_zfs_arc_l2_free_on_write 0
+# HELP node_zfs_arc_l2_hdr_size kstat.zfs.misc.arcstats.l2_hdr_size
+# TYPE node_zfs_arc_l2_hdr_size untyped
+node_zfs_arc_l2_hdr_size 0
+# HELP node_zfs_arc_l2_hits kstat.zfs.misc.arcstats.l2_hits
+# TYPE node_zfs_arc_l2_hits untyped
+node_zfs_arc_l2_hits 0
+# HELP node_zfs_arc_l2_io_error kstat.zfs.misc.arcstats.l2_io_error
+# TYPE node_zfs_arc_l2_io_error untyped
+node_zfs_arc_l2_io_error 0
+# HELP node_zfs_arc_l2_misses kstat.zfs.misc.arcstats.l2_misses
+# TYPE node_zfs_arc_l2_misses untyped
+node_zfs_arc_l2_misses 0
+# HELP node_zfs_arc_l2_read_bytes kstat.zfs.misc.arcstats.l2_read_bytes
+# TYPE node_zfs_arc_l2_read_bytes untyped
+node_zfs_arc_l2_read_bytes 0
+# HELP node_zfs_arc_l2_rw_clash kstat.zfs.misc.arcstats.l2_rw_clash
+# TYPE node_zfs_arc_l2_rw_clash untyped
+node_zfs_arc_l2_rw_clash 0
+# HELP node_zfs_arc_l2_size kstat.zfs.misc.arcstats.l2_size
+# TYPE node_zfs_arc_l2_size untyped
+node_zfs_arc_l2_size 0
+# HELP node_zfs_arc_l2_write_bytes kstat.zfs.misc.arcstats.l2_write_bytes
+# TYPE node_zfs_arc_l2_write_bytes untyped
+node_zfs_arc_l2_write_bytes 0
+# HELP node_zfs_arc_l2_writes_done kstat.zfs.misc.arcstats.l2_writes_done
+# TYPE node_zfs_arc_l2_writes_done untyped
+node_zfs_arc_l2_writes_done 0
+# HELP node_zfs_arc_l2_writes_error kstat.zfs.misc.arcstats.l2_writes_error
+# TYPE node_zfs_arc_l2_writes_error untyped
+node_zfs_arc_l2_writes_error 0
+# HELP node_zfs_arc_l2_writes_lock_retry kstat.zfs.misc.arcstats.l2_writes_lock_retry
+# TYPE node_zfs_arc_l2_writes_lock_retry untyped
+node_zfs_arc_l2_writes_lock_retry 0
+# HELP node_zfs_arc_l2_writes_sent kstat.zfs.misc.arcstats.l2_writes_sent
+# TYPE node_zfs_arc_l2_writes_sent untyped
+node_zfs_arc_l2_writes_sent 0
+# HELP node_zfs_arc_memory_all_bytes kstat.zfs.misc.arcstats.memory_all_bytes
+# TYPE node_zfs_arc_memory_all_bytes untyped
+node_zfs_arc_memory_all_bytes 5.358075904e+09
+# HELP node_zfs_arc_memory_direct_count kstat.zfs.misc.arcstats.memory_direct_count
+# TYPE node_zfs_arc_memory_direct_count untyped
+node_zfs_arc_memory_direct_count 0
+# HELP node_zfs_arc_memory_free_bytes kstat.zfs.misc.arcstats.memory_free_bytes
+# TYPE node_zfs_arc_memory_free_bytes untyped
+node_zfs_arc_memory_free_bytes 1.292587008e+09
+# HELP node_zfs_arc_memory_indirect_count kstat.zfs.misc.arcstats.memory_indirect_count
+# TYPE node_zfs_arc_memory_indirect_count untyped
+node_zfs_arc_memory_indirect_count 0
+# HELP node_zfs_arc_memory_throttle_count kstat.zfs.misc.arcstats.memory_throttle_count
+# TYPE node_zfs_arc_memory_throttle_count untyped
+node_zfs_arc_memory_throttle_count 0
+# HELP node_zfs_arc_metadata_size kstat.zfs.misc.arcstats.metadata_size
+# TYPE node_zfs_arc_metadata_size untyped
+node_zfs_arc_metadata_size 1.24537344e+08
+# HELP node_zfs_arc_mfu_evictable_data kstat.zfs.misc.arcstats.mfu_evictable_data
+# TYPE node_zfs_arc_mfu_evictable_data untyped
+node_zfs_arc_mfu_evictable_data 1.081195008e+09
+# HELP node_zfs_arc_mfu_evictable_metadata kstat.zfs.misc.arcstats.mfu_evictable_metadata
+# TYPE node_zfs_arc_mfu_evictable_metadata untyped
+node_zfs_arc_mfu_evictable_metadata 1.875456e+07
+# HELP node_zfs_arc_mfu_ghost_evictable_data kstat.zfs.misc.arcstats.mfu_ghost_evictable_data
+# TYPE node_zfs_arc_mfu_ghost_evictable_data untyped
+node_zfs_arc_mfu_ghost_evictable_data 8.9500672e+08
+# HELP node_zfs_arc_mfu_ghost_evictable_metadata kstat.zfs.misc.arcstats.mfu_ghost_evictable_metadata
+# TYPE node_zfs_arc_mfu_ghost_evictable_metadata untyped
+node_zfs_arc_mfu_ghost_evictable_metadata 1.1733248e+08
+# HELP node_zfs_arc_mfu_ghost_hits kstat.zfs.misc.arcstats.mfu_ghost_hits
+# TYPE node_zfs_arc_mfu_ghost_hits untyped
+node_zfs_arc_mfu_ghost_hits 40964
+# HELP node_zfs_arc_mfu_ghost_size kstat.zfs.misc.arcstats.mfu_ghost_size
+# TYPE node_zfs_arc_mfu_ghost_size untyped
+node_zfs_arc_mfu_ghost_size 1.0123392e+09
+# HELP node_zfs_arc_mfu_hits kstat.zfs.misc.arcstats.mfu_hits
+# TYPE node_zfs_arc_mfu_hits untyped
+node_zfs_arc_mfu_hits 5.8047354e+07
+# HELP node_zfs_arc_mfu_size kstat.zfs.misc.arcstats.mfu_size
+# TYPE node_zfs_arc_mfu_size untyped
+node_zfs_arc_mfu_size 1.127716352e+09
+# HELP node_zfs_arc_misses kstat.zfs.misc.arcstats.misses
+# TYPE node_zfs_arc_misses untyped
+node_zfs_arc_misses 990645
+# HELP node_zfs_arc_mru_evictable_data kstat.zfs.misc.arcstats.mru_evictable_data
+# TYPE node_zfs_arc_mru_evictable_data untyped
+node_zfs_arc_mru_evictable_data 7.87897344e+08
+# HELP node_zfs_arc_mru_evictable_metadata kstat.zfs.misc.arcstats.mru_evictable_metadata
+# TYPE node_zfs_arc_mru_evictable_metadata untyped
+node_zfs_arc_mru_evictable_metadata 8.944128e+06
+# HELP node_zfs_arc_mru_ghost_evictable_data kstat.zfs.misc.arcstats.mru_ghost_evictable_data
+# TYPE node_zfs_arc_mru_ghost_evictable_data untyped
+node_zfs_arc_mru_ghost_evictable_data 8.89022976e+08
+# HELP node_zfs_arc_mru_ghost_evictable_metadata kstat.zfs.misc.arcstats.mru_ghost_evictable_metadata
+# TYPE node_zfs_arc_mru_ghost_evictable_metadata untyped
+node_zfs_arc_mru_ghost_evictable_metadata 1.06008064e+08
+# HELP node_zfs_arc_mru_ghost_hits kstat.zfs.misc.arcstats.mru_ghost_hits
+# TYPE node_zfs_arc_mru_ghost_hits untyped
+node_zfs_arc_mru_ghost_hits 32508
+# HELP node_zfs_arc_mru_ghost_size kstat.zfs.misc.arcstats.mru_ghost_size
+# TYPE node_zfs_arc_mru_ghost_size untyped
+node_zfs_arc_mru_ghost_size 9.9503104e+08
+# HELP node_zfs_arc_mru_hits kstat.zfs.misc.arcstats.mru_hits
+# TYPE node_zfs_arc_mru_hits untyped
+node_zfs_arc_mru_hits 9.599212e+06
+# HELP node_zfs_arc_mru_size kstat.zfs.misc.arcstats.mru_size
+# TYPE node_zfs_arc_mru_size untyped
+node_zfs_arc_mru_size 9.28715264e+08
+# HELP node_zfs_arc_mutex_miss kstat.zfs.misc.arcstats.mutex_miss
+# TYPE node_zfs_arc_mutex_miss untyped
+node_zfs_arc_mutex_miss 9
+# HELP node_zfs_arc_overhead_size kstat.zfs.misc.arcstats.overhead_size
+# TYPE node_zfs_arc_overhead_size untyped
+node_zfs_arc_overhead_size 1.3456128e+08
+# HELP node_zfs_arc_p kstat.zfs.misc.arcstats.p
+# TYPE node_zfs_arc_p untyped
+node_zfs_arc_p 1.214708224e+09
+# HELP node_zfs_arc_prefetch_data_hits kstat.zfs.misc.arcstats.prefetch_data_hits
+# TYPE node_zfs_arc_prefetch_data_hits untyped
+node_zfs_arc_prefetch_data_hits 63419
+# HELP node_zfs_arc_prefetch_data_misses kstat.zfs.misc.arcstats.prefetch_data_misses
+# TYPE node_zfs_arc_prefetch_data_misses untyped
+node_zfs_arc_prefetch_data_misses 58142
+# HELP node_zfs_arc_prefetch_metadata_hits kstat.zfs.misc.arcstats.prefetch_metadata_hits
+# TYPE node_zfs_arc_prefetch_metadata_hits untyped
+node_zfs_arc_prefetch_metadata_hits 21541
+# HELP node_zfs_arc_prefetch_metadata_misses kstat.zfs.misc.arcstats.prefetch_metadata_misses
+# TYPE node_zfs_arc_prefetch_metadata_misses untyped
+node_zfs_arc_prefetch_metadata_misses 4710
+# HELP node_zfs_arc_size kstat.zfs.misc.arcstats.size
+# TYPE node_zfs_arc_size untyped
+node_zfs_arc_size 2.1120172e+09
+# HELP node_zfs_arc_uncompressed_size kstat.zfs.misc.arcstats.uncompressed_size
+# TYPE node_zfs_arc_uncompressed_size untyped
+node_zfs_arc_uncompressed_size 4.744208384e+09
+# HELP node_zfs_dmu_tx_dmu_tx_assigned kstat.zfs.misc.dmu_tx.dmu_tx_assigned
+# TYPE node_zfs_dmu_tx_dmu_tx_assigned untyped
+node_zfs_dmu_tx_dmu_tx_assigned 1.4242856e+07
+# HELP node_zfs_dmu_tx_dmu_tx_delay kstat.zfs.misc.dmu_tx.dmu_tx_delay
+# TYPE node_zfs_dmu_tx_dmu_tx_delay untyped
+node_zfs_dmu_tx_dmu_tx_delay 0
+# HELP node_zfs_dmu_tx_dmu_tx_dirty_delay kstat.zfs.misc.dmu_tx.dmu_tx_dirty_delay
+# TYPE node_zfs_dmu_tx_dmu_tx_dirty_delay untyped
+node_zfs_dmu_tx_dmu_tx_dirty_delay 0
+# HELP node_zfs_dmu_tx_dmu_tx_dirty_frees_delay kstat.zfs.misc.dmu_tx.dmu_tx_dirty_frees_delay
+# TYPE node_zfs_dmu_tx_dmu_tx_dirty_frees_delay untyped
+node_zfs_dmu_tx_dmu_tx_dirty_frees_delay 178
+# HELP node_zfs_dmu_tx_dmu_tx_dirty_over_max kstat.zfs.misc.dmu_tx.dmu_tx_dirty_over_max
+# TYPE node_zfs_dmu_tx_dmu_tx_dirty_over_max untyped
+node_zfs_dmu_tx_dmu_tx_dirty_over_max 0
+# HELP node_zfs_dmu_tx_dmu_tx_dirty_throttle kstat.zfs.misc.dmu_tx.dmu_tx_dirty_throttle
+# TYPE node_zfs_dmu_tx_dmu_tx_dirty_throttle untyped
+node_zfs_dmu_tx_dmu_tx_dirty_throttle 4
+# HELP node_zfs_dmu_tx_dmu_tx_error kstat.zfs.misc.dmu_tx.dmu_tx_error
+# TYPE node_zfs_dmu_tx_dmu_tx_error untyped
+node_zfs_dmu_tx_dmu_tx_error 0
+# HELP node_zfs_dmu_tx_dmu_tx_group kstat.zfs.misc.dmu_tx.dmu_tx_group
+# TYPE node_zfs_dmu_tx_dmu_tx_group untyped
+node_zfs_dmu_tx_dmu_tx_group 0
+# HELP node_zfs_dmu_tx_dmu_tx_memory_reclaim kstat.zfs.misc.dmu_tx.dmu_tx_memory_reclaim
+# TYPE node_zfs_dmu_tx_dmu_tx_memory_reclaim untyped
+node_zfs_dmu_tx_dmu_tx_memory_reclaim 0
+# HELP node_zfs_dmu_tx_dmu_tx_memory_reserve kstat.zfs.misc.dmu_tx.dmu_tx_memory_reserve
+# TYPE node_zfs_dmu_tx_dmu_tx_memory_reserve untyped
+node_zfs_dmu_tx_dmu_tx_memory_reserve 0
+# HELP node_zfs_dmu_tx_dmu_tx_quota kstat.zfs.misc.dmu_tx.dmu_tx_quota
+# TYPE node_zfs_dmu_tx_dmu_tx_quota untyped
+node_zfs_dmu_tx_dmu_tx_quota 0
+# HELP node_zfs_dmu_tx_dmu_tx_suspended kstat.zfs.misc.dmu_tx.dmu_tx_suspended
+# TYPE node_zfs_dmu_tx_dmu_tx_suspended untyped
+node_zfs_dmu_tx_dmu_tx_suspended 0
+# HELP node_zfs_dnode_dnode_alloc_next_block kstat.zfs.misc.dnodestats.dnode_alloc_next_block
+# TYPE node_zfs_dnode_dnode_alloc_next_block untyped
+node_zfs_dnode_dnode_alloc_next_block 0
+# HELP node_zfs_dnode_dnode_alloc_next_chunk kstat.zfs.misc.dnodestats.dnode_alloc_next_chunk
+# TYPE node_zfs_dnode_dnode_alloc_next_chunk untyped
+node_zfs_dnode_dnode_alloc_next_chunk 30
+# HELP node_zfs_dnode_dnode_alloc_race kstat.zfs.misc.dnodestats.dnode_alloc_race
+# TYPE node_zfs_dnode_dnode_alloc_race untyped
+node_zfs_dnode_dnode_alloc_race 0
+# HELP node_zfs_dnode_dnode_allocate kstat.zfs.misc.dnodestats.dnode_allocate
+# TYPE node_zfs_dnode_dnode_allocate untyped
+node_zfs_dnode_dnode_allocate 1708
+# HELP node_zfs_dnode_dnode_buf_evict kstat.zfs.misc.dnodestats.dnode_buf_evict
+# TYPE node_zfs_dnode_dnode_buf_evict untyped
+node_zfs_dnode_dnode_buf_evict 88
+# HELP node_zfs_dnode_dnode_free_interior_lock_retry kstat.zfs.misc.dnodestats.dnode_free_interior_lock_retry
+# TYPE node_zfs_dnode_dnode_free_interior_lock_retry untyped
+node_zfs_dnode_dnode_free_interior_lock_retry 0
+# HELP node_zfs_dnode_dnode_hold_alloc_hits kstat.zfs.misc.dnodestats.dnode_hold_alloc_hits
+# TYPE node_zfs_dnode_dnode_hold_alloc_hits untyped
+node_zfs_dnode_dnode_hold_alloc_hits 4.609784e+07
+# HELP node_zfs_dnode_dnode_hold_alloc_interior kstat.zfs.misc.dnodestats.dnode_hold_alloc_interior
+# TYPE node_zfs_dnode_dnode_hold_alloc_interior untyped
+node_zfs_dnode_dnode_hold_alloc_interior 0
+# HELP node_zfs_dnode_dnode_hold_alloc_lock_misses kstat.zfs.misc.dnodestats.dnode_hold_alloc_lock_misses
+# TYPE node_zfs_dnode_dnode_hold_alloc_lock_misses untyped
+node_zfs_dnode_dnode_hold_alloc_lock_misses 0
+# HELP node_zfs_dnode_dnode_hold_alloc_lock_retry kstat.zfs.misc.dnodestats.dnode_hold_alloc_lock_retry
+# TYPE node_zfs_dnode_dnode_hold_alloc_lock_retry untyped
+node_zfs_dnode_dnode_hold_alloc_lock_retry 0
+# HELP node_zfs_dnode_dnode_hold_alloc_misses kstat.zfs.misc.dnodestats.dnode_hold_alloc_misses
+# TYPE node_zfs_dnode_dnode_hold_alloc_misses untyped
+node_zfs_dnode_dnode_hold_alloc_misses 0
+# HELP node_zfs_dnode_dnode_hold_alloc_type_none kstat.zfs.misc.dnodestats.dnode_hold_alloc_type_none
+# TYPE node_zfs_dnode_dnode_hold_alloc_type_none untyped
+node_zfs_dnode_dnode_hold_alloc_type_none 0
+# HELP node_zfs_dnode_dnode_hold_dbuf_hold kstat.zfs.misc.dnodestats.dnode_hold_dbuf_hold
+# TYPE node_zfs_dnode_dnode_hold_dbuf_hold untyped
+node_zfs_dnode_dnode_hold_dbuf_hold 0
+# HELP node_zfs_dnode_dnode_hold_dbuf_read kstat.zfs.misc.dnodestats.dnode_hold_dbuf_read
+# TYPE node_zfs_dnode_dnode_hold_dbuf_read untyped
+node_zfs_dnode_dnode_hold_dbuf_read 0
+# HELP node_zfs_dnode_dnode_hold_free_hits kstat.zfs.misc.dnodestats.dnode_hold_free_hits
+# TYPE node_zfs_dnode_dnode_hold_free_hits untyped
+node_zfs_dnode_dnode_hold_free_hits 1708
+# HELP node_zfs_dnode_dnode_hold_free_lock_misses kstat.zfs.misc.dnodestats.dnode_hold_free_lock_misses
+# TYPE node_zfs_dnode_dnode_hold_free_lock_misses untyped
+node_zfs_dnode_dnode_hold_free_lock_misses 0
+# HELP node_zfs_dnode_dnode_hold_free_lock_retry kstat.zfs.misc.dnodestats.dnode_hold_free_lock_retry
+# TYPE node_zfs_dnode_dnode_hold_free_lock_retry untyped
+node_zfs_dnode_dnode_hold_free_lock_retry 0
+# HELP node_zfs_dnode_dnode_hold_free_misses kstat.zfs.misc.dnodestats.dnode_hold_free_misses
+# TYPE node_zfs_dnode_dnode_hold_free_misses untyped
+node_zfs_dnode_dnode_hold_free_misses 380
+# HELP node_zfs_dnode_dnode_hold_free_overflow kstat.zfs.misc.dnodestats.dnode_hold_free_overflow
+# TYPE node_zfs_dnode_dnode_hold_free_overflow untyped
+node_zfs_dnode_dnode_hold_free_overflow 0
+# HELP node_zfs_dnode_dnode_hold_free_refcount kstat.zfs.misc.dnodestats.dnode_hold_free_refcount
+# TYPE node_zfs_dnode_dnode_hold_free_refcount untyped
+node_zfs_dnode_dnode_hold_free_refcount 0
+# HELP node_zfs_dnode_dnode_hold_free_txg kstat.zfs.misc.dnodestats.dnode_hold_free_txg
+# TYPE node_zfs_dnode_dnode_hold_free_txg untyped
+node_zfs_dnode_dnode_hold_free_txg 87
+# HELP node_zfs_dnode_dnode_move_active kstat.zfs.misc.dnodestats.dnode_move_active
+# TYPE node_zfs_dnode_dnode_move_active untyped
+node_zfs_dnode_dnode_move_active 0
+# HELP node_zfs_dnode_dnode_move_handle kstat.zfs.misc.dnodestats.dnode_move_handle
+# TYPE node_zfs_dnode_dnode_move_handle untyped
+node_zfs_dnode_dnode_move_handle 0
+# HELP node_zfs_dnode_dnode_move_invalid kstat.zfs.misc.dnodestats.dnode_move_invalid
+# TYPE node_zfs_dnode_dnode_move_invalid untyped
+node_zfs_dnode_dnode_move_invalid 0
+# HELP node_zfs_dnode_dnode_move_recheck1 kstat.zfs.misc.dnodestats.dnode_move_recheck1
+# TYPE node_zfs_dnode_dnode_move_recheck1 untyped
+node_zfs_dnode_dnode_move_recheck1 0
+# HELP node_zfs_dnode_dnode_move_recheck2 kstat.zfs.misc.dnodestats.dnode_move_recheck2
+# TYPE node_zfs_dnode_dnode_move_recheck2 untyped
+node_zfs_dnode_dnode_move_recheck2 0
+# HELP node_zfs_dnode_dnode_move_rwlock kstat.zfs.misc.dnodestats.dnode_move_rwlock
+# TYPE node_zfs_dnode_dnode_move_rwlock untyped
+node_zfs_dnode_dnode_move_rwlock 0
+# HELP node_zfs_dnode_dnode_move_special kstat.zfs.misc.dnodestats.dnode_move_special
+# TYPE node_zfs_dnode_dnode_move_special untyped
+node_zfs_dnode_dnode_move_special 0
+# HELP node_zfs_dnode_dnode_reallocate kstat.zfs.misc.dnodestats.dnode_reallocate
+# TYPE node_zfs_dnode_dnode_reallocate untyped
+node_zfs_dnode_dnode_reallocate 0
+# HELP node_zfs_fm_erpt_dropped kstat.zfs.misc.fm.erpt-dropped
+# TYPE node_zfs_fm_erpt_dropped untyped
+node_zfs_fm_erpt_dropped 0
+# HELP node_zfs_fm_erpt_set_failed kstat.zfs.misc.fm.erpt-set-failed
+# TYPE node_zfs_fm_erpt_set_failed untyped
+node_zfs_fm_erpt_set_failed 0
+# HELP node_zfs_fm_fmri_set_failed kstat.zfs.misc.fm.fmri-set-failed
+# TYPE node_zfs_fm_fmri_set_failed untyped
+node_zfs_fm_fmri_set_failed 0
+# HELP node_zfs_fm_payload_set_failed kstat.zfs.misc.fm.payload-set-failed
+# TYPE node_zfs_fm_payload_set_failed untyped
+node_zfs_fm_payload_set_failed 0
+# HELP node_zfs_vdev_cache_delegations kstat.zfs.misc.vdev_cache_stats.delegations
+# TYPE node_zfs_vdev_cache_delegations untyped
+node_zfs_vdev_cache_delegations 0
+# HELP node_zfs_vdev_cache_hits kstat.zfs.misc.vdev_cache_stats.hits
+# TYPE node_zfs_vdev_cache_hits untyped
+node_zfs_vdev_cache_hits 0
+# HELP node_zfs_vdev_cache_misses kstat.zfs.misc.vdev_cache_stats.misses
+# TYPE node_zfs_vdev_cache_misses untyped
+node_zfs_vdev_cache_misses 0
+# HELP node_zfs_vdev_mirror_non_rotating_linear kstat.zfs.misc.vdev_mirror_stats.non_rotating_linear
+# TYPE node_zfs_vdev_mirror_non_rotating_linear untyped
+node_zfs_vdev_mirror_non_rotating_linear 0
+# HELP node_zfs_vdev_mirror_non_rotating_seek kstat.zfs.misc.vdev_mirror_stats.non_rotating_seek
+# TYPE node_zfs_vdev_mirror_non_rotating_seek untyped
+node_zfs_vdev_mirror_non_rotating_seek 0
+# HELP node_zfs_vdev_mirror_preferred_found kstat.zfs.misc.vdev_mirror_stats.preferred_found
+# TYPE node_zfs_vdev_mirror_preferred_found untyped
+node_zfs_vdev_mirror_preferred_found 266642
+# HELP node_zfs_vdev_mirror_preferred_not_found kstat.zfs.misc.vdev_mirror_stats.preferred_not_found
+# TYPE node_zfs_vdev_mirror_preferred_not_found untyped
+node_zfs_vdev_mirror_preferred_not_found 20787
+# HELP node_zfs_vdev_mirror_rotating_linear kstat.zfs.misc.vdev_mirror_stats.rotating_linear
+# TYPE node_zfs_vdev_mirror_rotating_linear untyped
+node_zfs_vdev_mirror_rotating_linear 0
+# HELP node_zfs_vdev_mirror_rotating_offset kstat.zfs.misc.vdev_mirror_stats.rotating_offset
+# TYPE node_zfs_vdev_mirror_rotating_offset untyped
+node_zfs_vdev_mirror_rotating_offset 0
+# HELP node_zfs_vdev_mirror_rotating_seek kstat.zfs.misc.vdev_mirror_stats.rotating_seek
+# TYPE node_zfs_vdev_mirror_rotating_seek untyped
+node_zfs_vdev_mirror_rotating_seek 0
+# HELP node_zfs_xuio_onloan_read_buf kstat.zfs.misc.xuio_stats.onloan_read_buf
+# TYPE node_zfs_xuio_onloan_read_buf untyped
+node_zfs_xuio_onloan_read_buf 0
+# HELP node_zfs_xuio_onloan_write_buf kstat.zfs.misc.xuio_stats.onloan_write_buf
+# TYPE node_zfs_xuio_onloan_write_buf untyped
+node_zfs_xuio_onloan_write_buf 0
+# HELP node_zfs_xuio_read_buf_copied kstat.zfs.misc.xuio_stats.read_buf_copied
+# TYPE node_zfs_xuio_read_buf_copied untyped
+node_zfs_xuio_read_buf_copied 0
+# HELP node_zfs_xuio_read_buf_nocopy kstat.zfs.misc.xuio_stats.read_buf_nocopy
+# TYPE node_zfs_xuio_read_buf_nocopy untyped
+node_zfs_xuio_read_buf_nocopy 0
+# HELP node_zfs_xuio_write_buf_copied kstat.zfs.misc.xuio_stats.write_buf_copied
+# TYPE node_zfs_xuio_write_buf_copied untyped
+node_zfs_xuio_write_buf_copied 0
+# HELP node_zfs_xuio_write_buf_nocopy kstat.zfs.misc.xuio_stats.write_buf_nocopy
+# TYPE node_zfs_xuio_write_buf_nocopy untyped
+node_zfs_xuio_write_buf_nocopy 2334
+# HELP node_zfs_zfetch_hits kstat.zfs.misc.zfetchstats.hits
+# TYPE node_zfs_zfetch_hits untyped
+node_zfs_zfetch_hits 1.13201e+06
+# HELP node_zfs_zfetch_max_streams kstat.zfs.misc.zfetchstats.max_streams
+# TYPE node_zfs_zfetch_max_streams untyped
+node_zfs_zfetch_max_streams 2.5213044e+07
+# HELP node_zfs_zfetch_misses kstat.zfs.misc.zfetchstats.misses
+# TYPE node_zfs_zfetch_misses untyped
+node_zfs_zfetch_misses 2.572616e+07
+# HELP node_zfs_zil_zil_commit_count kstat.zfs.misc.zil.zil_commit_count
+# TYPE node_zfs_zil_zil_commit_count untyped
+node_zfs_zil_zil_commit_count 261760
+# HELP node_zfs_zil_zil_commit_writer_count kstat.zfs.misc.zil.zil_commit_writer_count
+# TYPE node_zfs_zil_zil_commit_writer_count untyped
+node_zfs_zil_zil_commit_writer_count 261741
+# HELP node_zfs_zil_zil_itx_copied_bytes kstat.zfs.misc.zil.zil_itx_copied_bytes
+# TYPE node_zfs_zil_zil_itx_copied_bytes untyped
+node_zfs_zil_zil_itx_copied_bytes 0
+# HELP node_zfs_zil_zil_itx_copied_count kstat.zfs.misc.zil.zil_itx_copied_count
+# TYPE node_zfs_zil_zil_itx_copied_count untyped
+node_zfs_zil_zil_itx_copied_count 0
+# HELP node_zfs_zil_zil_itx_count kstat.zfs.misc.zil.zil_itx_count
+# TYPE node_zfs_zil_zil_itx_count untyped
+node_zfs_zil_zil_itx_count 6.932279e+06
+# HELP node_zfs_zil_zil_itx_indirect_bytes kstat.zfs.misc.zil.zil_itx_indirect_bytes
+# TYPE node_zfs_zil_zil_itx_indirect_bytes untyped
+node_zfs_zil_zil_itx_indirect_bytes 2.514731e+07
+# HELP node_zfs_zil_zil_itx_indirect_count kstat.zfs.misc.zil.zil_itx_indirect_count
+# TYPE node_zfs_zil_zil_itx_indirect_count untyped
+node_zfs_zil_zil_itx_indirect_count 480
+# HELP node_zfs_zil_zil_itx_metaslab_normal_bytes kstat.zfs.misc.zil.zil_itx_metaslab_normal_bytes
+# TYPE node_zfs_zil_zil_itx_metaslab_normal_bytes untyped
+node_zfs_zil_zil_itx_metaslab_normal_bytes 2.9709505976e+10
+# HELP node_zfs_zil_zil_itx_metaslab_normal_count kstat.zfs.misc.zil.zil_itx_metaslab_normal_count
+# TYPE node_zfs_zil_zil_itx_metaslab_normal_count untyped
+node_zfs_zil_zil_itx_metaslab_normal_count 427225
+# HELP node_zfs_zil_zil_itx_metaslab_slog_bytes kstat.zfs.misc.zil.zil_itx_metaslab_slog_bytes
+# TYPE node_zfs_zil_zil_itx_metaslab_slog_bytes untyped
+node_zfs_zil_zil_itx_metaslab_slog_bytes 0
+# HELP node_zfs_zil_zil_itx_metaslab_slog_count kstat.zfs.misc.zil.zil_itx_metaslab_slog_count
+# TYPE node_zfs_zil_zil_itx_metaslab_slog_count untyped
+node_zfs_zil_zil_itx_metaslab_slog_count 0
+# HELP node_zfs_zil_zil_itx_needcopy_bytes kstat.zfs.misc.zil.zil_itx_needcopy_bytes
+# TYPE node_zfs_zil_zil_itx_needcopy_bytes untyped
+node_zfs_zil_zil_itx_needcopy_bytes 2.8301626992e+10
+# HELP node_zfs_zil_zil_itx_needcopy_count kstat.zfs.misc.zil.zil_itx_needcopy_count
+# TYPE node_zfs_zil_zil_itx_needcopy_count untyped
+node_zfs_zil_zil_itx_needcopy_count 6.918589e+06
+# HELP node_zfs_zpool_nread kstat.zfs.misc.io.nread
+# TYPE node_zfs_zpool_nread untyped
+node_zfs_zpool_nread{zpool="fortressworkstation"} 1.6916717568e+10
+# HELP node_zfs_zpool_nwritten kstat.zfs.misc.io.nwritten
+# TYPE node_zfs_zpool_nwritten untyped
+node_zfs_zpool_nwritten{zpool="fortressworkstation"} 1.43326687232e+11
+# HELP node_zfs_zpool_rcnt kstat.zfs.misc.io.rcnt
+# TYPE node_zfs_zpool_rcnt untyped
+node_zfs_zpool_rcnt{zpool="fortressworkstation"} 0
+# HELP node_zfs_zpool_reads kstat.zfs.misc.io.reads
+# TYPE node_zfs_zpool_reads untyped
+node_zfs_zpool_reads{zpool="fortressworkstation"} 264723
+# HELP node_zfs_zpool_rlentime kstat.zfs.misc.io.rlentime
+# TYPE node_zfs_zpool_rlentime untyped
+node_zfs_zpool_rlentime{zpool="fortressworkstation"} 6.232545596488e+12
+# HELP node_zfs_zpool_rtime kstat.zfs.misc.io.rtime
+# TYPE node_zfs_zpool_rtime untyped
+node_zfs_zpool_rtime{zpool="fortressworkstation"} 1.810797360325e+12
+# HELP node_zfs_zpool_rupdate kstat.zfs.misc.io.rupdate
+# TYPE node_zfs_zpool_rupdate untyped
+node_zfs_zpool_rupdate{zpool="fortressworkstation"} 2.24465480068255e+14
+# HELP node_zfs_zpool_wcnt kstat.zfs.misc.io.wcnt
+# TYPE node_zfs_zpool_wcnt untyped
+node_zfs_zpool_wcnt{zpool="fortressworkstation"} 0
+# HELP node_zfs_zpool_wlentime kstat.zfs.misc.io.wlentime
+# TYPE node_zfs_zpool_wlentime untyped
+node_zfs_zpool_wlentime{zpool="fortressworkstation"} 1.05580798100666e+14
+# HELP node_zfs_zpool_writes kstat.zfs.misc.io.writes
+# TYPE node_zfs_zpool_writes untyped
+node_zfs_zpool_writes{zpool="fortressworkstation"} 5.076644e+06
+# HELP node_zfs_zpool_wtime kstat.zfs.misc.io.wtime
+# TYPE node_zfs_zpool_wtime untyped
+node_zfs_zpool_wtime{zpool="fortressworkstation"} 1.108143329798e+12
+# HELP node_zfs_zpool_wupdate kstat.zfs.misc.io.wupdate
+# TYPE node_zfs_zpool_wupdate untyped
+node_zfs_zpool_wupdate{zpool="fortressworkstation"} 2.24465479961296e+14
+# HELP process_cpu_seconds_total Total user and system CPU time spent in seconds.
+# TYPE process_cpu_seconds_total counter
+process_cpu_seconds_total 1.05
+# HELP process_max_fds Maximum number of open file descriptors.
+# TYPE process_max_fds gauge
+process_max_fds 1024
+# HELP process_open_fds Number of open file descriptors.
+# TYPE process_open_fds gauge
+process_open_fds 7
+# HELP process_resident_memory_bytes Resident memory size in bytes.
+# TYPE process_resident_memory_bytes gauge
+process_resident_memory_bytes 1.1382784e+07
+# HELP process_start_time_seconds Start time of the process since unix epoch in seconds.
+# TYPE process_start_time_seconds gauge
+process_start_time_seconds 1.54943965596e+09
+# HELP process_virtual_memory_bytes Virtual memory size in bytes.
+# TYPE process_virtual_memory_bytes gauge
+process_virtual_memory_bytes 2.90353152e+08
+# HELP promhttp_metric_handler_requests_in_flight Current number of scrapes being served.
+# TYPE promhttp_metric_handler_requests_in_flight gauge
+promhttp_metric_handler_requests_in_flight 1
+# HELP promhttp_metric_handler_requests_total Total number of scrapes by HTTP status code.
+# TYPE promhttp_metric_handler_requests_total counter
+promhttp_metric_handler_requests_total{code="200"} 0
+promhttp_metric_handler_requests_total{code="500"} 0
+promhttp_metric_handler_requests_total{code="503"} 0
+==============================
+
+

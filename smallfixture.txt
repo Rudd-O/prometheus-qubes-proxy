@@ -1,0 +1,412 @@
+node_zfs_vdev_mirror_non_rotating_linear 0
+# HELP node_zfs_vdev_mirror_non_rotating_seek kstat.zfs.misc.vdev_mirror_stats.non_rotating_seek
+# TYPE node_zfs_vdev_mirror_non_rotating_seek untyped
+node_zfs_vdev_mirror_non_rotating_seek 0
+# HELP node_zfs_vdev_mirror_preferred_found kstat.zfs.misc.vdev_mirror_stats.preferred_found
+# TYPE node_zfs_vdev_mirror_preferred_found untyped
+node_zfs_vdev_mirror_preferred_found 266642
+# HELP node_zfs_vdev_mirror_preferred_not_found kstat.zfs.misc.vdev_mirror_stats.preferred_not_found
+# TYPE node_zfs_vdev_mirror_preferred_not_found untyped
+node_zfs_vdev_mirror_preferred_not_found 20787
+# HELP node_zfs_vdev_mirror_rotating_linear kstat.zfs.misc.vdev_mirror_stats.rotating_linear
+# TYPE node_zfs_vdev_mirror_rotating_linear untyped
+node_zfs_vdev_mirror_rotating_linear 0
+# HELP node_zfs_vdev_mirror_rotating_offset kstat.zfs.misc.vdev_mirror_stats.rotating_offset
+# TYPE node_zfs_vdev_mirror_rotating_offset untyped
+node_zfs_vdev_mirror_rotating_offset 0
+# HELP node_zfs_vdev_mirror_rotating_seek kstat.zfs.misc.vdev_mirror_stats.rotating_seek
+# TYPE node_zfs_vdev_mirror_rotating_seek untyped
+node_zfs_vdev_mirror_rotating_seek 0
+# HELP node_zfs_xuio_onloan_read_buf kstat.zfs.misc.xuio_stats.onloan_read_buf
+# TYPE node_zfs_xuio_onloan_read_buf untyped
+node_zfs_xuio_onloan_read_buf 0
+# HELP node_zfs_xuio_onloan_write_buf kstat.zfs.misc.xuio_stats.onloan_write_buf
+# TYPE node_zfs_xuio_onloan_write_buf untyped
+node_zfs_xuio_onloan_write_buf 0
+# HELP node_zfs_xuio_read_buf_copied kstat.zfs.misc.xuio_stats.read_buf_copied
+# TYPE node_zfs_xuio_read_buf_copied untyped
+node_zfs_xuio_read_buf_copied 0
+# HELP node_zfs_xuio_read_buf_nocopy kstat.zfs.misc.xuio_stats.read_buf_nocopy
+# TYPE node_zfs_xuio_read_buf_nocopy untyped
+node_zfs_xuio_read_buf_nocopy 0
+# HELP node_zfs_xuio_write_buf_copied kstat.zfs.misc.xuio_stats.write_buf_copied
+# TYPE node_zfs_xuio_write_buf_copied untyped
+node_zfs_xuio_write_buf_copied 0
+# HELP node_zfs_xuio_write_buf_nocopy kstat.zfs.misc.xuio_stats.write_buf_nocopy
+# TYPE node_zfs_xuio_write_buf_nocopy untyped
+node_zfs_xuio_write_buf_nocopy 2334
+# HELP node_zfs_zfetch_hits kstat.zfs.misc.zfetchstats.hits
+# TYPE node_zfs_zfetch_hits untyped
+node_zfs_zfetch_hits 1.132006e+06
+# HELP node_zfs_zfetch_max_streams kstat.zfs.misc.zfetchstats.max_streams
+# TYPE node_zfs_zfetch_max_streams untyped
+node_zfs_zfetch_max_streams 2.5212916e+07
+# HELP node_zfs_zfetch_misses kstat.zfs.misc.zfetchstats.misses
+# TYPE node_zfs_zfetch_misses untyped
+node_zfs_zfetch_misses 2.5726022e+07
+# HELP node_zfs_zil_zil_commit_count kstat.zfs.misc.zil.zil_commit_count
+# TYPE node_zfs_zil_zil_commit_count untyped
+node_zfs_zil_zil_commit_count 261752
+# HELP node_zfs_zil_zil_commit_writer_count kstat.zfs.misc.zil.zil_commit_writer_count
+# TYPE node_zfs_zil_zil_commit_writer_count untyped
+node_zfs_zil_zil_commit_writer_count 261733
+# HELP node_zfs_zil_zil_itx_copied_bytes kstat.zfs.misc.zil.zil_itx_copied_bytes
+# TYPE node_zfs_zil_zil_itx_copied_bytes untyped
+node_zfs_zil_zil_itx_copied_bytes 0
+# HELP node_zfs_zil_zil_itx_copied_count kstat.zfs.misc.zil.zil_itx_copied_count
+# TYPE node_zfs_zil_zil_itx_copied_count untyped
+node_zfs_zil_zil_itx_copied_count 0
+# HELP node_zfs_zil_zil_itx_count kstat.zfs.misc.zil.zil_itx_count
+# TYPE node_zfs_zil_zil_itx_count untyped
+node_zfs_zil_zil_itx_count 6.932164e+06
+# HELP node_zfs_zil_zil_itx_indirect_bytes kstat.zfs.misc.zil.zil_itx_indirect_bytes
+# TYPE node_zfs_zil_zil_itx_indirect_bytes untyped
+node_zfs_zil_zil_itx_indirect_bytes 2.514731e+07
+# HELP node_zfs_zil_zil_itx_indirect_count kstat.zfs.misc.zil.zil_itx_indirect_count
+# TYPE node_zfs_zil_zil_itx_indirect_count untyped
+node_zfs_zil_zil_itx_indirect_count 480
+# HELP node_zfs_zil_zil_itx_metaslab_normal_bytes kstat.zfs.misc.zil.zil_itx_metaslab_normal_bytes
+# TYPE node_zfs_zil_zil_itx_metaslab_normal_bytes untyped
+node_zfs_zil_zil_itx_metaslab_normal_bytes 2.9709011016e+10
+# HELP node_zfs_zil_zil_itx_metaslab_normal_count kstat.zfs.misc.zil.zil_itx_metaslab_normal_count
+# TYPE node_zfs_zil_zil_itx_metaslab_normal_count untyped
+node_zfs_zil_zil_itx_metaslab_normal_count 427215
+# HELP node_zfs_zil_zil_itx_metaslab_slog_bytes kstat.zfs.misc.zil.zil_itx_metaslab_slog_bytes
+# TYPE node_zfs_zil_zil_itx_metaslab_slog_bytes untyped
+node_zfs_zil_zil_itx_metaslab_slog_bytes 0
+# HELP node_zfs_zil_zil_itx_metaslab_slog_count kstat.zfs.misc.zil.zil_itx_metaslab_slog_count
+# TYPE node_zfs_zil_zil_itx_metaslab_slog_count untyped
+node_zfs_zil_zil_itx_metaslab_slog_count 0
+# HELP node_zfs_zil_zil_itx_needcopy_bytes kstat.zfs.misc.zil.zil_itx_needcopy_bytes
+# TYPE node_zfs_zil_zil_itx_needcopy_bytes untyped
+node_zfs_zil_zil_itx_needcopy_bytes 2.8301155952e+10
+# HELP node_zfs_zil_zil_itx_needcopy_count kstat.zfs.misc.zil.zil_itx_needcopy_count
+# TYPE node_zfs_zil_zil_itx_needcopy_count untyped
+node_zfs_zil_zil_itx_needcopy_count 6.918474e+06
+# HELP node_zfs_zpool_nread kstat.zfs.misc.io.nread
+# TYPE node_zfs_zpool_nread untyped
+node_zfs_zpool_nread{zpool="fortressworkstation"} 1.6916717568e+10
+# HELP node_zfs_zpool_nwritten kstat.zfs.misc.io.nwritten
+# TYPE node_zfs_zpool_nwritten untyped
+node_zfs_zpool_nwritten{zpool="fortressworkstation"} 1.43322144768e+11
+# HELP node_zfs_zpool_rcnt kstat.zfs.misc.io.rcnt
+# TYPE node_zfs_zpool_rcnt untyped
+node_zfs_zpool_rcnt{zpool="fortressworkstation"} 0
+# HELP node_zfs_zpool_reads kstat.zfs.misc.io.reads
+# TYPE node_zfs_zpool_reads untyped
+node_zfs_zpool_reads{zpool="fortressworkstation"} 264723
+# HELP node_zfs_zpool_rlentime kstat.zfs.misc.io.rlentime
+# TYPE node_zfs_zpool_rlentime untyped
+node_zfs_zpool_rlentime{zpool="fortressworkstation"} 6.232487133945e+12
+# HELP node_zfs_zpool_rtime kstat.zfs.misc.io.rtime
+# TYPE node_zfs_zpool_rtime untyped
+node_zfs_zpool_rtime{zpool="fortressworkstation"} 1.810764049084e+12
+# HELP node_zfs_zpool_rupdate kstat.zfs.misc.io.rupdate
+# TYPE node_zfs_zpool_rupdate untyped
+node_zfs_zpool_rupdate{zpool="fortressworkstation"} 2.24456897448377e+14
+# HELP node_zfs_zpool_wcnt kstat.zfs.misc.io.wcnt
+# TYPE node_zfs_zpool_wcnt untyped
+node_zfs_zpool_wcnt{zpool="fortressworkstation"} 0
+# HELP node_zfs_zpool_wlentime kstat.zfs.misc.io.wlentime
+# TYPE node_zfs_zpool_wlentime untyped
+node_zfs_zpool_wlentime{zpool="fortressworkstation"} 1.05580320313631e+14
+# HELP node_zfs_zpool_writes kstat.zfs.misc.io.writes
+# TYPE node_zfs_zpool_writes untyped
+node_zfs_zpool_writes{zpool="fortressworkstation"} 5.076393e+06
+# HELP node_zfs_zpool_wtime kstat.zfs.misc.io.wtime
+# TYPE node_zfs_zpool_wtime untyped
+node_zfs_zpool_wtime{zpool="fortressworkstation"} 1.108124492702e+12
+# HELP node_zfs_zpool_wupdate kstat.zfs.misc.io.wupdate
+# TYPE node_zfs_zpool_wupdate untyped
+node_zfs_zpool_wupdate{zpool="fortressworkstation"} 2.24456897269942e+14
+# HELP process_cpu_seconds_total Total user and system CPU time spent in seconds.
+# TYPE process_cpu_seconds_total counter
+process_cpu_seconds_total 1.04
+# HELP process_max_fds Maximum number of open file descriptors.
+# TYPE process_max_fds gauge
+process_max_fds 1024
+# HELP process_open_fds Number of open file descriptors.
+# TYPE process_open_fds gauge
+process_open_fds 7
+# HELP process_resident_memory_bytes Resident memory size in bytes.
+# TYPE process_resident_memory_bytes gauge
+process_resident_memory_bytes 1.1112448e+07
+# HELP process_start_time_seconds Start time of the process since unix epoch in seconds.
+# TYPE process_start_time_seconds gauge
+process_start_time_seconds 1.54943965596e+09
+# HELP process_virtual_memory_bytes Virtual memory size in bytes.
+# TYPE process_virtual_memory_bytes gauge
+process_virtual_memory_bytes 2.90353152e+08
+# HELP promhttp_metric_handler_requests_in_flight Current number of scrapes being served.
+# TYPE promhttp_metric_handler_requests_in_flight gauge
+promhttp_metric_handler_requests_in_flight 1
+# HELP promhttp_metric_handler_requests_total Total number of scrapes by HTTP status code.
+# TYPE promhttp_metric_handler_requests_total counter
+promhttp_metric_handler_requests_total{code="200"} 0
+promhttp_metric_handler_requests_total{code="500"} 0
+promhttp_metric_handler_requests_total{code="503"} 0==============================# HELP go_gc_duration_seconds A summary of the GC invocation durations.
+# TYPE go_gc_duration_seconds summary
+go_gc_duration_seconds{quantile="0"} 4.6788e-05
+go_gc_duration_seconds{quantile="0.25"} 9.5869e-05
+go_gc_duration_seconds{quantile="0.5"} 0.000118775
+go_gc_duration_seconds{quantile="0.75"} 0.000163162
+go_gc_duration_seconds{quantile="1"} 0.002185543
+go_gc_duration_seconds_sum 0.03567781
+go_gc_duration_seconds_count 179
+# HELP go_goroutines Number of goroutines that currently exist.
+# TYPE go_goroutines gauge
+go_goroutines 6
+# HELP go_info Information about the Go environment.
+# TYPE go_info gauge
+go_info{version="go1.9.6"} 1
+# HELP go_memstats_alloc_bytes Number of bytes allocated and still in use.
+# TYPE go_memstats_alloc_bytes gauge
+go_memstats_alloc_bytes 2.918264e+06
+# HELP go_memstats_alloc_bytes_total Total number of bytes allocated, even if freed.
+# TYPE go_memstats_alloc_bytes_total counter
+go_memstats_alloc_bytes_total 1.15176904e+08
+# HELP go_memstats_buck_hash_sys_bytes Number of bytes used by the profiling bucket hash table.
+# TYPE go_memstats_buck_hash_sys_bytes gauge
+go_memstats_buck_hash_sys_bytes 1.482424e+06
+# HELP go_memstats_frees_total Total number of frees.
+# TYPE go_memstats_frees_total counter
+go_memstats_frees_total 1.658549e+06
+# HELP go_memstats_gc_cpu_fraction The fraction of this program's available CPU time used by the GC since the program started.
+# TYPE go_memstats_gc_cpu_fraction gauge
+go_memstats_gc_cpu_fraction 3.581452516016717e-06
+# HELP go_memstats_gc_sys_bytes Number of bytes used for garbage collection system metadata.
+# TYPE go_memstats_gc_sys_bytes gauge
+go_memstats_gc_sys_bytes 438272
+# HELP go_memstats_heap_alloc_bytes Number of heap bytes allocated and still in use.
+# TYPE go_memstats_heap_alloc_bytes gauge
+go_memstats_heap_alloc_bytes 2.918264e+06
+# HELP go_memstats_heap_idle_bytes Number of heap bytes waiting to be used.
+# TYPE go_memstats_heap_idle_bytes gauge
+go_memstats_heap_idle_bytes 2.064384e+06
+# HELP go_memstats_heap_inuse_bytes Number of heap bytes that are in use.
+# TYPE go_memstats_heap_inuse_bytes gauge
+go_memstats_heap_inuse_bytes 4.653056e+06
+# HELP go_memstats_heap_objects Number of allocated objects.
+# TYPE go_memstats_heap_objects gauge
+go_memstats_heap_objects 33763
+# HELP go_memstats_heap_released_bytes Number of heap bytes released to OS.
+# TYPE go_memstats_heap_released_bytes gauge
+go_memstats_heap_released_bytes 1.122304e+06
+# HELP go_memstats_heap_sys_bytes Number of heap bytes obtained from system.
+# TYPE go_memstats_heap_sys_bytes gauge
+go_memstats_heap_sys_bytes 6.71744e+06
+# HELP go_memstats_last_gc_time_seconds Number of seconds since 1970 of last garbage collection.
+# TYPE go_memstats_last_gc_time_seconds gauge
+go_memstats_last_gc_time_seconds 1.5494563051466303e+09
+# HELP go_memstats_lookups_total Total number of pointer lookups.
+# TYPE go_memstats_lookups_total counter
+go_memstats_lookups_total 8653
+# HELP go_memstats_mallocs_total Total number of mallocs.
+# TYPE go_memstats_mallocs_total counter
+go_memstats_mallocs_total 1.692312e+06
+# HELP go_memstats_mcache_inuse_bytes Number of bytes in use by mcache structures.
+# TYPE go_memstats_mcache_inuse_bytes gauge
+go_memstats_mcache_inuse_bytes 6944
+# HELP go_memstats_mcache_sys_bytes Number of bytes used for mcache structures obtained from system.
+# TYPE go_memstats_mcache_sys_bytes gauge
+go_memstats_mcache_sys_bytes 16384
+# HELP go_memstats_mspan_inuse_bytes Number of bytes in use by mspan structures.
+# TYPE go_memstats_mspan_inuse_bytes gauge
+go_memstats_mspan_inuse_bytes 65360
+# HELP go_memstats_mspan_sys_bytes Number of bytes used for mspan structures obtained from system.
+# TYPE go_memstats_mspan_sys_bytes gauge
+go_memstats_mspan_sys_bytes 81920
+# HELP go_memstats_next_gc_bytes Number of heap bytes when next garbage collection will take place.
+# TYPE go_memstats_next_gc_bytes gauge
+go_memstats_next_gc_bytes 4.194304e+06
+# HELP go_memstats_other_sys_bytes Number of bytes used for other system allocations.
+# TYPE go_memstats_other_sys_bytes gauge
+go_memstats_other_sys_bytes 1.231424e+06
+# HELP go_memstats_stack_inuse_bytes Number of bytes in use by the stack allocator.
+# TYPE go_memstats_stack_inuse_bytes gauge
+go_memstats_stack_inuse_bytes 622592
+# HELP go_memstats_stack_sys_bytes Number of bytes obtained from system for stack allocator.
+# TYPE go_memstats_stack_sys_bytes gauge
+go_memstats_stack_sys_bytes 622592
+# HELP go_memstats_sys_bytes Number of bytes obtained from system.
+# TYPE go_memstats_sys_bytes gauge
+go_memstats_sys_bytes 1.0590456e+07
+# HELP go_threads Number of OS threads created.
+# TYPE go_threads gauge
+go_threads 10
+# HELP node_boot_time_seconds Node boot time, in unixtime.
+# TYPE node_boot_time_seconds gauge
+node_boot_time_seconds 1.549231848e+09
+# HELP node_context_switches_total Total number of context switches.
+# TYPE node_context_switches_total counter
+node_context_switches_total 1.588064297e+09
+# HELP node_cpu_guest_seconds_total Seconds the cpus spent in guests (VMs) for each mode.
+# TYPE node_cpu_guest_seconds_total counter
+node_cpu_guest_seconds_total{cpu="0",mode="nice"} 0
+node_cpu_guest_seconds_total{cpu="0",mode="user"} 0
+node_cpu_guest_seconds_total{cpu="1",mode="nice"} 0
+node_cpu_guest_seconds_total{cpu="1",mode="user"} 0
+node_cpu_guest_seconds_total{cpu="2",mode="nice"} 0
+node_cpu_guest_seconds_total{cpu="2",mode="user"} 0
+node_cpu_guest_seconds_total{cpu="3",mode="nice"} 0
+node_cpu_guest_seconds_total{cpu="3",mode="user"} 0
+# HELP node_cpu_seconds_total Seconds the cpus spent in each mode.
+# TYPE node_cpu_seconds_total counter
+node_cpu_seconds_total{cpu="0",mode="idle"} 213189.15
+node_cpu_seconds_total{cpu="0",mode="iowait"} 551.59
+node_cpu_seconds_total{cpu="0",mode="irq"} 654.3
+node_cpu_seconds_total{cpu="0",mode="nice"} 4.76
+node_cpu_seconds_total{cpu="0",mode="softirq"} 255.21
+node_cpu_seconds_total{cpu="0",mode="steal"} 1409.28
+node_cpu_seconds_total{cpu="0",mode="system"} 3455.62
+node_cpu_seconds_total{cpu="0",mode="user"} 3671.19
+node_cpu_seconds_total{cpu="1",mode="idle"} 213505.38
+node_cpu_seconds_total{cpu="1",mode="iowait"} 611
+node_cpu_seconds_total{cpu="1",mode="irq"} 392.75
+node_cpu_seconds_total{cpu="1",mode="nice"} 4.17
+node_cpu_seconds_total{cpu="1",mode="softirq"} 251.04
+node_cpu_seconds_total{cpu="1",mode="steal"} 1283.7
+node_cpu_seconds_total{cpu="1",mode="system"} 3193.83
+node_cpu_seconds_total{cpu="1",mode="user"} 3663.59
+node_cpu_seconds_total{cpu="2",mode="idle"} 214035.57
+node_cpu_seconds_total{cpu="2",mode="iowait"} 544.65
+node_cpu_seconds_total{cpu="2",mode="irq"} 362.94
+node_cpu_seconds_total{cpu="2",mode="nice"} 3.48
+node_cpu_seconds_total{cpu="2",mode="softirq"} 250.05
+node_cpu_seconds_total{cpu="2",mode="steal"} 1237.12
+node_cpu_seconds_total{cpu="2",mode="system"} 3213.67
+node_cpu_seconds_total{cpu="2",mode="user"} 3389.02
+node_cpu_seconds_total{cpu="3",mode="idle"} 214214.32
+node_cpu_seconds_total{cpu="3",mode="iowait"} 554.04
+node_cpu_seconds_total{cpu="3",mode="irq"} 365.9
+node_cpu_seconds_total{cpu="3",mode="nice"} 5.58
+node_cpu_seconds_total{cpu="3",mode="softirq"} 267.87
+node_cpu_seconds_total{cpu="3",mode="steal"} 1230.31
+node_cpu_seconds_total{cpu="3",mode="system"} 3105.24
+node_cpu_seconds_total{cpu="3",mode="user"} 3270.11
+# HELP node_disk_io_now The number of I/Os currently in progress.
+# TYPE node_disk_io_now gauge
+node_disk_io_now{device="dm-0"} 0
+node_disk_io_now{device="dm-1"} 0
+node_disk_io_now{device="dm-2"} 0
+node_disk_io_now{device="sda"} 0
+node_disk_io_now{device="sdb"} 0
+node_disk_io_now{device="sdc"} 0
+node_disk_io_now{device="zd0"} 0
+# HELP node_disk_io_time_seconds_total Total seconds spent doing I/Os.
+# TYPE node_disk_io_time_seconds_total counter
+node_disk_io_time_seconds_total{device="dm-0"} 3834.849
+node_disk_io_time_seconds_total{device="dm-1"} 36.385
+node_disk_io_time_seconds_total{device="dm-2"} 240.948
+node_disk_io_time_seconds_total{device="sda"} 0.023
+node_disk_io_time_seconds_total{device="sdb"} 0.098
+node_disk_io_time_seconds_total{device="sdc"} 3663.0860000000002
+node_disk_io_time_seconds_total{device="zd0"} 0.07
+# HELP node_disk_io_time_weighted_seconds_total The weighted # of seconds spent doing I/Os. See https://www.kernel.org/doc/Documentation/iostats.txt.
+# TYPE node_disk_io_time_weighted_seconds_total counter
+node_disk_io_time_weighted_seconds_total{device="dm-0"} 25493.46
+node_disk_io_time_weighted_seconds_total{device="dm-1"} 104.512
+node_disk_io_time_weighted_seconds_total{device="dm-2"} 923.186
+node_disk_io_time_weighted_seconds_total{device="sda"} 0.032
+node_disk_io_time_weighted_seconds_total{device="sdb"} 0.21
+node_disk_io_time_weighted_seconds_total{device="sdc"} 26321.952
+node_disk_io_time_weighted_seconds_total{device="zd0"} 0.07
+# HELP node_disk_read_bytes_total The total number of bytes read successfully.
+# TYPE node_disk_read_bytes_total counter
+node_disk_read_bytes_total{device="dm-0"} 1.6919891968e+10
+node_disk_read_bytes_total{device="dm-1"} 6.540639232e+09
+node_disk_read_bytes_total{device="dm-2"} 5.415558656e+10
+node_disk_read_bytes_total{device="sda"} 3.289088e+06
+node_disk_read_bytes_total{device="sdb"} 8.786432e+06
+node_disk_read_bytes_total{device="sdc"} 1.693488896e+10
+node_disk_read_bytes_total{device="zd0"} 196608
+# HELP node_disk_read_time_seconds_total The total number of milliseconds spent by all reads.
+# TYPE node_disk_read_time_seconds_total counter
+node_disk_read_time_seconds_total{device="dm-0"} 19960.196
+node_disk_read_time_seconds_total{device="dm-1"} 104.505
+node_disk_read_time_seconds_total{device="dm-2"} 922.955
+node_disk_read_time_seconds_total{device="sda"} 0.002
+node_disk_read_time_seconds_total{device="sdb"} 0.064
+node_disk_read_time_seconds_total{device="sdc"} 544.282
+node_disk_read_time_seconds_total{device="zd0"} 0.07
+# HELP node_disk_reads_completed_total The total number of reads completed successfully.
+# TYPE node_disk_reads_completed_total counter
+node_disk_reads_completed_total{device="dm-0"} 774642
+node_disk_reads_completed_total{device="dm-1"} 331983
+node_disk_reads_completed_total{device="dm-2"} 4.844461e+06
+node_disk_reads_completed_total{device="sda"} 353
+node_disk_reads_completed_total{device="sdb"} 2822
+node_disk_reads_completed_total{device="sdc"} 267071
+node_disk_reads_completed_total{device="zd0"} 26
+# HELP node_disk_reads_merged_total The total number of reads merged. See https://www.kernel.org/doc/Documentation/iostats.txt.
+# TYPE node_disk_reads_merged_total counter
+node_disk_reads_merged_total{device="dm-0"} 0
+node_disk_reads_merged_total{device="dm-1"} 0
+node_disk_reads_merged_total{device="dm-2"} 0
+node_disk_reads_merged_total{device="sda"} 0
+node_disk_reads_merged_total{device="sdb"} 0
+node_disk_reads_merged_total{device="sdc"} 910
+node_disk_reads_merged_total{device="zd0"} 0
+# HELP node_disk_write_time_seconds_total This is the total number of seconds spent by all writes.
+# TYPE node_disk_write_time_seconds_total counter
+node_disk_write_time_seconds_total{device="dm-0"} 5529.28
+node_disk_write_time_seconds_total{device="dm-1"} 0
+node_disk_write_time_seconds_total{device="dm-2"} 0
+node_disk_write_time_seconds_total{device="sda"} 0
+node_disk_write_time_seconds_total{device="sdb"} 0
+node_disk_write_time_seconds_total{device="sdc"} 24805.146
+node_disk_write_time_seconds_total{device="zd0"} 0
+# HELP node_disk_writes_completed_total The total number of writes completed successfully.
+# TYPE node_disk_writes_completed_total counter
+node_disk_writes_completed_total{device="dm-0"} 5.076644e+06
+node_disk_writes_completed_total{device="dm-1"} 0
+node_disk_writes_completed_total{device="dm-2"} 0
+node_disk_writes_completed_total{device="sda"} 0
+node_disk_writes_completed_total{device="sdb"} 0
+node_disk_writes_completed_total{device="sdc"} 5.536019e+06
+node_disk_writes_completed_total{device="zd0"} 0
+# HELP node_disk_writes_merged_total The number of writes merged. See https://www.kernel.org/doc/Documentation/iostats.txt.
+# TYPE node_disk_writes_merged_total counter
+node_disk_writes_merged_total{device="dm-0"} 0
+node_disk_writes_merged_total{device="dm-1"} 0
+node_disk_writes_merged_total{device="dm-2"} 0
+node_disk_writes_merged_total{device="sda"} 0
+node_disk_writes_merged_total{device="sdb"} 0
+node_disk_writes_merged_total{device="sdc"} 75408
+node_disk_writes_merged_total{device="zd0"} 0
+# HELP node_disk_written_bytes_total The total number of bytes written successfully.
+# TYPE node_disk_written_bytes_total counter
+node_disk_written_bytes_total{device="dm-0"} 1.43326687232e+11
+node_disk_written_bytes_total{device="dm-1"} 0
+node_disk_written_bytes_total{device="dm-2"} 0
+node_disk_written_bytes_total{device="sda"} 0
+node_disk_written_bytes_total{device="sdb"} 0
+node_disk_written_bytes_total{device="sdc"} 1.43326721024e+11
+node_disk_written_bytes_total{device="zd0"} 0
+# HELP node_entropy_available_bits Bits of available entropy.
+# TYPE node_entropy_available_bits gauge
+node_entropy_available_bits 3701
+# HELP node_exporter_build_info A metric with a constant '1' value labeled by version, revision, branch, and goversion from which node_exporter was built.
+# TYPE node_exporter_build_info gauge
+node_exporter_build_info{branch="HEAD",goversion="go1.9.6",revision="d42bd70f4363dced6b77d8fc311ea57b63387e4f",version="0.16.0"} 1
+# HELP node_filefd_allocated File descriptor statistics: allocated.
+# TYPE node_filefd_allocated gauge
+node_filefd_allocated 12672
+# HELP node_filefd_maximum File descriptor statistics: maximum.
+# TYPE node_filefd_maximum gauge
+node_filefd_maximum 1.585351e+06
+# HELP node_filesystem_avail_bytes Filesystem space available to non-root users in bytes.
+# TYPE node_filesystem_avail_bytes gauge
+node_filesystem_avail_bytes{device="/dev/sdc2",fstype="vfat",mountpoint="/boot/efi"} 1.014992896e+09
+node_filesystem_avail_bytes{device="/dev/sdc3",fstype="ext4",mountpoint="/boot"} 7.09484544e+08
+node_filesystem_avail_bytes{device="fortressworkstation/ROOT/os",fstype="zfs",mountpoint="/"} 4.97948295168e+11
+node_filesystem_avail_bytes{device="fortressworkstation/ROOT/os-borg-2018-12-02",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-uRtWclTBtE"} 4.97948295168e+11
+node_filesystem_avail_bytes{device="fortressworkstation/ROOT/os-borg-2019-01-06",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-1lUku9wUmv"} 4.97948295168e+11
+node_filesystem_avail_bytes{device="fortressworkstation/ROOT/os-borg-2019-01-23",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-bF2DolWWag"} 4.97948295168e+11
+node_filesystem_avail_bytes{device="fortressworkstation/ROOT/os-borg-2019-02-03",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-1LVq6UOPBe"} 4.97948295168e+11
+node_filesystem_avail_bytes{device="fortressworkstation/ROOT/os-borg-2019-02-06",fstype="zfs",mountpoint="/tmp/borg-offsite-backup-IEDpbEYFIT"} 4.97948295168e+11
+node_filesystem_avail_bytes{device="tmpfs",fstype="tmpfs",mountpoint="/run"} 8.146743296e+09
+node_filesystem_avail_bytes{device="tmpfs",fstype="tmpfs",mountpoint="/run/user/1000"} 1.63024896e+09
+node_filesystem_avail_bytes{device="tmpfs",fstype="tmpfs",mountpoint="/tmp"} 8.15128576e+09
+node_filesystem_avail_bytes{device="xenstore",fstype="tmpfs",mountpoint="/var/lib/xenstored"} 8.150700032e+09
+# HELP node_filesystem_device_error Whether an error occurred while getting statistics for the given device.==============================

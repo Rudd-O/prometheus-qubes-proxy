@@ -1,0 +1,7 @@
+harvest and package qubes-rpc policy and driver from dom0
+add error handling:
+* what happens if the read() takes too long?
+* should we close the connection with the browser and kill the qrexec connection?
+* how long do we wait for prometheus to respond to us?
+* what happens with the current locking mechanism?
+  * the mutex is abandoned when we return the io.Reader, that is bad.
