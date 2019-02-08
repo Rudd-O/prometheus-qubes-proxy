@@ -1,16 +1,17 @@
 #!/bin/bash
 
+port="$1"
+if [ "$port" -lt "1025" -o "$port" -gt "65535" ] ; then break ; fi
+
+read handshake
+if [ "$handshake" != "+" ] ; then exit ; fi
+echo "="
+
 while true ; do
-#echo waiting >>/tmp/log
-read var
-if [ "$var" != "?" ] ; then break ; fi
-#echo received >>/tmp/log
-text=$(curl -s http://localhost:9100/metrics)
-#echo curled >>/tmp/log
-chars=$(echo "$text" | wc -c)
-echo "$chars"
-#echo sent header >>/tmp/log
-echo "$text"
-#echo sent text >>/tmp/log
+    read var
+    if [ "$var" != "?" ] ; then break ; fi
+    text=$(curl -s http://127.0.0.1:"$port"/metrics)
+    chars=$(echo "$text" | wc -c)
+    echo "$chars"
+    echo "$text"
 done
-#echo bailed >>/tmp/log

@@ -1,5 +1,7 @@
-harvest and package qubes-rpc policy and driver from dom0
 add error handling:
-* what happens if the read() from prometheus takes too long?  cancellation?
-* should we close the connection with the browser and kill the qrexec connection?  investigate what happens when the VM or qrexec daemon dies.
-* how long do we wait for prometheus to confirm it is in session with us (handshake protocol)?  cancel?
+* cancel if read from qrexec pipe takes too long, or if write takes too long
+* cancel connection with the browser if reado/write to client takes too long
+* rate limiting for clients
+* SSL
+* authentication
+* documentation on how to scrape with this thing

@@ -41,6 +41,9 @@ Install this package on your VM / VM template in order to allow Prometheus Qubes
 proxy to talk to any exporters running on said VM / on any VMs derived from that
 VM template.
 
+Requires: curl
+Requires: bash
+
 %package dom0
 Summary:        This component installs the default-deny proxy policy to dom0.
 
@@ -85,13 +88,13 @@ systemctl enable %{name}.service >/dev/null 2>&1 || true
 %attr(0755, root, root) %{_bindir}/%{name}
 %attr(0644, root, root) %{_unitdir}/%{name}.service
 %attr(0644, root, root) %{_presetdir}/70-%{name}.preset
-%doc README.md
+%doc README.md TODO
 
 %files service
 %attr(0644, root, root) %{_sysconfdir}/qubes-rpc/ruddo.PrometheusProxy
 
 %files dom0
-%attr(0644, root, root) %{_sysconfdir}/qubes-rpc/policy/ruddo.PrometheusProxy
+%attr(0644, root, root) %config(noreplace) %{_sysconfdir}/qubes-rpc/policy/ruddo.PrometheusProxy
 
 %changelog
 * Fri Feb 8 2019 Manuel Amador (Rudd-O) <rudd-o@rudd-o.com>

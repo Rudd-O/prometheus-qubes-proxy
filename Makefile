@@ -6,8 +6,7 @@ PROGNAME=prometheus-qubes-proxy
 
 prometheus-qubes-proxy: *.go
 	GOPATH=$$PWD go build
-	for f in prometheus-qubes-proxy-*.*.* ; do if test -f "$$f" ; then mv "$$f" prometheus-qubes-proxy ; fi ; done
-	test -f prometheus-qubes-proxy
+	if ! test -f prometheus-qubes-proxy ; then for f in prometheus-qubes-proxy-*.*.* ; do if test -f "$$f" ; then mv "$$f" prometheus-qubes-proxy ; fi ; done ; fi
 
 clean:
 	rm -f prometheus-qubes-proxy
