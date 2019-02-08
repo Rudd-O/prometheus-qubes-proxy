@@ -20,6 +20,7 @@ BuildRequires:  findutils
 BuildRequires:  golang
 
 Requires(pre): shadow-utils
+%{systemd_requires}
 
 %description
 This package lets your Prometheus server contact Prometheus exporters running
@@ -59,9 +60,9 @@ make DESTDIR=$RPM_BUILD_ROOT BINDIR=%{_bindir} SYSCONFDIR=%{_sysconfdir} UNITDIR
 %install
 rm -rf $RPM_BUILD_ROOT
 # variables must be kept in sync with build
-make DESTDIR=$RPM_BUILD_ROOT BINDIR=%{_bindir} SYSCONFDIR=%{_sysconfdir} UNITDIR=%{_unitdir}
-ls -la 
 make install DESTDIR=$RPM_BUILD_ROOT BINDIR=%{_bindir} SYSCONFDIR=%{_sysconfdir} UNITDIR=%{_unitdir}
+echo "enable %{name}.service" > 70-%{name}.preset
+install -Dm 644 70-%{name}.preset -t $RPM_BUILD_ROOT/%{_presetdir}/
 
 %pre
 getent group %{name} >/dev/null || groupadd -r %{name}
@@ -72,6 +73,7 @@ exit 0
 
 %post
 %systemd_post %{name}.service
+systemctl enable %{name}.service >/dev/null 2>&1 || true
 
 %preun
 %systemd_preun %{name}.service
@@ -82,6 +84,7 @@ exit 0
 %files
 %attr(0755, root, root) %{_bindir}/%{name}
 %attr(0644, root, root) %{_unitdir}/%{name}.service
+%attr(0644, root, root) %{_presetdir}/70-%{name}.preset
 %doc README.md
 
 %files service
