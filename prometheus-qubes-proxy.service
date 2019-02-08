@@ -1,6 +1,6 @@
 [Unit]
 Description=Prometheus proxy for Qubes OS
-ConditionPathExists=/var/run-qubes-service/prometheus-qubes-proxy
+ConditionPathExists=/var/run/qubes-service/prometheus-qubes-proxy
 
 [Service]
 Type=simple
