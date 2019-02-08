@@ -1,4 +1,11 @@
 add error handling:
+* deprivilege the qubes rpc service completely
+  * find out as what user it runs, we don't want it to run in the same
+    security context as the user of the console
+  * it looks like it runs as "user", this may require some sudoing
+    into an unprivileged user
+* write tests for all those handled error cases, to ensure the code is
+  completely covered by the tests
 * cancel if read from qrexec pipe takes too long, or if write takes too long
 * cancel connection with the browser if reado/write to client takes too long
 * rate limiting for clients
