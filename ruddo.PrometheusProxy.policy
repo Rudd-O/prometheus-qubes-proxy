@@ -1,0 +1,5 @@
+## This is the default policy.
+## Add your authorization rules above these comments.
+## Your custom comments should be prefixed with a single hash.
+
+$anyvm $anyvm deny

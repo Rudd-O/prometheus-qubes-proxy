@@ -1,0 +1,16 @@
+#!/bin/bash
+
+while true ; do
+#echo waiting >>/tmp/log
+read var
+if [ "$var" != "?" ] ; then break ; fi
+#echo received >>/tmp/log
+text=$(curl -s http://localhost:9100/metrics)
+#echo curled >>/tmp/log
+chars=$(echo "$text" | wc -c)
+echo "$chars"
+#echo sent header >>/tmp/log
+echo "$text"
+#echo sent text >>/tmp/log
+done
+#echo bailed >>/tmp/log

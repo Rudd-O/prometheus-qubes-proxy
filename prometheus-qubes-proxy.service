@@ -1,0 +1,12 @@
+[Unit]
+Description=Prometheus proxy for Qubes OS
+ConditionPathExists=/var/run-qubes-service/prometheus-qubes-proxy
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/prometheus-qubes-proxy
+User=prometheus-qubes-proxy
+ProtectSystem=strict
+
+[Install]
+WantedBy=multi-user.service

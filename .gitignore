@@ -1,1 +1,3 @@
 prometheus-qubes-proxy
+*.rpm
+*.tar.gz
