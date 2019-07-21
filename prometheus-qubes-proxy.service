@@ -9,4 +9,4 @@ User=user
 ProtectSystem=strict
 
 [Install]
-WantedBy=multi-user.service
+WantedBy=multi-user.target
