@@ -5,7 +5,7 @@ ConditionPathExists=/var/run/qubes-service/prometheus-qubes-proxy
 [Service]
 Type=simple
 ExecStart=/usr/bin/prometheus-qubes-proxy
-User=prometheus-qubes-proxy
+User=user
 ProtectSystem=strict
 
 [Install]

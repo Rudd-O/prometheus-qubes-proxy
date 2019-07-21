@@ -166,27 +166,33 @@ func (q *qrexecConn) query() (io.Reader, error) {
 	if q.cmd == nil {
 		ctx, cancel := context.WithCancel(context.Background())
 		q.cancel = cancel
-		c := exec.CommandContext(ctx, "qrexec-client-vm", q.targetVm, fmt.Sprintf("ruddo.PrometheusProxy+%v", q.targetPort))
+		arg := fmt.Sprintf("ruddo.PrometheusProxy+%v", q.targetPort)
+		log.Printf("Launching qrexec-client-vm against %s with argument %s.", q.targetVm, arg)
+		c := exec.CommandContext(ctx, "qrexec-client-vm", q.targetVm, arg)
 		q.cmd = c
 		var err error
 		q.stdin, err = c.StdinPipe()
 		if err != nil {
+			log.Printf("Failed to launch program stdin pipe: %s.", err)
 			cancelResources()
 			return nil, err
 		}
 		q.stdout, err = c.StdoutPipe()
 		if err != nil {
+			log.Printf("Failed to launch program stdout pipe: %s.", err)
 			cancelResources()
 			return nil, err
 		}
 		c.Stderr = os.Stderr
 		err = c.Start()
 		if err != nil {
+			log.Printf("Failed to start program.")
 			cancelResources()
 			return nil, err
 		}
 		wrt, err := q.stdin.Write([]byte("+\n"))
 		if err != nil {
+			log.Printf("Failed to write initial handshake: %s.", err)
 			cancelProg()
 			if err == io.EOF {
 				err = errRequestRefused
@@ -194,12 +200,14 @@ func (q *qrexecConn) query() (io.Reader, error) {
 			return nil, err
 		}
 		if wrt != 2 {
+			log.Printf("Failed to write initial handshake (short write of %d bytes).", wrt)
 			cancelProg()
 			return nil, errRequestRefused
 		}
 		var mybuf [2]byte
 		n, err := q.stdout.Read(mybuf[:])
 		if err != nil {
+			log.Printf("Failed to read initial handshake: %s.", err)
 			cancelProg()
 			if err == io.EOF {
 				err = errRequestRefused
@@ -207,6 +215,7 @@ func (q *qrexecConn) query() (io.Reader, error) {
 			return nil, err
 		}
 		if n != 2 || string(mybuf[:]) != "=\n" {
+			log.Printf("Failed to read initial handshake (wrong contents).")
 			cancelProg()
 			return nil, errRequestRefused
 		}
@@ -260,7 +269,7 @@ func (m *myHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 	vm := uVM
 
-	log.Printf("Incoming metrics request for exporter on port %v in VM %v", port, vm)
+	// log.Printf("Incoming metrics request for exporter on port %v in VM %v", port, vm)
 	reader, err := m.conn.query(vm, port)
 	if err != nil {
 		log.Printf("Metrics query for exporter on port %v in VM %v failed: %s", port, vm, err)

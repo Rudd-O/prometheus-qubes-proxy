@@ -67,13 +67,6 @@ make install DESTDIR=$RPM_BUILD_ROOT BINDIR=%{_bindir} SYSCONFDIR=%{_sysconfdir}
 echo "enable %{name}.service" > 70-%{name}.preset
 install -Dm 644 70-%{name}.preset -t $RPM_BUILD_ROOT/%{_presetdir}/
 
-%pre
-getent group %{name} >/dev/null || groupadd -r %{name}
-getent passwd %{name} >/dev/null || \
-    useradd -r -g %{name} -d /var/lib/%{name} -s /sbin/nologin \
-    -c "Role account for the Prometheus Qubes proxy" %{name}
-exit 0
-
 %post
 %systemd_post %{name}.service
 systemctl enable %{name}.service >/dev/null 2>&1 || true
