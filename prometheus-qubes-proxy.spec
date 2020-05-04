@@ -20,7 +20,17 @@ BuildRequires:  findutils
 BuildRequires:  golang
 
 Requires(pre): shadow-utils
-%{systemd_requires}
+
+%if 0%{?fedora} > 29
+BuildRequires:    systemd-rpm-macros
+%{?systemd_requires}
+%else
+%global _presetdir %{_prefix}/lib/systemd/system-preset
+%global _unitdir   %{_prefix}/lib/systemd/system
+Requires(pre):    systemd
+Requires(preun):  systemd
+Requires(postun): systemd
+%endif
 
 %description
 This package lets your Prometheus server contact Prometheus exporters running
@@ -68,14 +78,29 @@ echo "enable %{name}.service" > 70-%{name}.preset
 install -Dm 644 70-%{name}.preset -t $RPM_BUILD_ROOT/%{_presetdir}/
 
 %post
+%if 0%{?fedora} > 29
 %systemd_post %{name}.service
-systemctl enable %{name}.service >/dev/null 2>&1 || true
+%else
+systemctl --no-reload preset %{name}.service
+%endif
 
 %preun
+%if 0%{?fedora} > 29
 %systemd_preun %{name}.service
+%else
+if [ $1 -eq 0 ] ; then
+    systemctl --no-reload disable --now %{name}.service
+fi
+%endif
 
 %postun
+%if 0%{?fedora} > 29
 %systemd_postun_with_restart %{name}.service
+%else
+if [ $1 -ge 1 ] ; then
+    systemctl try-restart %{name}.service
+fi
+%endif
 
 %files
 %attr(0755, root, root) %{_bindir}/%{name}
