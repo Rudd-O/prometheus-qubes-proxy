@@ -7,7 +7,7 @@ PROGNAME=prometheus-qubes-proxy
 ROOT_DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
 prometheus-qubes-proxy: *.go
-	GOPATH=$$PWD go build
+	go build ./...
 	if ! test -f prometheus-qubes-proxy ; then for f in prometheus-qubes-proxy-*.*.* ; do if test -f "$$f" ; then mv "$$f" prometheus-qubes-proxy ; fi ; done ; fi
 
 .PHONY: clean dist rpm srpm install
