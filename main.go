@@ -7,7 +7,6 @@ import (
 	"flag"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
@@ -21,6 +20,7 @@ import (
 
 var errRequestRefused = errors.New("request refused")
 var errShortWrite = errors.New("short write")
+var errShortRead = errors.New("short read")
 
 func SplitAt(substring string) func(data []byte, atEOF bool) (advance int, token []byte, err error) {
 
@@ -50,57 +50,6 @@ type proxyReader struct {
 	l int
 }
 
-func newProxyReader(r io.Reader) io.Reader {
-	return &proxyReader{
-		r: r,
-		l: -1,
-	}
-}
-
-func (r *proxyReader) Read(buf []byte) (int, error) {
-	if r.l < 0 {
-		read := []byte{}
-		for {
-			if len(read) > 8 {
-				return 0, fmt.Errorf("number too big")
-			}
-			mybuf := []byte{0}
-			n, err := r.r.Read(mybuf)
-			if err != nil {
-				return n, err
-			}
-			if n == 0 {
-				return n, fmt.Errorf("short read")
-			}
-			if string(mybuf) == "\n" {
-				// Done reading header.
-				break
-			}
-			read = append(read, mybuf...)
-		}
-		var err error
-		r.l, err = strconv.Atoi(string(read))
-		if err != nil {
-			r.l = -1
-			return 0, err
-		}
-		if r.l < 0 {
-			return 0, fmt.Errorf("number too small")
-		}
-	}
-	m := r.l
-	if m >= len(buf) {
-		m = len(buf) - 1
-	}
-	n, err := r.r.Read(buf[:m])
-	r.l = r.l - n
-	if r.l == 0 || err == io.EOF {
-		r.l = -1
-		err = io.EOF
-	}
-	return n, err
-}
-
 type qrexecConnMultiplexer struct {
 	vmPortMap map[string]*qrexecConn
 	m         sync.Mutex
@@ -115,7 +64,9 @@ func newQrexecConnMultiplexer() *qrexecConnMultiplexer {
 func (q *qrexecConnMultiplexer) query(vm string, port int) (io.Reader, error) {
 	lookup := func(vm string, port int) *qrexecConn {
 		q.m.Lock()
-		defer q.m.Unlock()
+		defer func() {
+			q.m.Unlock()
+		}()
 		identifier := fmt.Sprintf("%s-%d", vm, port)
 		conn, ok := q.vmPortMap[identifier]
 		if ok {
@@ -138,13 +89,14 @@ type qrexecConn struct {
 	cancel     context.CancelFunc
 	stdin      io.WriteCloser
 	stdout     io.ReadCloser
-	filter     io.Reader
 	m          sync.Mutex
 }
 
 func (q *qrexecConn) query() (io.Reader, error) {
 	q.m.Lock()
-	defer q.m.Unlock()
+	defer func() {
+		q.m.Unlock()
+	}()
 
 	cancelResources := func() {
 		q.cmd = nil
@@ -160,7 +112,6 @@ func (q *qrexecConn) query() (io.Reader, error) {
 	}
 	cancelFilter := func() {
 		cancelProg()
-		q.filter = nil
 	}
 
 	if q.cmd == nil {
@@ -204,6 +155,7 @@ func (q *qrexecConn) query() (io.Reader, error) {
 			cancelProg()
 			return nil, errRequestRefused
 		}
+		log.Println("Initial handshake successful")
 		var mybuf [2]byte
 		n, err := q.stdout.Read(mybuf[:])
 		if err != nil {
@@ -219,7 +171,6 @@ func (q *qrexecConn) query() (io.Reader, error) {
 			cancelProg()
 			return nil, errRequestRefused
 		}
-		q.filter = newProxyReader(q.stdout)
 	}
 
 	n, err := q.stdin.Write([]byte("?\n"))
@@ -232,11 +183,45 @@ func (q *qrexecConn) query() (io.Reader, error) {
 		return nil, errShortWrite
 	}
 
-	b, err := ioutil.ReadAll(q.filter)
-	if len(b) == 0 {
-		cancelFilter()
-		return nil, errRequestRefused
+	readSoFar := []byte{}
+	readLength := false
+	for i := 0; i < 7; i++ { // max 9999999 bytes following read
+		var buf [1]byte
+		n, err := io.ReadFull(q.stdout, buf[:])
+		if i == 0 && n == 0 {
+			log.Println("Failed to read length byte (nothing read).")
+			cancelFilter()
+			return nil, errRequestRefused
+		}
+		if err != nil {
+			log.Printf("Failed to read length byte: %s.", err)
+			cancelFilter()
+			return nil, err
+		}
+		if buf[0] == '\n' {
+			readLength = true
+			break
+		}
+		readSoFar = append(readSoFar, buf[0])
 	}
+	if !readLength {
+		cancelFilter()
+		return nil, fmt.Errorf("number too big")
+	}
+
+	length, err := strconv.Atoi(string(readSoFar))
+	if err != nil || length < 1 {
+		cancelFilter()
+		return nil, fmt.Errorf("number too small")
+	}
+
+	b := make([]byte, length)
+	_, err = io.ReadFull(q.stdout, b)
+	if err != nil {
+		cancelFilter()
+		return nil, err
+	}
+
 	return bytes.NewBuffer(b), err
 }
 
@@ -304,6 +289,7 @@ func main() {
 		ReadTimeout:    30 * time.Second,
 		WriteTimeout:   30 * time.Second,
 		MaxHeaderBytes: 1 << 10,
+		IdleTimeout:    1,
 	}
 	log.Printf("Starting to serve on address %s", addr)
 	log.Fatal(s.ListenAndServe())
