@@ -35,7 +35,7 @@ install-prometheus-qubes-proxy.service: prometheus-qubes-proxy.service
 	install -Dm 644 prometheus-qubes-proxy.service -t $(DESTDIR)/$(UNITDIR)/
 
 install-ruddo.PrometheusProxy: ruddo.PrometheusProxy
-	install -Dm 644 ruddo.PrometheusProxy -t $(DESTDIR)/$(SYSCONFDIR)/qubes-rpc/
+	install -Dm 755 ruddo.PrometheusProxy -t $(DESTDIR)/$(SYSCONFDIR)/qubes-rpc/
 
 install-ruddo.PrometheusProxy.policy: ruddo.PrometheusProxy.policy
 	install -Dm 644 ruddo.PrometheusProxy.policy $(DESTDIR)/$(SYSCONFDIR)/qubes-rpc/policy/ruddo.PrometheusProxy

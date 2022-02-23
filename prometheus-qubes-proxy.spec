@@ -3,7 +3,7 @@
 %define mybuildnumber %{?build_number}%{?!build_number:1}
 
 Name:           prometheus-qubes-proxy
-Version:        0.0.5.1
+Version:        0.0.5.2
 Release:        %{mybuildnumber}%{?dist}
 Summary:        Proxy the outside world into Prometheus exporters running on your Qubes OS VMs
 
@@ -21,9 +21,7 @@ BuildRequires:  golang
 
 Requires(pre): shadow-utils
 
-%if 0%{?fedora} > 29
 BuildRequires:    systemd-rpm-macros
-%{?systemd_requires}
 %else
 %global _presetdir %{_prefix}/lib/systemd/system-preset
 %global _unitdir   %{_prefix}/lib/systemd/system
@@ -78,29 +76,13 @@ echo "enable %{name}.service" > 70-%{name}.preset
 install -Dm 644 70-%{name}.preset -t $RPM_BUILD_ROOT/%{_presetdir}/
 
 %post
-%if 0%{?fedora} > 29
 %systemd_post %{name}.service
-%else
-systemctl --no-reload preset %{name}.service
-%endif
 
 %preun
-%if 0%{?fedora} > 29
 %systemd_preun %{name}.service
-%else
-if [ $1 -eq 0 ] ; then
-    systemctl --no-reload disable --now %{name}.service
-fi
-%endif
 
 %postun
-%if 0%{?fedora} > 29
 %systemd_postun_with_restart %{name}.service
-%else
-if [ $1 -ge 1 ] ; then
-    systemctl try-restart %{name}.service
-fi
-%endif
 
 %files
 %attr(0755, root, root) %{_bindir}/%{name}
@@ -109,7 +91,7 @@ fi
 %doc README.md TODO
 
 %files service
-%attr(0644, root, root) %{_sysconfdir}/qubes-rpc/ruddo.PrometheusProxy
+%attr(0755, root, root) %{_sysconfdir}/qubes-rpc/ruddo.PrometheusProxy
 
 %files dom0
 %attr(0644, root, root) %config(noreplace) %{_sysconfdir}/qubes-rpc/policy/ruddo.PrometheusProxy
