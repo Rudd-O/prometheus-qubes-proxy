@@ -3,7 +3,7 @@
 %define mybuildnumber %{?build_number}%{?!build_number:1}
 
 Name:           prometheus-qubes-proxy
-Version:        0.0.5.2
+Version:        0.0.5.3
 Release:        %{mybuildnumber}%{?dist}
 Summary:        Proxy the outside world into Prometheus exporters running on your Qubes OS VMs
 
@@ -22,13 +22,6 @@ BuildRequires:  golang
 Requires(pre): shadow-utils
 
 BuildRequires:    systemd-rpm-macros
-%else
-%global _presetdir %{_prefix}/lib/systemd/system-preset
-%global _unitdir   %{_prefix}/lib/systemd/system
-Requires(pre):    systemd
-Requires(preun):  systemd
-Requires(postun): systemd
-%endif
 
 %description
 This package lets your Prometheus server contact Prometheus exporters running
