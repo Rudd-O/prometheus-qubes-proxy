@@ -185,7 +185,7 @@ func (q *qrexecConn) query() (io.Reader, error) {
 
 	readSoFar := []byte{}
 	readLength := false
-	for i := 0; i < 7; i++ { // max 9999999 bytes following read
+	for i := 0; i < 8; i++ { // max 9999999 bytes following read
 		var buf [1]byte
 		n, err := io.ReadFull(q.stdout, buf[:])
 		if i == 0 && n == 0 {
