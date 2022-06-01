@@ -10,8 +10,8 @@ echo "="
 while true ; do
     read var
     if [ "$var" != "?" ] ; then break ; fi
-    text=$(curl -s http://127.0.0.1:"$port"/metrics)
-    chars=$(echo "$text" | wc -c)
-    echo "$chars"
-    echo "$text"
+    text=$(curl -s http://127.0.0.1:"$port"/metrics) || break
+    chars=$(echo "$text" | wc -c) || break
+    echo "$chars" || break
+    echo "$text" || break
 done
