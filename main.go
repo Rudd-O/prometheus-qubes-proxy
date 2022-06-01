@@ -204,7 +204,7 @@ func (q *qrexecConn) query() (io.Reader, error) {
 		if i == 0 && n == 0 {
 			log.Printf("%d: failed to read length byte (nothing read).", q.targetPort)
 			q.cancel()
-			return nil, errRequestRefused
+			return nil, errShortRead
 		}
 		if err != nil {
 			log.Printf("%d: failed to read length byte: %s.", q.targetPort, err)
