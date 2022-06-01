@@ -131,14 +131,14 @@ func (q *qrexecConn) query() (io.Reader, error) {
 		var err error
 		q.stdin, err = c.StdinPipe()
 		if err != nil {
-			log.Printf("Failed to launch program stdin pipe: %s.", err)
+			log.Printf("%d: failed to launch program stdin pipe: %s.", q.targetPort, err)
 			q.cancel()
 			return nil, err
 		}
 
 		q.stdout, err = c.StdoutPipe()
 		if err != nil {
-			log.Printf("Failed to launch program stdout pipe: %s.", err)
+			log.Printf("%d: failed to launch program stdout pipe: %s.", q.targetPort, err)
 			q.cancel()
 			return nil, err
 		}
@@ -146,14 +146,14 @@ func (q *qrexecConn) query() (io.Reader, error) {
 
 		err = c.Start()
 		if err != nil {
-			log.Printf("Failed to start program.")
+			log.Printf("%d: failed to start program.", q.targetPort)
 			q.cancel()
 			return nil, err
 		}
 
 		wrt, err := q.stdin.Write([]byte("+\n"))
 		if err != nil {
-			log.Printf("Failed to write initial handshake: %s.", err)
+			log.Printf("%d: failed to write initial handshake: %s.", q.targetPort, err)
 			q.cancel()
 			if err == io.EOF {
 				err = errRequestRefused
@@ -161,7 +161,7 @@ func (q *qrexecConn) query() (io.Reader, error) {
 			return nil, err
 		}
 		if wrt != 2 {
-			log.Printf("Failed to write initial handshake (short write of %d bytes).", wrt)
+			log.Printf("%d: failed to write initial handshake (short write of %d bytes).", q.targetPort, wrt)
 			q.cancel()
 			return nil, errRequestRefused
 		}
@@ -170,7 +170,7 @@ func (q *qrexecConn) query() (io.Reader, error) {
 		var mybuf [2]byte
 		n, err := q.stdout.Read(mybuf[:])
 		if err != nil {
-			log.Printf("Failed to read initial handshake: %s.", err)
+			log.Printf("%d: failed to read initial handshake: %s.", q.targetPort, err)
 			q.cancel()
 			if err == io.EOF {
 				err = errRequestRefused
@@ -178,7 +178,7 @@ func (q *qrexecConn) query() (io.Reader, error) {
 			return nil, err
 		}
 		if n != 2 || string(mybuf[:]) != "=\n" {
-			log.Printf("Failed to read initial handshake (wrong contents).")
+			log.Printf("%d: failed to read initial handshake (wrong contents).", q.targetPort)
 			q.cancel()
 			return nil, errRequestRefused
 		}
@@ -186,11 +186,13 @@ func (q *qrexecConn) query() (io.Reader, error) {
 
 	n, err := q.stdin.Write([]byte("?\n"))
 	if err != nil {
+		log.Printf("%d: failed to write handshake: %s.", q.targetPort, err)
 		q.cancel()
 		return nil, err
 	}
 	if n != 2 {
 		q.cancel()
+		log.Printf("%d: failed to write handshake (short write).", q.targetPort)
 		return nil, errShortWrite
 	}
 
@@ -200,12 +202,12 @@ func (q *qrexecConn) query() (io.Reader, error) {
 		var buf [1]byte
 		n, err := io.ReadFull(q.stdout, buf[:])
 		if i == 0 && n == 0 {
-			log.Println("Failed to read length byte (nothing read).")
+			log.Printf("%d: failed to read length byte (nothing read).", q.targetPort)
 			q.cancel()
 			return nil, errRequestRefused
 		}
 		if err != nil {
-			log.Printf("Failed to read length byte: %s.", err)
+			log.Printf("%d: failed to read length byte: %s.", q.targetPort, err)
 			q.cancel()
 			return nil, err
 		}
@@ -216,12 +218,14 @@ func (q *qrexecConn) query() (io.Reader, error) {
 		readSoFar = append(readSoFar, buf[0])
 	}
 	if !readLength {
+		log.Printf("%d: data returned from exporter is too big", q.targetPort)
 		q.cancel()
 		return nil, fmt.Errorf("number too big")
 	}
 
 	length, err := strconv.Atoi(string(readSoFar))
 	if err != nil || length < 1 {
+		log.Printf("%d: data returned from exporter is too small: %s", q.targetPort, err)
 		q.cancel()
 		return nil, fmt.Errorf("number too small")
 	}
@@ -229,6 +233,7 @@ func (q *qrexecConn) query() (io.Reader, error) {
 	b := make([]byte, length)
 	_, err = io.ReadFull(q.stdout, b)
 	if err != nil {
+		log.Printf("%d: failed to read payload from exporter: %s", q.targetPort, err)
 		q.cancel()
 		return nil, err
 	}
