@@ -83,13 +83,14 @@ func (q *qrexecConnMultiplexer) query(vm string, port int) (io.Reader, error) {
 }
 
 type qrexecConn struct {
-	targetVm   string
-	targetPort int
-	cmd        *exec.Cmd
-	cancel     context.CancelFunc
-	stdin      io.WriteCloser
-	stdout     io.ReadCloser
-	m          sync.Mutex
+	targetVm      string
+	targetPort    int
+	cmd           *exec.Cmd
+	cancel        context.CancelFunc
+	cancelCommand context.CancelFunc
+	stdin         io.WriteCloser
+	stdout        io.ReadCloser
+	m             sync.Mutex
 }
 
 func (q *qrexecConn) query() (io.Reader, error) {
@@ -98,53 +99,62 @@ func (q *qrexecConn) query() (io.Reader, error) {
 		q.m.Unlock()
 	}()
 
-	cancelResources := func() {
-		q.cmd = nil
-		q.cancel = nil
-		q.stdin = nil
-		q.stdout = nil
-	}
-	cancelProg := func() {
-		q.cancel()
-		q.stdin.Close()
-		q.stdout.Close()
-		cancelResources()
-	}
-	cancelFilter := func() {
-		cancelProg()
-	}
-
 	if q.cmd == nil {
+		q.cancel = func() {
+			if q.stdout != nil {
+				q.stdout.Close()
+				q.stdout = nil
+			}
+			if q.stdin != nil {
+				q.stdin.Close()
+				q.stdin = nil
+			}
+			if q.cmd != nil {
+				q.cancelCommand()
+				q.cmd = nil
+				q.cancelCommand = nil
+			}
+			if q.cancelCommand != nil {
+				q.cancelCommand()
+				q.cancelCommand = nil
+			}
+		}
+
 		ctx, cancel := context.WithCancel(context.Background())
-		q.cancel = cancel
+		q.cancelCommand = cancel
+
 		arg := fmt.Sprintf("ruddo.PrometheusProxy+%v", q.targetPort)
 		log.Printf("Launching qrexec-client-vm against %s with argument %s.", q.targetVm, arg)
 		c := exec.CommandContext(ctx, "qrexec-client-vm", q.targetVm, arg)
 		q.cmd = c
+
 		var err error
 		q.stdin, err = c.StdinPipe()
 		if err != nil {
 			log.Printf("Failed to launch program stdin pipe: %s.", err)
-			cancelResources()
+			q.cancel()
 			return nil, err
 		}
+
 		q.stdout, err = c.StdoutPipe()
 		if err != nil {
 			log.Printf("Failed to launch program stdout pipe: %s.", err)
-			cancelResources()
+			q.cancel()
 			return nil, err
 		}
 		c.Stderr = os.Stderr
+
 		err = c.Start()
 		if err != nil {
 			log.Printf("Failed to start program.")
-			cancelResources()
+			q.cancel()
 			return nil, err
 		}
+
 		wrt, err := q.stdin.Write([]byte("+\n"))
 		if err != nil {
 			log.Printf("Failed to write initial handshake: %s.", err)
-			cancelProg()
+			q.cancel()
 			if err == io.EOF {
 				err = errRequestRefused
 			}
@@ -152,15 +162,16 @@ func (q *qrexecConn) query() (io.Reader, error) {
 		}
 		if wrt != 2 {
 			log.Printf("Failed to write initial handshake (short write of %d bytes).", wrt)
-			cancelProg()
+			q.cancel()
 			return nil, errRequestRefused
 		}
 		log.Println("Initial handshake successful")
+
 		var mybuf [2]byte
 		n, err := q.stdout.Read(mybuf[:])
 		if err != nil {
 			log.Printf("Failed to read initial handshake: %s.", err)
-			cancelProg()
+			q.cancel()
 			if err == io.EOF {
 				err = errRequestRefused
 			}
@@ -168,18 +179,18 @@ func (q *qrexecConn) query() (io.Reader, error) {
 		}
 		if n != 2 || string(mybuf[:]) != "=\n" {
 			log.Printf("Failed to read initial handshake (wrong contents).")
-			cancelProg()
+			q.cancel()
 			return nil, errRequestRefused
 		}
 	}
 
 	n, err := q.stdin.Write([]byte("?\n"))
 	if err != nil {
-		cancelFilter()
+		q.cancel()
 		return nil, err
 	}
 	if n != 2 {
-		cancelFilter()
+		q.cancel()
 		return nil, errShortWrite
 	}
 
@@ -190,12 +201,12 @@ func (q *qrexecConn) query() (io.Reader, error) {
 		n, err := io.ReadFull(q.stdout, buf[:])
 		if i == 0 && n == 0 {
 			log.Println("Failed to read length byte (nothing read).")
-			cancelFilter()
+			q.cancel()
 			return nil, errRequestRefused
 		}
 		if err != nil {
 			log.Printf("Failed to read length byte: %s.", err)
-			cancelFilter()
+			q.cancel()
 			return nil, err
 		}
 		if buf[0] == '\n' {
@@ -205,20 +216,20 @@ func (q *qrexecConn) query() (io.Reader, error) {
 		readSoFar = append(readSoFar, buf[0])
 	}
 	if !readLength {
-		cancelFilter()
+		q.cancel()
 		return nil, fmt.Errorf("number too big")
 	}
 
 	length, err := strconv.Atoi(string(readSoFar))
 	if err != nil || length < 1 {
-		cancelFilter()
+		q.cancel()
 		return nil, fmt.Errorf("number too small")
 	}
 
 	b := make([]byte, length)
 	_, err = io.ReadFull(q.stdout, b)
 	if err != nil {
-		cancelFilter()
+		q.cancel()
 		return nil, err
 	}
 
