@@ -111,6 +111,7 @@ func (q *qrexecConn) query() (io.Reader, error) {
 			}
 			if q.cmd != nil {
 				q.cancelCommand()
+				q.cmd.Wait()
 				q.cmd = nil
 				q.cancelCommand = nil
 			}
