@@ -24,7 +24,7 @@ All said and done, this is what happens:
 
 * Prometheus contacts `prometheus-qubes-proxy` in the NetVM, asking to scrape the exporter running on VM `X`.
 * `prometheus-qubes-proxy` opens a Qubes RPC connection to VM `X`, requesting the `ruddo.PrometheusProxy` service.
-* `dom0` (the AdminVM) authorizes this request based on the policy configured in `/etc/qubes-rpc/policy/ruddo.PrometheusProxy` (the policy rejects everything by default, so you must configure this by hand).
+* `dom0` (the AdminVM) authorizes this request based on the policy configured in `/etc/qubes/policy.d` (the default `90-prometheus-proxy.policy` rejects everything by default, so you must configure this by hand).
 * `ruddo.PrometheusProxy` receives the Qubes RPC request.
 * `prometheus-qubes-proxy` requests, via this RPC channel, to scrape the exporter running on `X`.
 * `ruddo.PrometheusProxy` contacts the exporter running on `localhost` in `X`, then relays the reply back to `prometheus-qubes-proxy`
