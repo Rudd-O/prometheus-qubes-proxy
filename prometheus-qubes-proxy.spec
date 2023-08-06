@@ -47,7 +47,7 @@ Requires: bash
 
 %package dom0
 Summary:        This component installs the default-deny proxy policy to dom0.
-Requires:       qubes-release >= 4.1-1
+Requires:       qubes-core-dom0 >= 4.1-1
 
 %description dom0
 This package installs the default deny-all policy for ruddo.PrometheusProxy to

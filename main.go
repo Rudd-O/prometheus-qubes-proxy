@@ -265,7 +265,7 @@ func (m *myHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 	uVMa := strings.Split(uVM, ".")
 	if len(uVMa) == 0 {
-	    uVMa = []string{" "}
+		uVMa = []string{" "}
 	}
 	uVM = uVMa[0]
 	VMre := regexp.MustCompile("[a-zA-Z0-9_-]{1,32}")
