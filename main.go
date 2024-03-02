@@ -45,11 +45,6 @@ func SplitAt(substring string) func(data []byte, atEOF bool) (advance int, token
 	}
 }
 
-type proxyReader struct {
-	r io.Reader
-	l int
-}
-
 type qrexecConnMultiplexer struct {
 	vmPortMap map[string]*qrexecConn
 	m         sync.Mutex
