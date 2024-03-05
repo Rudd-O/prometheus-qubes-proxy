@@ -9,7 +9,6 @@ import (
 	"io"
 	"log"
 	"net/http"
-	"os"
 	"os/exec"
 	"regexp"
 	"strconv"
@@ -22,29 +21,6 @@ var errRequestRefused = errors.New("request refused")
 var errShortWrite = errors.New("short write")
 var errShortRead = errors.New("short read")
 
-func SplitAt(substring string) func(data []byte, atEOF bool) (advance int, token []byte, err error) {
-
-	return func(data []byte, atEOF bool) (advance int, token []byte, err error) {
-
-		// Return nothing if at end of file and no data passed
-		if atEOF && len(data) == 0 {
-			return 0, nil, nil
-		}
-
-		// Find the index of the input of the separator substring
-		if i := strings.Index(string(data), substring); i >= 0 {
-			return i + len(substring), data[0:i], nil
-		}
-
-		// If at end of file with data return the data74
-		if atEOF {
-			return len(data), data, nil
-		}
-
-		return
-	}
-}
-
 type qrexecConnMultiplexer struct {
 	vmPortMap map[string]*qrexecConn
 	m         sync.Mutex
@@ -54,6 +30,49 @@ func newQrexecConnMultiplexer() *qrexecConnMultiplexer {
 	return &qrexecConnMultiplexer{
 		vmPortMap: make(map[string]*qrexecConn),
 	}
+}
+
+type qrexecConnLogger struct {
+	vm     string
+	port   int
+	logged map[string]bool
+	m      sync.Mutex
+}
+
+func newqrexecConnLogger(vm string, port int) *qrexecConnLogger {
+	l := qrexecConnLogger{
+		vm:     vm,
+		port:   port,
+		logged: make(map[string]bool),
+	}
+	return &l
+}
+
+func (l *qrexecConnLogger) Error(formatString string, args ...interface{}) {
+	l.m.Lock()
+	defer func() {
+		l.m.Unlock()
+	}()
+	key := fmt.Sprintf("%s:%d", l.vm, l.port)
+	if !l.logged[key] {
+		x := fmt.Sprintf(formatString, args...)
+		log.Printf("%s:%d: %s", l.vm, l.port, x)
+		l.logged[key] = true
+	}
+}
+
+func (l *qrexecConnLogger) OK(formatString string, args ...interface{}) {
+	l.m.Lock()
+	defer func() {
+		l.m.Unlock()
+	}()
+	if formatString != "" {
+		x := fmt.Sprintf(formatString, args...)
+		log.Printf("%s:%d: %s", l.vm, l.port, x)
+		log.Printf("%s:%d: %s", l.vm, l.port, "(further messages will be suppressed until success)")
+	}
+	key := fmt.Sprintf("%s:%d", l.vm, l.port)
+	l.logged[key] = false
 }
 
 func (q *qrexecConnMultiplexer) query(vm string, port int) (io.Reader, error) {
@@ -68,8 +87,9 @@ func (q *qrexecConnMultiplexer) query(vm string, port int) (io.Reader, error) {
 			return conn
 		}
 		q.vmPortMap[identifier] = &qrexecConn{
-			targetVm:   vm,
+			targetVM:   vm,
 			targetPort: port,
+			logger:     newqrexecConnLogger(vm, port),
 		}
 		return q.vmPortMap[identifier]
 	}
@@ -78,7 +98,7 @@ func (q *qrexecConnMultiplexer) query(vm string, port int) (io.Reader, error) {
 }
 
 type qrexecConn struct {
-	targetVm      string
+	targetVM      string
 	targetPort    int
 	cmd           *exec.Cmd
 	cancel        context.CancelFunc
@@ -86,6 +106,7 @@ type qrexecConn struct {
 	stdin         io.WriteCloser
 	stdout        io.ReadCloser
 	m             sync.Mutex
+	logger        *qrexecConnLogger
 }
 
 func (q *qrexecConn) query() (io.Reader, error) {
@@ -120,36 +141,41 @@ func (q *qrexecConn) query() (io.Reader, error) {
 		q.cancelCommand = cancel
 
 		arg := fmt.Sprintf("ruddo.PrometheusProxy+%v", q.targetPort)
-		log.Printf("Launching qrexec-client-vm against %s with argument %s.", q.targetVm, arg)
-		c := exec.CommandContext(ctx, "qrexec-client-vm", q.targetVm, arg)
+		c := exec.CommandContext(ctx, "qrexec-client-vm", q.targetVM, arg)
 		q.cmd = c
 
 		var err error
 		q.stdin, err = c.StdinPipe()
 		if err != nil {
-			log.Printf("%d: failed to launch program stdin pipe: %s.", q.targetPort, err)
+			q.logger.Error("failed to launch program stdin pipe: %s.", err)
 			q.cancel()
 			return nil, err
 		}
 
 		q.stdout, err = c.StdoutPipe()
 		if err != nil {
-			log.Printf("%d: failed to launch program stdout pipe: %s.", q.targetPort, err)
+			q.logger.Error("failed to launch program stdout pipe: %s.", err)
 			q.cancel()
 			return nil, err
 		}
-		c.Stderr = os.Stderr
+		var stderr strings.Builder
+		c.Stderr = &stderr
 
 		err = c.Start()
 		if err != nil {
-			log.Printf("%d: failed to start program.", q.targetPort)
+			q.logger.Error("failed to start qrexec-client-vm: %s.", err)
 			q.cancel()
 			return nil, err
+		}
+
+		cleanedUpStderr := func() string {
+			return strings.ReplaceAll(strings.TrimSuffix(stderr.String(), "\n"), "\n", "\\n")
 		}
 
 		wrt, err := q.stdin.Write([]byte("+\n"))
 		if err != nil {
-			log.Printf("%d: failed to write initial handshake: %s.", q.targetPort, err)
+			result := c.Wait()
+			q.logger.Error("failed to write initial handshake: %s (stderr: %s, result: %s).", err, cleanedUpStderr(), result)
 			q.cancel()
 			if err == io.EOF {
 				err = errRequestRefused
@@ -157,16 +183,17 @@ func (q *qrexecConn) query() (io.Reader, error) {
 			return nil, err
 		}
 		if wrt != 2 {
-			log.Printf("%d: failed to write initial handshake (short write of %d bytes).", q.targetPort, wrt)
+			result := c.Wait()
+			q.logger.Error("failed to write initial handshake (short write of %d bytes, stderr: %s, result: %s).", wrt, cleanedUpStderr(), result)
 			q.cancel()
 			return nil, errRequestRefused
 		}
-		log.Println("Initial handshake successful")
 
 		var mybuf [2]byte
 		n, err := q.stdout.Read(mybuf[:])
 		if err != nil {
-			log.Printf("%d: failed to read initial handshake: %s.", q.targetPort, err)
+			result := c.Wait()
+			q.logger.Error("failed to read initial handshake: %s (stderr: %s, result: %s).", err, cleanedUpStderr(), result)
 			q.cancel()
 			if err == io.EOF {
 				err = errRequestRefused
@@ -174,7 +201,7 @@ func (q *qrexecConn) query() (io.Reader, error) {
 			return nil, err
 		}
 		if n != 2 || string(mybuf[:]) != "=\n" {
-			log.Printf("%d: failed to read initial handshake (wrong contents).", q.targetPort)
+			q.logger.Error("failed to read initial handshake (wrong contents).")
 			q.cancel()
 			return nil, errRequestRefused
 		}
@@ -182,13 +209,13 @@ func (q *qrexecConn) query() (io.Reader, error) {
 
 	n, err := q.stdin.Write([]byte("?\n"))
 	if err != nil {
-		log.Printf("%d: failed to write handshake: %s.", q.targetPort, err)
+		q.logger.Error("failed to write handshake: %s.", err)
 		q.cancel()
 		return nil, err
 	}
 	if n != 2 {
 		q.cancel()
-		log.Printf("%d: failed to write handshake (short write).", q.targetPort)
+		q.logger.Error("failed to write handshake (short write).")
 		return nil, errShortWrite
 	}
 
@@ -198,12 +225,12 @@ func (q *qrexecConn) query() (io.Reader, error) {
 		var buf [1]byte
 		n, err := io.ReadFull(q.stdout, buf[:])
 		if i == 0 && n == 0 {
-			log.Printf("%d: failed to read length byte (nothing read).", q.targetPort)
+			q.logger.Error("failed to read length byte (nothing read).")
 			q.cancel()
 			return nil, errShortRead
 		}
 		if err != nil {
-			log.Printf("%d: failed to read length byte: %s.", q.targetPort, err)
+			q.logger.Error("failed to read length byte: %s.", err)
 			q.cancel()
 			return nil, err
 		}
@@ -214,14 +241,14 @@ func (q *qrexecConn) query() (io.Reader, error) {
 		readSoFar = append(readSoFar, buf[0])
 	}
 	if !readLength {
-		log.Printf("%d: data returned from exporter is too big", q.targetPort)
+		q.logger.Error("data returned from exporter is too big")
 		q.cancel()
 		return nil, fmt.Errorf("number too big")
 	}
 
 	length, err := strconv.Atoi(string(readSoFar))
 	if err != nil || length < 1 {
-		log.Printf("%d: data returned from exporter is too small: %s", q.targetPort, err)
+		q.logger.Error("data returned from exporter is too small: %s", err)
 		q.cancel()
 		return nil, fmt.Errorf("number too small")
 	}
@@ -229,11 +256,12 @@ func (q *qrexecConn) query() (io.Reader, error) {
 	b := make([]byte, length)
 	_, err = io.ReadFull(q.stdout, b)
 	if err != nil {
-		log.Printf("%d: failed to read payload from exporter: %s", q.targetPort, err)
+		q.logger.Error("failed to read payload from exporter: %s", err)
 		q.cancel()
 		return nil, err
 	}
 
+	q.logger.OK("")
 	return bytes.NewBuffer(b), err
 }
 
@@ -252,7 +280,7 @@ func (m *myHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	uVM := r.URL.Query().Get("target")
 
 	port, err := strconv.Atoi(uPort)
-	if port < 1025 || port > 65535 {
+	if port < 1025 || port > 65535 || err != nil {
 		w.WriteHeader(400)
 		fmt.Fprintf(w, "port is a mandatory query string parameter and it cannot be outside the 1025-65535 range\n")
 		return
@@ -274,7 +302,7 @@ func (m *myHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	// log.Printf("Incoming metrics request for exporter on port %v in VM %v", port, vm)
 	reader, err := m.conn.query(vm, port)
 	if err != nil {
-		log.Printf("Metrics query for exporter on port %v in VM %v failed: %s", port, vm, err)
+		// log.Printf("Metrics query for exporter on port %v in VM %v failed: %s", port, vm, err)
 		if err == errRequestRefused {
 			w.WriteHeader(403)
 		} else {
@@ -286,13 +314,12 @@ func (m *myHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	w.Header().Add("Content-Type", "text/plain; version=0.0.4")
 	_, err = io.Copy(w, reader)
 	if err != nil {
-		log.Printf("Metrics read/write failed: %s", err)
+		log.Printf("%v:%v: metrics read/write failed: %s", vm, port, err)
 		return
 	}
 }
 
 var port = flag.Int("port", 8199, "Which port to listen on.")
-var targetVm = "dom0"
 
 func main() {
 	if *port < 1025 || *port > 65535 {

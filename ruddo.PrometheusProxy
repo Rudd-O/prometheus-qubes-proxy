@@ -1,7 +1,7 @@
 #!/bin/bash
 
 port="$1"
-if [ "$port" -lt "1025" -o "$port" -gt "65535" ] ; then break ; fi
+if [ "$port" -lt "1025" -o "$port" -gt "65535" ] ; then exit 116 ; fi
 
 read handshake
 if [ "$handshake" != "+" ] ; then exit ; fi
@@ -9,9 +9,9 @@ echo "="
 
 while true ; do
     read var
-    if [ "$var" != "?" ] ; then break ; fi
-    text=$(curl -s http://127.0.0.1:"$port"/metrics) || break
-    chars=$(echo "$text" | wc -c) || break
-    echo "$chars" || break
-    echo "$text" || break
+    if [ "$var" != "?" ] ; then exit 117 ; fi
+    text=$(curl -s http://127.0.0.1:"$port"/metrics) || exit $?
+    chars=$(echo "$text" | wc -c) || exit $?
+    echo "$chars" || exit $?
+    echo "$text" || exit $?
 done
