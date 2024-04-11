@@ -311,10 +311,19 @@ func (m *myHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "%s\n", err)
 		return
 	}
-	w.Header().Add("Content-Type", "text/plain; version=0.0.4")
-	_, err = io.Copy(w, reader)
+	queriedData, err := io.ReadAll(reader)
 	if err != nil {
-		log.Printf("%v:%v: metrics read/write failed: %s", vm, port, err)
+		log.Printf("%v:%v: metrics read from exporter failed: %s", vm, port, err)
+		w.WriteHeader(500)
+		return
+	}
+
+	w.Header().Add("Content-Type", "text/plain; version=0.0.4")
+	w.WriteHeader(200)
+
+	_, err = w.Write(queriedData)
+	if err != nil {
+		log.Printf("%v:%v: metrics write to scraper failed: %s", vm, port, err)
 		return
 	}
 }
