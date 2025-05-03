@@ -59,7 +59,7 @@ Build the RPM packages in a build VM with the command `make rpm`.
 
 Install the `prometheus-qubes-proxy` package on your VM template.
 
-Install the `prometheus-qubes-proxy-service` package on your VM template.
+Install the `prometheus-qubes-proxy-service` package on your VM template, or standalone, or even dom0.  The files of that package must be present on the VM whose metrics exporter you want to query via the proxy.
 
 Install the `prometheus-qubes-proxy-dom0` package on your `dom0` AdminVM.
 
