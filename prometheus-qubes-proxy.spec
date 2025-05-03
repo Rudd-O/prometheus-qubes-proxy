@@ -3,7 +3,7 @@
 %define mybuildnumber %{?build_number}%{?!build_number:1}
 
 Name:           prometheus-qubes-proxy
-Version:        0.1.4
+Version:        0.1.5
 Release:        %{mybuildnumber}%{?dist}
 Summary:        Proxy the outside world into Prometheus exporters running on your Qubes OS VMs
 

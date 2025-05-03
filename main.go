@@ -319,6 +319,8 @@ func (m *myHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.Header().Add("Content-Type", "text/plain; version=0.0.4")
+	w.Header().Add("Content-Length", fmt.Sprintf("%d", len(queriedData)))
+	w.Header().Add("Connection", "close")
 	w.WriteHeader(200)
 
 	_, err = w.Write(queriedData)
