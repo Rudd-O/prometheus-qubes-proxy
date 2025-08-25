@@ -1,0 +1,14 @@
+#!/bin/bash
+
+read handshake
+if [ "$handshake" != "+" ] ; then exit ; fi
+echo "="
+
+while true ; do
+    read var
+    if [ "$var" != "?" ] ; then exit 117 ; fi
+    text=$(qvm-ls --raw-data --fields name --no-spinner --running --quiet) || exit $?
+    chars=$(echo "$text" | wc -c) || exit $?
+    echo "$chars" || exit $?
+    echo "$text" || exit $?
+done

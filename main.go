@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"context"
+	"encoding/json"
 	"errors"
 	"flag"
 	"fmt"
@@ -33,17 +34,17 @@ func newQrexecConnMultiplexer() *qrexecConnMultiplexer {
 }
 
 type qrexecConnLogger struct {
-	vm     string
-	port   int
-	logged map[string]bool
-	m      sync.Mutex
+	vm                string
+	serviceIdentifier string
+	logged            map[string]bool
+	m                 sync.Mutex
 }
 
-func newqrexecConnLogger(vm string, port int) *qrexecConnLogger {
+func newqrexecConnLogger(vm string, serviceIdentifier string) *qrexecConnLogger {
 	l := qrexecConnLogger{
-		vm:     vm,
-		port:   port,
-		logged: make(map[string]bool),
+		vm:                vm,
+		serviceIdentifier: serviceIdentifier,
+		logged:            make(map[string]bool),
 	}
 	return &l
 }
@@ -53,10 +54,10 @@ func (l *qrexecConnLogger) Error(formatString string, args ...interface{}) {
 	defer func() {
 		l.m.Unlock()
 	}()
-	key := fmt.Sprintf("%s:%d", l.vm, l.port)
+	key := fmt.Sprintf("%s:%s", l.vm, l.serviceIdentifier)
 	if !l.logged[key] {
 		x := fmt.Sprintf(formatString, args...)
-		log.Printf("%s:%d: %s", l.vm, l.port, x)
+		log.Printf("%s:%s: %s", l.vm, l.serviceIdentifier, x)
 		l.logged[key] = true
 	}
 }
@@ -68,38 +69,40 @@ func (l *qrexecConnLogger) OK(formatString string, args ...interface{}) {
 	}()
 	if formatString != "" {
 		x := fmt.Sprintf(formatString, args...)
-		log.Printf("%s:%d: %s", l.vm, l.port, x)
-		log.Printf("%s:%d: %s", l.vm, l.port, "(further messages will be suppressed until success)")
+		log.Printf("%s:%s: %s", l.vm, l.serviceIdentifier, x)
+		log.Printf("%s:%s: %s", l.vm, l.serviceIdentifier, "(further messages will be suppressed until success)")
 	}
-	key := fmt.Sprintf("%s:%d", l.vm, l.port)
+	key := fmt.Sprintf("%s:%s", l.vm, l.serviceIdentifier)
 	l.logged[key] = false
 }
 
-func (q *qrexecConnMultiplexer) query(vm string, port int) (io.Reader, error) {
-	lookup := func(vm string, port int) *qrexecConn {
+func (q *qrexecConnMultiplexer) query(vm string, service string, arg string) (io.Reader, error) {
+	lookup := func(vm string, service string, arg string) *qrexecConn {
 		q.m.Lock()
 		defer func() {
 			q.m.Unlock()
 		}()
-		identifier := fmt.Sprintf("%s-%d", vm, port)
+		identifier := fmt.Sprintf("%s-%s-%s", service, vm, arg)
 		conn, ok := q.vmPortMap[identifier]
 		if ok {
 			return conn
 		}
 		q.vmPortMap[identifier] = &qrexecConn{
-			targetVM:   vm,
-			targetPort: port,
-			logger:     newqrexecConnLogger(vm, port),
+			targetVM:      vm,
+			targetService: service,
+			targetArg:     arg,
+			logger:        newqrexecConnLogger(vm, identifier),
 		}
 		return q.vmPortMap[identifier]
 	}
-	conn := lookup(vm, port)
+	conn := lookup(vm, service, arg)
 	return conn.query()
 }
 
 type qrexecConn struct {
 	targetVM      string
-	targetPort    int
+	targetService string
+	targetArg     string
 	cmd           *exec.Cmd
 	cancel        context.CancelFunc
 	cancelCommand context.CancelFunc
@@ -140,7 +143,10 @@ func (q *qrexecConn) query() (io.Reader, error) {
 		ctx, cancel := context.WithCancel(context.Background())
 		q.cancelCommand = cancel
 
-		arg := fmt.Sprintf("ruddo.PrometheusProxy+%v", q.targetPort)
+		arg := q.targetService
+		if q.targetArg != "" {
+			arg = fmt.Sprintf("%s+%s", q.targetService, q.targetArg)
+		}
 		c := exec.CommandContext(ctx, "qrexec-client-vm", q.targetVM, arg)
 		q.cmd = c
 
@@ -270,12 +276,53 @@ type myHandler struct {
 	conn *qrexecConnMultiplexer
 }
 
-func (m *myHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path != "/forward" {
-		w.WriteHeader(404)
-		fmt.Fprintf(w, "the only valid URI in this service is /forward\n")
+func (m *myHandler) serveDiscovery(w http.ResponseWriter) {
+	// log.Printf("Incoming metrics request for exporter on port %v in VM %v", port, vm)
+	vm := "dom0"
+	reader, err := m.conn.query(vm, "ruddo.PrometheusDiscover", "")
+	if err != nil {
+		// log.Printf("Metrics query for exporter on port %v in VM %v failed: %s", port, vm, err)
+		if err == errRequestRefused {
+			w.WriteHeader(403)
+		} else {
+			w.WriteHeader(500)
+		}
+		fmt.Fprintf(w, "%s\n", err)
 		return
 	}
+	queriedData, err := io.ReadAll(reader)
+	if err != nil {
+		log.Printf("%v: discovery data read from exporter failed: %s", vm, err)
+		w.WriteHeader(500)
+		return
+	}
+
+	vmsSplit := strings.Split(string(queriedData[:]), "\n")
+	var vms []string
+	for _, s := range vmsSplit {
+		if strings.TrimSpace(s) != "" {
+			vms = append(vms, s)
+		}
+	}
+	res := []map[string][]string{{"targets": vms}}
+
+	marshaled, err := json.Marshal(res)
+	if err != nil {
+		log.Printf("%v: discovery marshal to JSON failed: %s", vm, err)
+	}
+
+	w.Header().Add("Content-Type", "application/json")
+	w.Header().Add("Content-Length", fmt.Sprintf("%d", len(marshaled)))
+	w.Header().Add("Connection", "close")
+	w.WriteHeader(200)
+
+	_, err = w.Write(marshaled)
+	if err != nil {
+		log.Printf("%v: discovery write to scraper failed: %s", vm, err)
+	}
+}
+
+func (m *myHandler) serveMetrics(w http.ResponseWriter, r *http.Request) {
 	uPort := r.URL.Query().Get("port")
 	uVM := r.URL.Query().Get("target")
 
@@ -300,7 +347,7 @@ func (m *myHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	vm := uVM
 
 	// log.Printf("Incoming metrics request for exporter on port %v in VM %v", port, vm)
-	reader, err := m.conn.query(vm, port)
+	reader, err := m.conn.query(vm, "ruddo.PrometheusProxy", strconv.Itoa(port))
 	if err != nil {
 		// log.Printf("Metrics query for exporter on port %v in VM %v failed: %s", port, vm, err)
 		if err == errRequestRefused {
@@ -328,6 +375,21 @@ func (m *myHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		log.Printf("%v:%v: metrics write to scraper failed: %s", vm, port, err)
 		return
 	}
+}
+
+func (m *myHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path == "/discover" {
+		m.serveDiscovery(w)
+		return
+	}
+
+	if r.URL.Path == "/forward" {
+		m.serveMetrics(w, r)
+		return
+	}
+
+	w.WriteHeader(404)
+	fmt.Fprintf(w, "the only valid URIs in this service are /forward and /discover\n")
 }
 
 var port = flag.Int("port", 8199, "Which port to listen on.")

@@ -17,14 +17,55 @@ Here's where this program bridges the gap:
 
 1. You install an exporter on your VMs / VM templates, then configure the exporter to start up on boot.  Exporters are usually lightweight, so they won't demand a lot of memory from your system's VMs.
 2. You install the `ruddo.PrometheusProxy` Qubes RPC service in the VMs / VM templates where you're running the exporters you desire to scrape / expose.
-3. You install the `prometheus-qubes-proxy` program (presumably) in your NetVM, then configure it to start on boot.
-4. You configure the appropriate Qubes RPC policy to allow `prometheus-qubes-proxy` in your NetVM to talk to other VMs' `ruddo.PrometheusProxy` service.
+3. You install the `prometheus-qubes-proxy` program (presumably) in your NetVM, then configure it to start on boot (you must enable `qvm-service` `prometheus-qubes-proxy` and restart the qube for the service to start).
+4. You configure the appropriate Qubes RPC policy in `dom0` to allow `prometheus-qubes-proxy` in your NetVM to talk to other VMs' `ruddo.PrometheusProxy` service.
+5. You configure your Prometheus instance to scrape the `/forward` endpoint of the NetVM `prometheus-qubes-proxy` (by default running on port 8199).  A sample snippet of the main Prometheus configuration file, using the proxy to scrape Node Exporter on non-networked VMs, follows:
+
+```yaml
+- job_name: node_exporter
+  metrics_path: /metrics
+  scheme: http
+  follow_redirects: true
+  enable_http2: true
+  static_configs:
+  - targets:
+    - work:9100
+    - personal:9100
+    - files:9100
+  relabel_configs:
+  - # Tell Prometheus to scrape /forward instead of /metrics.
+    source_labels: [__address__]
+    regex: (.+)
+    target_label: __metrics_path__
+    replacement: /forward
+    action: replace
+  - # Tell Prometheus to put the name of the VM in query string parameter ?target=
+    source_labels: [__address__]
+    regex: (.+):(.+)
+    target_label: __param_target
+    replacement: ${1}
+    action: replace
+  - # Tell Prometheus to put the node exporter port (9100) in query string parameter ?port=
+    source_labels: [__address__]
+    regex: (.+):(.+)
+    target_label: __param_port
+    replacement: ${2}
+    action: replace
+  - # Finally, tell Prometheus to put the IP address (and port 8199)
+    # (in our example, the NetVM running prometheus-qubes-proxy) as the
+    # real address to talk to.
+    source_labels: [__address__]
+    regex: (.+)
+    target_label: __address__
+    replacement: 192.168.1.2:8199
+    action: replace
+```
 
 All said and done, this is what happens:
 
 * Prometheus contacts `prometheus-qubes-proxy` in the NetVM, asking to scrape the exporter running on VM `X`.
 * `prometheus-qubes-proxy` opens a Qubes RPC connection to VM `X`, requesting the `ruddo.PrometheusProxy` service.
-* `dom0` (the AdminVM) authorizes this request based on the policy configured in `/etc/qubes/policy.d` (the default `90-prometheus-proxy.policy` rejects everything by default, so you must configure this by hand).
+* `dom0` (the AdminVM) authorizes this request based on the policy configured in `/etc/qubes/policy.d` (the default `90-prometheus-proxy.policy` rejects everything by default, so you must explicitly configure an `allow` policy).
 * `ruddo.PrometheusProxy` receives the Qubes RPC request.
 * `prometheus-qubes-proxy` requests, via this RPC channel, to scrape the exporter running on `X`.
 * `ruddo.PrometheusProxy` contacts the exporter running on `localhost` in `X`, then relays the reply back to `prometheus-qubes-proxy`
@@ -33,7 +74,27 @@ All said and done, this is what happens:
 
 That's all.
 
-In principle, any exporter exposing a `/metrics` endpoint can be serviced by this proxy.
+Any exporter exposing a `/metrics` endpoint can be serviced by this proxy.  The proxy will not query any other URL paths, for security reasons.
+
+### Service discovery
+
+Prometheus also supports service discovery, and in this program, service discovery is also supported (through URL path `/discover`).  The discovery reply will consist of all the running qubes (requested from `dom0` by the proxy).
+
+This is also disallowed by default, but you can allow it by setting policy `ruddo.PrometheusDiscover` targeting the `dom0` VM from your NetVM to `allow`.
+
+The benefit of using discovery (plus relabeling rules, as shown above) is that Prometheus will not waste your CPU time requesting metrics for qubes that aren't running.  This particular situation I have measured at about 40% usage of one whole CPU core in `dom0`.  Additionally, you will not get error messages in the `dom0` system log noting that a VM which is stopped will not be autostarted.
+
+Note that this allows anyone with access to the NetVM's `prometheus-qubes-proxy` to query all names of running VMs.
+
+Here is a sample response from the `/discover` endpoint:
+
+```json
+[
+    {
+        "targets": ["work", "personal", "vault"]
+    }
+]
+```
 
 ## How to deploy this
 

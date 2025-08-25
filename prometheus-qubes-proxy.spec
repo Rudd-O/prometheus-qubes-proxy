@@ -3,7 +3,7 @@
 %define mybuildnumber %{?build_number}%{?!build_number:1}
 
 Name:           prometheus-qubes-proxy
-Version:        0.1.5
+Version:        0.2.0
 Release:        %{mybuildnumber}%{?dist}
 Summary:        Proxy the outside world into Prometheus exporters running on your Qubes OS VMs
 
@@ -48,12 +48,14 @@ Requires: bash
 %package dom0
 Summary:        This component installs the default-deny proxy policy to dom0.
 Requires:       qubes-core-dom0 >= 4.1-1
+Requires:       qubes-core-admin-client >= 4.1-1
 
 %description dom0
-This package installs the default deny-all policy for ruddo.PrometheusProxy to
-your dom0.
+This package installs the default deny-all policy for ruddo.PrometheusProxy
+and ruddo.PrometheusDiscover to your dom0.  It also installs the necessary
+qrexec service in dom0 to make Prometheus SD-discovery of VMs possible.
 
-Install this package on your dom0 and then adjust the policy file to suit your
+Install this package on your dom0 and then override the policy files to suit your
 specific requirements.
 
 %prep
@@ -89,6 +91,8 @@ install -Dm 644 70-%{name}.preset -t $RPM_BUILD_ROOT/%{_presetdir}/
 
 %files dom0
 %attr(0664, root, qubes) %config(noreplace) %{_sysconfdir}/qubes/policy.d/90-prometheus-proxy.policy
+%attr(0664, root, qubes) %config(noreplace) %{_sysconfdir}/qubes/policy.d/90-prometheus-discover.policy
+%attr(0755, root, root) %{_sysconfdir}/qubes-rpc/ruddo.PrometheusDiscover
 
 %changelog
 * Fri Feb 8 2019 Manuel Amador (Rudd-O) <rudd-o@rudd-o.com>
